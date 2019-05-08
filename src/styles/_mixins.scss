@@ -1,0 +1,48 @@
+//== Name: Mixins
+
+@mixin v-h-align($position: absolute) {
+    position: $position;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+}
+
+@mixin rp-error() {
+    position: absolute;
+    bottom: -$spacer;
+    left: .5 * $spacer;
+    z-index: 15;
+    padding: (.125 * $spacer) (.25 * $spacer);
+    max-width: 16em;
+    background-color: $rp-red;
+    border: 1px solid $rp-red;
+    border-radius: $border-radius-lg;
+    color: $white;
+    font-size: $font-size-base;
+    font-weight: bold;
+    line-height: 1.5em !important;
+    box-shadow: none !important;
+
+    p {
+        font-size: $font-size-base;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -.27 * $spacer;
+        left: .25 * $spacer;
+        z-index: 10;
+        width: 0;
+        height: 0;
+        border-left: .25 * $spacer solid transparent;
+        border-right: .25 * $spacer solid transparent;
+        border-bottom: .25 * $spacer solid $rp-red;
+    }
+
+    @include media-breakpoint-up(lg) {
+        left: 35% !important;
+    }
+}
+

@@ -1,0 +1,20 @@
+//== Return Path - WP Admin Bar
+//== Copyright 2018 Return Path
+
+@charset "utf-8";
+
+//== Includes
+@import 'variables';
+
+html {
+    margin-top: 0 !important;
+}
+
+#wpadminbar {
+    opacity: 0.5;
+    transition: opacity $rp-timing $rp-timing-function;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}

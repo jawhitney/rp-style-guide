@@ -1,0 +1,134 @@
+//== Name: Add To Any
+//== Description: Defines Add To Any social share styles
+
+.a2a_kit {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: $rp-z-index * 3.5 !important;
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity $rp-timing $rp-timing-function;
+
+    li {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: .7 * $rp-spacing;
+        height: .7 * $rp-spacing;
+        text-align: center;
+        line-height: .7 * $rp-spacing;
+        transition: all $rp-timing $rp-timing-function;
+    }
+
+    li:not(:last-of-type):hover {
+        width: .8 * $rp-spacing;
+
+        a {
+            border-top-right-radius: $border-radius-lg;
+            border-bottom-right-radius: $border-radius-lg;
+        }
+    }
+
+    a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        transition: all $rp-timing $rp-timing-function;
+
+        i {
+            font-size: (.7 * $rp-spacing) / 2;
+            color: $white;
+        }
+    }
+
+    .a2a_button_twitter,
+    .a2a_button_facebook,
+    .a2a_button_linkedin,
+    .a2a_button_pinterest,
+    .a2a_rp_show_hide {
+        opacity: .8;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .a2a_button_twitter {
+        background-color: $twitter !important;
+        border-top-right-radius: $border-radius-lg;
+
+        &:hover {
+            background-color: lighten($twitter, $rp-color-change) !important;
+        }
+    }
+
+    .a2a_button_facebook {
+        background-color: $facebook !important;
+
+        &:hover {
+            background-color: lighten($facebook , $rp-color-change) !important;
+        }
+    }
+
+    .a2a_button_linkedin {
+        background-color: $linkedin !important;
+
+        &:hover {
+            background-color: lighten($linkedin , $rp-color-change) !important;
+        }
+    }
+
+    .a2a_button_pinterest {
+        background-color: $pinterest !important;
+        border-bottom-right-radius: $border-radius-lg;
+
+        &:hover {
+            background-color: lighten($pinterest , $rp-color-change) !important;
+        }
+    }
+
+    .a2a_rp_show_hide {
+        position: relative;
+        top: 5px;
+        left: 2.5px;
+        display: inline-block;
+        padding: 0;
+        height: .6 * $rp-spacing;
+        width: .6 * $rp-spacing;
+        background-color: $gray-darker;
+        border-radius: (.6 * $rp-spacing) / 2;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        color: $white;
+
+        i {
+            font-size: 12px;
+        }
+    }
+
+    &.a2a_rp_hide {
+        li:not(:last-of-type) {
+            left: -.7 * $rp-spacing;
+        }
+
+        .a2a_rp_show_hide {
+            left: 0;
+            border-radius: 0;
+            border-top-left-radius: $border-radius-lg;
+            border-bottom-left-radius: $border-radius-lg;
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.rp-window-loaded {
+    .a2a_kit {
+        opacity: 1;
+    }
+}

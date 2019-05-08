@@ -1,0 +1,74 @@
+//== Name: Content
+//== Description: Defines content styles
+
+.rp-row-content {
+    .container-fluid {
+        position: relative;
+        z-index: $rp-z-index;
+    }
+
+    a:not(.btn) {
+        text-decoration: underline;
+    }
+
+    ul:not(.list-inline),
+    ol {
+        margin-bottom: .5 * $rp-spacing;
+        padding-top: 0;
+        padding-right: 0;
+        padding-left: .5 * $rp-spacing;
+        padding-bottom: 0;
+        font-size: $rp-font-size;
+
+        li {
+            padding-left: .25 * $rp-spacing;
+            padding-bottom: .25 * $rp-spacing;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+
+    .rp-content-image {
+        min-width: 2 * $rp-spacing;
+        max-width: 2 * $rp-spacing;
+    }
+
+    img.aligncenter,
+    img.alignnone {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .rp-row-content {
+        ul:not(.list-inline),
+        ol {
+            padding-left: $rp-spacing;
+            font-size: $rp-font-size-lg;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        li {
+            padding-bottom: .5 * $rp-spacing;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

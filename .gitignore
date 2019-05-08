@@ -1,0 +1,22 @@
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon
+Thumbs.db
+._*
+
+# SASS #
+########
+.sass-cache
+
+# NODE #
+########
+node_modules
+
+# VSCode #
+##########
+.vscode/
+.csscomb.json
+.scss-lint.yml
+.jshintrc

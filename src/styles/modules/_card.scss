@@ -1,0 +1,112 @@
+//== Name: Card
+
+.rp-card,
+.rp-card-front,
+.rp-card-back {
+    width: 100%;
+    max-width: 7 * $spacer;
+    height: 9 * $spacer;
+}
+
+.rp-card {
+    margin: 0 auto;
+    perspective: 1000px;
+
+    p {
+        line-height: 1.5;
+    }
+
+    &:hover {
+        .rp-card-front {
+            z-index: 1;
+        }
+
+        .rp-card-back {
+            z-index: 2;
+        }
+    }
+}
+
+.rp-card-inner {
+    transition: transform 2 * $rp-timing $rp-timing-function;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.rp-card-image {
+    position: relative;
+    width: 100%;
+    padding-top: percentage(240/420);
+
+    .rp-bg-image {
+        background-attachment: scroll !important;
+    }
+}
+
+.rp-card-front,
+.rp-card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url($assets-path + 'images/backgrounds/background-confetti-gray.svg');
+    background-size: 400%;
+    overflow: hidden;
+}
+
+.rp-card-front {
+    z-index: 2;
+}
+
+.rp-card-back {
+    z-index: 1;
+}
+
+.rp-card-mobile {
+    display: none;
+}
+
+// Not IE11
+.csspositionsticky.no-touchevents {
+    .rp-card:hover {
+        .rp-card-inner {
+            transform: rotateY(-180deg);
+        }
+    }
+
+    .rp-card-front {
+        transform: rotateY(0deg);
+    }
+
+    .rp-card-back {
+        transform: rotateY(-180deg);
+    }
+}
+
+.touchevents {
+    .rp-card,
+    .rp-card-front,
+    .rp-card-back {
+        height: auto;
+    }
+
+    .rp-card-front,
+    .rp-card-back {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .rp-card-back {
+        display: none !important;
+    }
+
+    .rp-card-front-inner {
+        padding-top: 0.5 * $spacer;
+        padding-bottom: 0.5 * $spacer;
+    }
+
+    .rp-card-mobile {
+        display: block;
+    }
+}

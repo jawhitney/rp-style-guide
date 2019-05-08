@@ -1,0 +1,77 @@
+//== Name: Footer
+//== Description: Defines footer styles
+
+footer {
+    z-index: 1;
+    padding: $rp-spacing 0;
+    min-height: 100%;
+    min-height: 100vh;
+    background-color: $rp-navy-dark;
+    color: $white;
+
+    .container-fluid {
+        position: relative;
+        padding-left: $rp-spacing;
+        padding-right: $rp-spacing;
+    }
+
+    p {
+        font-size: 1rem !important;
+    }
+
+    a {
+        @include reset-states();
+        color: $white;
+
+        &:focus,
+        &:hover {
+            color: $gray;
+        }
+    }
+
+    .rp-icon-link {
+        &:focus,
+        &:hover {
+            background-color: $gray !important;
+        }
+    }
+}
+
+#rpCopyright,
+#rpPrivacy {
+    a {
+        text-decoration: underline;
+
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited, {
+            text-decoration: underline;
+        }
+    }
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+// Is IE11
+.no-csspositionsticky {
+    footer {
+        .container-fluid {
+            margin: 0 !important;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    footer {
+        height: 100%;
+        height: 100vh;
+
+        .container-fluid {
+            padding-left: 2 * $rp-spacing;
+            padding-right: 2 * $rp-spacing;
+        }
+    }
+}

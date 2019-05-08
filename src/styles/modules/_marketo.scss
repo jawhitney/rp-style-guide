@@ -1,0 +1,283 @@
+//== Name: Marketo
+
+.mktoForm {
+    width: 100% !important;
+
+    * {
+        margin: 0 !important;
+        margin-top: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+        padding-top: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 0 !important;
+        height: auto !important;
+        min-height: auto !important;
+        font-weight: normal !important;
+        line-height: 1.5 !important;
+        color: $gray-base !important;
+    }
+
+    .mktoOffset,
+    .mktoAsterix,
+    .mktoGutter {
+        display: none !important;
+    }
+
+    .mktoFormCol,
+    .mktoFieldWrap,
+    .mktoButtonRow,
+    .mktoHtmlText {
+        width: 100% !important;
+    }
+
+    .mktoFieldWrap {
+        position: relative !important;
+        display: block !important;
+        margin-bottom: 0.5 * $spacer !important;
+    }
+
+    input,
+    textarea {
+        padding: 0.125 * $spacer 0.25 * $spacer !important;
+    }
+
+    select {
+        height: 2rem !important;
+    }
+
+    .mktoFormRow:not(.rpMktOptInCheckbox):not(.rpMktCheckboxList) {
+        input,
+        textarea,
+        select,
+        .mktoCheckboxList,
+        .mktoLabel {
+            width: 100% !important;
+        }
+
+        .mktoLabel {
+            margin-bottom: 0.125 * $spacer !important;
+        }
+    }
+
+    .mktoLabel {
+        position: relative !important;
+    }
+
+    .mktoRequiredField {
+        .mktoLabel {
+            display: flex !important;
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+        }
+
+        .mktoLabel::after {
+            content: '\f069';
+            margin-left: 0.5rem !important;
+            color: $rp-red !important;
+            font-family: 'Font Awesome 5 Pro' !important;
+            font-weight: 900 !important;
+            font-size: 0.5rem !important;
+        }
+    }
+
+    .rpMktOptInCheckbox {
+        .mktoCheckboxList {
+            float: left !important;
+            width: 0.5 * $spacer !important;
+        }
+
+        label {
+            float: right !important;
+            width: calc(100% - #{0.5 * $spacer}) !important;
+        }
+    }
+
+    .mktoError {
+        left: 0 !important;
+
+        .mktoErrorArrowWrap,
+        .mktoErrorArrow {
+            display: none !important;
+        }
+
+        .mktoErrorMsg {
+            padding: 0.125 * $spacer 0.25 * $spacer !important;
+            background-image: none !important;
+            background-color: rgba($rp-red, 0.9) !important;
+            border: 1px solid $rp-red !important;
+            border-radius: $border-radius !important;
+            box-shadow: none !important;
+            color: $white !important;
+            text-shadow: none !important;
+            font-weight: bold !important;
+        }
+
+        .mktoErrorDetail {
+            color: $white !important;
+            font-weight: normal !important;
+        }
+    }
+
+    .mktoButtonRow {
+        padding-top: 0.5 * $spacer !important;
+        text-align: right !important;
+    }
+
+    .mktoButtonWrap {
+        display: inline-block !important;
+    }
+
+    .mktoButton {
+        position: relative !important;
+        padding: $input-btn-padding-y $input-btn-padding-x !important;
+        font-size: $input-btn-font-size !important;
+        border: none !important;
+        border-radius: $btn-border-radius !important;
+        font-weight: $btn-font-weight !important;
+        box-shadow: $btn-box-shadow !important;
+        background-image: none !important;
+        background-color: $gray-base !important;
+        color: $white !important;
+        text-transform: uppercase !important;
+        transition: all $rp-timing $rp-timing-function !important;
+
+        &:focus,
+        &:active {
+            box-shadow: none !important;
+            outline: none !important;
+            color: $white !important;
+        }
+
+        &:hover {
+            background-image: none !important;
+            background-color: rgba($gray-base, $link-hover-opacity) !important;
+            color: rgba($white, $link-hover-opacity) !important;
+        }
+    }
+
+    .rpMktCheckboxList:not(.rpMktOptInCheckbox) {
+        .mktoFieldWrap {
+            display: block !important;
+
+            > label {
+                margin-bottom: 0.25 * $spacer !important;
+                width: 100% !important;
+            }
+
+            > .mktoCheckboxList {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                width: 100% !important;
+
+                input {
+                    float: none !important;
+                    width: 0.5 * $spacer !important;
+                }
+
+                label {
+                    float: none !important;
+                    width: calc(100% - #{0.5 * $spacer}) !important;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .mktoForm {
+        .mktoFieldWrap {
+            display: flex !important;
+            align-items: center !important;
+            flex-wrap: nowrap !important;
+        }
+
+        .rpMktOptInCheckbox {
+            .mktoFieldWrap {
+                display: block !important;
+            }
+        }
+
+        .mktoFormRow:not(.rpMktOptInCheckbox):not(.rpMktCheckboxList) {
+            input,
+            textarea,
+            select,
+            .mktoCheckboxList {
+                width: 65% !important;
+            }
+
+            .mktoLabel {
+                margin-bottom: 0 !important;
+                width: 35% !important;
+            }
+        }
+
+        .mktoFormRow:not(.rpMktCheckboxList) {
+            .mktoRequiredField {
+                .mktoLabel {
+                    align-items: center !important;
+                    justify-content: space-between !important;
+                }
+
+                .mktoLabel::after {
+                    margin-right: 0.5rem !important;
+                }
+            }
+        }
+
+        .mktoError {
+            left: 35% !important;
+        }
+    }
+}
+
+.rp-row-marketo {
+    a:not(.btn):not(.social) {
+        color: $white;
+        text-decoration: underline;
+        opacity: 0.6;
+
+        &:hover {
+            color: darken($white, $rp-color-change);
+        }
+    }
+}
+
+.rp-marketo-errors {
+    display: none;
+}
+
+.rp-marketo-form-wrapper,
+.rp-calculator-form-wrapper {
+    position: relative;
+    opacity: 0;
+    min-height: 3 * $spacer;
+    background-color: rgba($white, 0.7);
+    transition: 2.5 * $rp-timing $rp-timing-function !important;
+
+    &.rp-marketo-form-rendered {
+        opacity: 1;
+    }
+}
+
+.rp-calculator-form-wrapper {
+    opacity: 1;
+}
+
+.modal-body {
+    .rp-marketo-form-wrapper {
+        padding: 0 !important;
+    }
+}
+
+.rp-marketo-form-wrapper-gray {
+    background-color: $gray-lightest;
+}
+
+.rp-marketo-form-wrapper-transparent,
+.rp-marketo-promo-form-wrapper {
+    background-color: transparent;
+}

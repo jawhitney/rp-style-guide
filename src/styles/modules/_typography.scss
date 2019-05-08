@@ -1,0 +1,115 @@
+//== Name: Typography
+
+@each $rp-color, $color in $rp-colors {
+    .rp-text-color-#{$rp-color} {
+        color: $color;
+
+        a:not(.btn):not(.social) {
+            color: $color;
+
+            &:hover {
+                color: rgba($color, $link-hover-opacity);
+            }
+        }
+    }
+}
+
+h1 { font-size: $font-size-base * 2; }
+h2 { font-size: $font-size-base * 1.5; }
+h3 { font-size: $font-size-base * 1.25; }
+h4 { font-size: $font-size-base; }
+h5 { font-size: $font-size-base; }
+h6 { font-size: $font-size-base; }
+
+@include media-breakpoint-up(md) {
+    h1 { font-size: $font-size-base * 2.25; }
+    h2 { font-size: $font-size-base * 1.75; }
+    h3 { font-size: $font-size-base * 1.5; }
+    h4 { font-size: $font-size-base * 1.25; }
+    h5 { font-size: $font-size-base; }
+    h6 { font-size: $font-size-base; }
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+h4 {
+    line-height: 1.75;
+}
+
+dl, ol, ul, blockquote {
+    margin-bottom: 0.5 * $spacer;
+}
+
+p, dl, ol, ul, blockquote {
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+ul:not(.list-unstyled):not(.list-inline) {
+    list-style: none;
+    padding: 0;
+
+    li {
+        padding-left: 0.5 * $spacer;
+
+        &::before {
+            content: '\f0da';
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 900;
+            display: inline-block;
+            margin-left: -0.5 * $spacer;
+            width: 0.5 * $spacer;
+        }
+    }
+}
+
+ul.rp-list li {
+    line-height: 0.5 * $spacer;
+}
+
+p {
+    line-height: 1.75;
+}
+
+pre {
+    padding: 0.5 * $spacer;
+    border: 1px solid $gray;
+    border-radius: $border-radius-lg;
+    background-color: $gray-lightest;
+}
+
+.rp-row-content,
+.rp-row-content-image,
+.rp-row-icons-content {
+    dl, ol, ul {
+        li {
+            margin-bottom: 0.25 * $spacer;
+        }
+    }
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.rp-border-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    padding: 0 0.25 * $spacer;
+    background-color: $white;
+    transform: translateX(-50%) translateY(-50%);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: 3px;
+}
+
+.small {
+    font-size: $font-size-base * 0.75;
+}

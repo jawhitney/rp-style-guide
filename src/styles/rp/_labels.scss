@@ -1,0 +1,13 @@
+//== Name: Labels
+//== Description: Defines label styles
+
+@each $rp-color, $color in $rp-colors {
+    .rp-label-#{$rp-color} { @include rp-label($color); }
+}
+
+.rp-label-top-left {
+    position: absolute;
+    z-index: 1;
+    top: .5 * $rp-spacing;
+    left: -.5 * $rp-spacing;
+}

@@ -1,0 +1,17 @@
+@keyframes rpLoader {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@mixin rp-loader() {
+    margin: 0 auto;
+    width: 3 * $rp-spacing;
+    height: 3 * $rp-spacing;
+    border-top: .25 * $rp-spacing solid rgba($gray-light, .25);
+    border-right: .25 * $rp-spacing solid rgba($gray-light, .25);
+    border-bottom: .25 * $rp-spacing solid rgba($gray-light, .25);
+    border-left: .25 * $rp-spacing solid $rp-red;
+    border-radius: 50%;
+    animation: rpLoader 1.25s linear infinite;
+    transition: opacity 2.5 * $rp-timing $rp-timing-function !important;
+}

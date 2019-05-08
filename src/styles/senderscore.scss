@@ -1,0 +1,188 @@
+//== Name: Sender Score
+//== Description: Defines sender score styles
+
+@charset "utf-8";
+
+//== Includes
+@import 'inc/variables';
+@import 'inc/mixins';
+@import 'inc/keyframes';
+
+.rp-senderscore {
+    .rp-marketo-form-complete {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        opacity: 0;
+        transition: $rp-timing $rp-timing-function !important;
+
+        &.rp-marketo-form-rendered {
+            opacity: 1;
+        }
+    }
+
+    .ss-blacklist-default-form,
+    .ss-blacklist-marketo-form {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    #ssRegisterSuccess,
+    #ssRegisterErrors,
+    #ssBlacklistSuccess,
+    #ssBlacklistErrors,
+    #ssForgotPasswordErrors,
+    #passResetFrmErrors,
+    #ssLookupErrors,
+    #ssLookupResults,
+    .rp-valid-lookup {
+        display: none;
+    }
+
+    .g-recaptcha {
+        margin-bottom: .5 * $rp-spacing !important;
+    }
+
+    .text-center {
+        .g-recaptcha {
+            > div {
+                margin: 0 auto !important;
+            }
+        }
+    }
+
+    .rp-sign-in-linkedin {
+        width: 4 * $rp-spacing;
+    }
+
+    .rp-icon {
+        top: 0 !important;
+        width: .5 * $rp-spacing;
+        height: .5 * $rp-spacing;
+        vertical-align: text-top;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: .5 * $rp-spacing;
+        cursor: pointer;
+
+        &.rp-icon-ss-question {
+            background-image: url($assets-path + 'images/rp/icons/ss-icon-question.svg');
+        }
+    }
+
+    #rpLookupWrapper {
+        p, ul, li {
+            font-size: $rp-font-size-md !important;
+        }
+
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .gated-content-link {
+            @include v-align();
+            z-index: 1;
+            width: calc(100% - #{2 * $rp-spacing});
+            height: $rp-spacing;
+        }
+
+        .gated-content-link-50 {
+            left: 50%;
+            width: calc(50% - #{$rp-spacing});
+        }
+
+        .gated-content-filter {
+            filter: blur(5px);
+            opacity: .25;
+        }
+
+        [aria-label]:hover {
+            cursor: pointer;
+        }
+
+        #whoIsContent {
+            height: 500px;
+            overflow-y: auto;
+        }
+    }
+
+    #domainsSSLInfoLoader {
+        position: relative;
+        min-height: 3 * $rp-spacing;
+    }
+
+    #lookupInfoModal {
+        .lookup-help-info {
+            font-size: $rp-font-size-md;
+        }
+    }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        #rpLookupWrapper {
+            .gated-content-filter {
+                filter: none;
+                opacity: .1;
+            }
+        }
+    }
+
+    h4 {
+        font-weight: bold;
+    }
+
+    .table {
+        th, td {
+            vertical-align: middle;
+            white-space: nowrap;
+            padding: 0 12.5px;
+            line-height: 50px;
+        }
+    }
+
+    .pagination {
+        a {
+            text-decoration: none !important;
+            text-transform: uppercase !important;
+            font-size: 14px !important;
+            font-weight: bold !important;
+        }
+    }
+
+    .rp-donut-chart {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+
+        svg {
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            transform: scale(-1, 1) rotate(90deg);
+        }
+
+        h2 {
+            @include v-h-align();
+            z-index: 1;
+            font-family: $rp-sans;
+            font-weight: bold;
+            font-size: 5rem;
+
+            @media (min-width: 768px) { font-size: 3rem; }
+            @media (min-width: 992px) { font-size: 3.5rem; }
+            @media (min-width: 1200px) { font-size: 4rem; }
+        }
+    }
+
+    .rp-label-top-left {
+        top: -0.25 * $rp-spacing;
+        left: -0.25 * $rp-spacing;
+    }
+}

@@ -1,0 +1,137 @@
+//== Name: Buttons
+
+@mixin btn-gradient($color1, $color2, $bg-color: null, $font-color: null) {
+    @if ($bg-color) {
+        background-color: $bg-color;
+    }
+
+    @if ($font-color) {
+        color: $font-color;
+    }
+
+    background-image: linear-gradient(to right, $color1, $color2);
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        z-index: -1;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        background-image: linear-gradient(to right, $color1, $color1);
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity $rp-timing $rp-timing-function;
+    }
+
+    &:hover {
+        @if ($font-color) {
+            color: $font-color;
+        }
+
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+.btn {
+    position: relative;
+    z-index: 1;
+    background-origin: border-box;
+    border-color: transparent;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@each $rp-color, $color in $rp-colors {
+    &.btn-#{$rp-color},
+    &.btn-#{$rp-color}:not([href]):not([tabindex]) {
+        background-color: $color;
+        color: $white;
+
+        &:hover {
+            background-color: rgba($color, $link-hover-opacity);
+            color: $white;
+        }
+
+        @if $color == $white or $color == $gray-lightest {
+            color: $gray-base;
+
+            &:hover {
+                background-color: rgba($color, $link-hover-opacity);
+                color: $gray-base;
+            }
+        } @else if $color == $rp-red {
+            @include btn-gradient($rp-red, darken($rp-red, $rp-color-change), $rp-red, $white);
+        }
+
+        @if $color == $rp-red {
+            font-weight: bold;
+        }
+
+        @if $rp-color == "request-a-demo-promo" {
+            background-color: $rp-red;
+            color: $white;
+            font-weight: bold;
+
+            &:hover {
+                background-color: rgba($rp-red, $link-hover-opacity);
+                color: $white;
+            }
+
+            @include btn-gradient($rp-red, darken($rp-red, $rp-color-change), $rp-red, $white);
+        }
+    }
+
+    &.btn-#{$rp-color}-hollow,
+    &.btn-#{$rp-color}-hollow:not([href]):not([tabindex]) {
+        background-color: transparent;
+        border-color: $color;
+        color: $color;
+
+        &:hover {
+            border: 1px solid rgba($color, $link-hover-opacity);
+            color: rgba($color, $link-hover-opacity);
+        }
+
+        @if $rp-color == "footer-promo" {
+            border-color: $rp-red;
+            color: $rp-red;
+
+            &:hover {
+                border: 1px solid rgba($rp-red, $link-hover-opacity);
+                color: rgba($rp-red, $link-hover-opacity);
+            }
+        }
+    }
+}
+
+.btn {
+    &::before {
+        opacity: 0;
+        transition: opacity 2.5 * $rp-timing $rp-timing-function !important;
+    }
+
+    &.loading {
+        color: transparent;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: calc(50% - #{0.25 * $spacer});
+            left: calc(50% - #{0.25 * $spacer});
+            width: 0.5 * $spacer;
+            height: 0.5 * $spacer;
+            border-top: .0625 * $spacer solid rgba($gray-light, .25);
+            border-right: .0625 * $spacer solid rgba($gray-light, .25);
+            border-bottom: .0625 * $spacer solid rgba($gray-light, .25);
+            border-left: .0625 * $spacer solid $rp-red;
+            border-radius: 50%;
+            opacity: 1;
+            animation: rpLoader 1.25s linear infinite;
+        }
+    }
+}

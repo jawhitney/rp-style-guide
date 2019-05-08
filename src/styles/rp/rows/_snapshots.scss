@@ -1,0 +1,127 @@
+//== Name: Screenshots
+//== Description: Defines screenshots styles
+
+.rp-row-snapshots {
+    .container-fluid {
+        position: relative;
+        z-index: $rp-z-index;
+    }
+
+    .snapshots {
+        overflow: hidden;
+    }
+
+    .snapshot {
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+
+        &.active {
+            position: relative;
+            visibility: visible;
+        }
+    }
+
+    .icons {
+        a {
+            margin: .25 * $rp-spacing;
+            width: 4 * $rp-spacing;
+
+            &:hover {
+                img {
+                    box-shadow: $rp-shadow;
+                }
+
+                p {
+                    color: $gray;
+                }
+            }
+
+            img {
+                background-color: $white;
+                border-radius: $border-radius-lg;
+                width: 1.25 * $rp-spacing;
+                min-width: 1.25 * $rp-spacing;
+                height: 1.25 * $rp-spacing;
+                min-height: 1.25 * $rp-spacing;
+                box-shadow: none;
+                transition: box-shadow $rp-timing $rp-timing-function;
+            }
+
+            p {
+                padding-top: .5 * $rp-spacing;
+                font-size: $rp-font-size;
+                color: $gray-base;
+                transition: color $rp-timing $rp-timing-function;
+            }
+        }
+    }
+
+    .instructions {
+        p {
+            font-size: .6875 * $rp-font-size; // 11px
+            color: $gray-base;
+        }
+
+        i {
+            font-size: 2 * .6875 * $rp-font-size;
+        }
+    }
+}
+
+.rp-row-snapshots-screenshots {
+    .snapshot {
+        box-shadow: $rp-shadow-blue-dark;
+
+        &:not(.default) {
+            cursor: pointer;
+        }
+    }
+
+    .icons {
+        a {
+            &:hover {
+                img {
+                    box-shadow: $rp-shadow-blue-dark;
+                }
+
+                p {
+                    color: $white;
+                }
+            }
+
+            p {
+                color: $rp-blue-lighter;
+            }
+        }
+    }
+
+    .instructions {
+        p {
+            color: $white;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .rp-row-snapshots {
+        .icons {
+            padding-left: $rp-spacing;
+
+            a {
+                margin: 0;
+                width: 100%;
+
+                p {
+                    padding-top: 0;
+                    padding-left: .5 * $rp-spacing;
+                }
+            }
+
+            a:not(:first-child) {
+                margin-top: .5 * $rp-spacing;
+            }
+        }
+    }
+}

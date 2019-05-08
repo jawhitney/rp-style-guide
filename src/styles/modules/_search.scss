@@ -1,0 +1,112 @@
+//== Name: Search
+
+#rpSearchTrigger {
+    position: relative;
+    width: 0.75 * $spacer;
+    height: $spacer;
+    background-color: transparent;
+
+    .fa-times {
+        display: none;
+        opacity: 0;
+    }
+
+    &.active {
+        .fa-times {
+            display: inline-block;
+            transform: rotate(180deg) scale(1);
+			opacity: 1;
+        }
+
+        .fa-search {
+            display: none;
+            transform: rotate(-180deg) scale(.5);
+			opacity: 0;
+        }
+    }
+}
+
+#rpSearchForm,
+#rpSearchFormResults {
+    height: $spacer;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+}
+
+.rp-search {
+    width: 100%;
+
+    .form-group {
+        margin-bottom: 0;
+        width: 100%;
+        height: $spacer;
+    }
+
+    &:not(.rp-search-blog) {
+        .form-group {
+            width: calc(100% - #{1.5 * $spacer});
+        }
+    }
+
+    .form-control {
+        padding: 0 0.25 * $spacer;
+        width: 100%;
+        height: $spacer;
+        line-height: $spacer;
+        border: none;
+        border-radius: 0px;
+        outline: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    &.rp-search-blog {
+        .form-control {
+            border-radius: $border-radius-lg;
+        }
+    }
+
+    button[type="submit"] {
+        width: 1.5 * $spacer;
+        height: $spacer;
+        border: none;
+        border-radius: 0px;
+
+        &:hover {
+            background-color: lighten($rp-blue-dark, $rp-color-change) !important;
+        }
+    }
+}
+
+#rpSearchForm {
+    position: fixed;
+    top: 0.5 * $spacer;
+    right: 1.75 * $spacer;
+    z-index: 2;
+    width: 0px;
+    border: 1px solid transparent;
+    transition: border-color $rp-timing $rp-timing-function,
+                width $rp-timing $rp-timing-function;
+
+    .rp-search {
+        .form-group {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        button[type="submit"] {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+.rp-is-below-top {
+    #rpSearchForm.active {
+        border-color: rgba($gray, 0.5);
+    }
+}

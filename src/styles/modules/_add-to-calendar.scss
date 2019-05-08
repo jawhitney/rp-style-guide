@@ -1,0 +1,109 @@
+//== Name: AddToCalendar Base CSS (http://addtocalendar.com)
+
+.rp-row-add-to-calendar-results {
+    display: none;
+}
+
+//== Base
+.addtocalendar {
+    position: relative;
+    display: inline-block;
+    background: transparent !important;
+
+    var {
+        display: none;
+    }
+}
+
+.atcb-link {
+    display: block;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    background-origin: border-box;
+    background-color: transparent;
+    font-size: $input-btn-font-size;
+    text-decoration: none !important;
+    font-weight: $btn-font-weight;
+    line-height: 1.25;
+    color: $rp-blue-dark;
+    text-transform: uppercase;
+    border: $input-btn-border-width solid $rp-blue-dark;
+    border-radius: $btn-border-radius;
+    outline: none !important;
+    box-shadow: $btn-box-shadow;
+    transition: color $rp-timing $rp-timing-function,
+                border-color $rp-timing $rp-timing-function;
+
+    &:hover {
+        color: rgba($rp-blue-dark, $link-hover-opacity);
+        border: $input-btn-border-width solid rgba($rp-blue-dark, $link-hover-opacity);
+        text-decoration: none !important;
+    }
+}
+
+.atcb-link:active~ul,
+.atcb-link:focus~ul,
+.atcb-list:hover {
+    display: inline-block;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.atcb-list {
+    display: none;
+    position: relative;
+    padding: 0.25 * $spacer !important;
+    width: 100%;
+    height: 0;
+    border: 1px solid $gray-light;
+    border-radius: $border-radius-lg;
+    visibility: visible;
+    opacity: 0;
+    transition: opacity $rp-timing $rp-timing-function;
+}
+
+.atcb-item,
+.atcb-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: $white;
+}
+
+.atcb-item {
+    float: none;
+    padding: 0 !important;
+    text-align: left;
+    line-height: .5 * $spacer;
+}
+
+.atcb-item::before {
+    display: none !important;
+}
+
+.atcb-item-link {
+    text-decoration: none;
+    outline: none;
+    display: block;
+}
+
+.atcb-item.hover,
+.atcb-item:hover {
+    position: relative;
+    z-index: 900;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+}
+
+//== Overrides
+.rp-atc-wrapper {
+    text-align: center;
+}
+
+.rp-atc-errors {
+    display: none;
+}

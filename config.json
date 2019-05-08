@@ -1,0 +1,110 @@
+{
+    "localhost": "corp.returnpath.localhost",
+    "ssl": "../ssl/returnpath.localhost",
+    "active": {
+        "scripts": {
+            "all": false,
+            "main": true,
+            "vendor": false,
+            "add-to-calendar": false,
+            "arcade": false,
+            "billing": true,
+            "calculator": true,
+            "email-dna": false,
+            "email-for-president": false,
+            "email-university": false,
+            "game-email-heroes": false,
+            "game-great-email-escape": false,
+            "game-path-to-the-inbox": false,
+            "marketo": true,
+            "offices": false
+        },
+        "styles": {
+            "all": false,
+            "main": true,
+            "email-dna-atf": false,
+            "email-dna": false,
+            "email-university": false,
+            "game-path-to-the-inbox": false,
+            "jobvite-desktop": false,
+            "jobvite-mobile": false,
+            "senderscore": false,
+            "wp-admin-bar": false,
+            "wp-admin": false
+        }
+    },
+    "paths": {
+        "input": {
+            "scripts": "src/scripts/",
+            "styles": "src/styles/"
+        },
+        "scripts": {
+            "input": "src/scripts/*",
+            "output": {
+                "full": "dist/scripts/",
+                "min": "../dmk-rp-pantheon-wordpress/assets/scripts/"
+            }
+        },
+        "styles": {
+            "input": "src/styles/*",
+            "output": {
+                "full": "dist/styles/",
+                "min": "../dmk-rp-pantheon-wordpress/assets/styles/"
+            }
+        }
+    },
+    "orders": {
+        "main" : [
+            "utilities",
+            "polyfills",
+            "hero",
+            "jump-to-links",
+            "lazy-loading",
+            "marquees",
+            "megamenu",
+            "mobile-menu",
+            "scrolling",
+            "search"
+        ],
+        "vendor" : [
+            "jquery-3.3.1.min",
+            "bootstrap/util",
+            "bootstrap/collapse",
+            "bootstrap/modal",
+            "modernizr.custom.min"
+        ],
+        "game-email-heroes" : [
+            "scene",
+            "level",
+            "demo",
+            "level1",
+            "level2",
+            "level3",
+            "level4",
+            "congrats",
+            "intro",
+            "game"
+        ],
+        "game-great-email-escape" : [
+            "scene",
+            "interaction",
+            "intro",
+            "level",
+            "countdown",
+            "interactions",
+            "outro",
+            "game"
+        ],
+        "game-path-to-the-inbox" : [
+            "game",
+            "config",
+            "boot",
+            "load",
+            "intro",
+            "titles",
+            "secret",
+            "play",
+            "ending"
+        ]
+    }
+}

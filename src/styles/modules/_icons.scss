@@ -1,0 +1,23 @@
+//== Name: Return Path Icons
+
+.rp-fa-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 0.5 * $spacer;
+    height: 0.5 * $spacer;
+    border-radius: $border-radius;
+
+    &.light {
+        background-color: $gray-lighter;
+        color: $gray-dark;
+    }
+
+    &.dark {
+        background-color: $gray-dark;
+        color: $gray-lightest;
+    }
+
+    i {
+        @include v-h-align();
+    }
+}

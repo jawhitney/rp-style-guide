@@ -1,0 +1,36 @@
+//== Name: Request a Demo
+//== Description: Defines Request a Demo styles
+
+.rp-modal {
+    .modal-header {
+        background-color: $rp-teal-dark;
+        background-image: url($assets-path + 'images/backgrounds/background-emaildna.svg');
+    }
+}
+
+.mktoForm {
+    .mktoButton {
+        background-color: $rp-yellow-dark !important;
+        box-shadow: $rp-shadow !important;
+
+        &:hover,
+        &:focus {
+            background-color: $rp-yellow-light !important;
+            box-shadow: $rp-shadow-lighter !important;
+            color: $white !important;
+
+            &:before {
+                opacity: 1 !important;
+            }
+        }
+    }
+}
+
+#radFormWrapper {
+    min-height: 4 * $rp-spacing;
+}
+
+#radThanksWrapper {
+    display: none;
+    color: $gray-base;
+}

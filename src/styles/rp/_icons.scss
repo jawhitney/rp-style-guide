@@ -1,0 +1,521 @@
+//== Name: Icons
+//== Description: Defines icon styles
+
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'return-path-icons';
+    src: url($rp-font-path + '.eot');
+    src: url($rp-font-path + '.eot?#iefix') format('embedded-opentype'),
+        url($rp-font-path + '.woff') format('woff'),
+        url($rp-font-path + '.ttf') format('truetype'),
+        url($rp-font-path + '.svg#return-path-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[data-icon]::before {
+    font-family: "return-path-icons" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="rp-icon-"]::before,
+[class*=" rp-icon-"]::before {
+    font-family: "return-path-icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.rp-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size: 1em;
+    line-height: 1em;
+}
+
+.rp-icon-square,
+.rp-icon-square-lg {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: $border-radius-lg;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    .rp-icon,
+    .fab,
+    .fas,
+    .fa {
+        @include v-h-align();
+    }
+
+    .rp-icon::before {
+        @include v-h-align();
+    }
+
+    &.rp-icon-link {
+        transition: background-color $rp-timing $rp-timing-function;
+
+        &:hover {
+            background-color: $white;
+        }
+    }
+}
+
+.rp-icon-square {
+    width: 2em;
+    height: 2em;
+
+    .rp-icon,
+    .fab,
+    .fas,
+    .fa {
+        font-size: 1em;
+        line-height: 1em;
+    }
+}
+
+.rp-icon-square-lg {
+    width: 2.5em;
+    height: 2.5em;
+
+    .rp-icon,
+    .fab,
+    .fas,
+    .fa {
+        font-size: 1.25em;
+        line-height: 1.25em;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .rp-icon-square-lg {
+        width: 3em;
+        height: 3em;
+
+        .rp-icon,
+        .fab,
+        .fas,
+        .fa {
+            font-size: 1.5em;
+            line-height: 1.5em;
+        }
+    }
+}
+
+//== Return Path icons
+.rp-icon-acquisition::before { content: '\61'; }
+.rp-icon-airplane::before { content: '\62'; }
+.rp-icon-apparel-hanger::before { content: '\63'; }
+.rp-icon-arrows-2way::before { content: '\64'; }
+.rp-icon-arrows-agile::before { content: '\65'; }
+.rp-icon-arrows-bounce::before { content: '\66'; }
+.rp-icon-arrows-box::before { content: '\67'; }
+.rp-icon-arrows-down::before { content: '\68'; }
+.rp-icon-arrows-down-in::before { content: '\69'; }
+.rp-icon-arrows-out-up::before { content: '\6a'; }
+.rp-icon-arrows-right::before { content: '\6b'; }
+.rp-icon-arrows-right-in::before { content: '\6c'; }
+.rp-icon-arrows-right-out::before { content: '\6d'; }
+.rp-icon-arrows-square::before { content: '\6e'; }
+.rp-icon-arrows-up::before { content: '\6f'; }
+.rp-icon-arrows-uturn-left::before { content: '\70'; }
+.rp-icon-arrows-uturn-right::before { content: '\71'; }
+.rp-icon-at-symbol::before { content: '\72'; }
+.rp-icon-automation::before { content: '\73'; }
+.rp-icon-automotive::before { content: '\74'; }
+.rp-icon-baby-bib::before { content: '\75'; }
+.rp-icon-baby-booties::before { content: '\76'; }
+.rp-icon-baby-bottle::before { content: '\77'; }
+.rp-icon-baby-boy::before { content: '\78'; }
+.rp-icon-baby-carseat::before { content: '\79'; }
+.rp-icon-baby-crib::before { content: '\7a'; }
+.rp-icon-baby-girl::before { content: '\41'; }
+.rp-icon-baby-mobile::before { content: '\42'; }
+.rp-icon-baby-monitor::before { content: '\43'; }
+.rp-icon-baby-onesie::before { content: '\44'; }
+.rp-icon-baby-pacifier::before { content: '\45'; }
+.rp-icon-baby-rattle::before { content: '\46'; }
+.rp-icon-baby-ring-stack::before { content: '\47'; }
+.rp-icon-baby-shape-board::before { content: '\48'; }
+.rp-icon-baby-stroller::before { content: '\49'; }
+.rp-icon-baby-teddy-bear::before { content: '\4a'; }
+.rp-icon-bandaid::before { content: '\4b'; }
+.rp-icon-bar-chart::before { content: '\4c'; }
+.rp-icon-basketball::before { content: '\4d'; }
+.rp-icon-battery::before { content: '\4e'; }
+.rp-icon-beach-chair-umbrella::before { content: '\4f'; }
+.rp-icon-beaker::before { content: '\50'; }
+.rp-icon-beaker-full::before { content: '\51'; }
+.rp-icon-beer::before { content: '\52'; }
+.rp-icon-billboard::before { content: '\53'; }
+.rp-icon-binoculars::before { content: '\54'; }
+.rp-icon-blowpop-tootsiepop::before { content: '\55'; }
+.rp-icon-bomb::before { content: '\56'; }
+.rp-icon-book::before { content: '\57'; }
+.rp-icon-book-of-magic::before { content: '\58'; }
+.rp-icon-box-text::before { content: '\59'; }
+.rp-icon-broadcast::before { content: '\5a'; }
+.rp-icon-brochure::before { content: '\30'; }
+.rp-icon-browser::before { content: '\31'; }
+.rp-icon-building::before { content: '\32'; }
+.rp-icon-buildings::before { content: '\33'; }
+.rp-icon-bullets::before { content: '\34'; }
+.rp-icon-calculator::before { content: '\35'; }
+.rp-icon-caldron::before { content: '\36'; }
+.rp-icon-calendar::before { content: '\37'; }
+.rp-icon-candles::before { content: '\38'; }
+.rp-icon-candy-1::before { content: '\39'; }
+.rp-icon-candy-2::before { content: '\21'; }
+.rp-icon-candy-3::before { content: '\22'; }
+.rp-icon-candy-cane::before { content: '\23'; }
+.rp-icon-cardinal::before { content: '\24'; }
+.rp-icon-caution-quote::before { content: '\25'; }
+.rp-icon-caution-triangle::before { content: '\26'; }
+.rp-icon-cereal-bowl::before { content: '\27'; }
+.rp-icon-certification::before { content: '\28'; }
+.rp-icon-checkmark-box::before { content: '\29'; }
+.rp-icon-chickenleg::before { content: '\2a'; }
+.rp-icon-christmas-tree::before { content: '\2b'; }
+.rp-icon-click-through::before { content: '\2c'; }
+.rp-icon-click-to-open::before { content: '\2d'; }
+.rp-icon-clicks-cursor::before { content: '\2e'; }
+.rp-icon-clock::before { content: '\2f'; }
+.rp-icon-cloud::before { content: '\3a'; }
+.rp-icon-coffe-mug::before { content: '\3b'; }
+.rp-icon-color-palette::before { content: '\3c'; }
+.rp-icon-commerce-page::before { content: '\3d'; }
+.rp-icon-competitive-intelligence::before { content: '\3e'; }
+.rp-icon-computer-monitor::before { content: '\3f'; }
+.rp-icon-conversation-1::before { content: '\40'; }
+.rp-icon-conversation-2::before { content: '\5b'; }
+.rp-icon-conversion::before { content: '\5d'; }
+.rp-icon-coupon::before { content: '\5e'; }
+.rp-icon-crafts::before { content: '\5f'; }
+.rp-icon-credit-card::before { content: '\60'; }
+.rp-icon-crown::before { content: '\7b'; }
+.rp-icon-cup::before { content: '\7c'; }
+.rp-icon-cursor::before { content: '\7d'; }
+.rp-icon-cylinder-stacked::before { content: '\7e'; }
+.rp-icon-decision::before { content: '\5c'; }
+.rp-icon-device-monitor-phone::before { content: '\e000'; }
+.rp-icon-device-phone::before { content: '\e001'; }
+.rp-icon-device-stylus-068::before { content: '\e002'; }
+.rp-icon-device-tablet::before { content: '\e003'; }
+.rp-icon-device-tablet-phone::before { content: '\e004'; }
+.rp-icon-dialog-bubble::before { content: '\e005'; }
+.rp-icon-director-chair::before { content: '\e006'; }
+.rp-icon-dog-with-leash::before { content: '\e007'; }
+.rp-icon-dollar-sign::before { content: '\e008'; }
+.rp-icon-dollar-sign-highlights::before { content: '\e009'; }
+.rp-icon-dollar-sign-outlined::before { content: '\e00a'; }
+.rp-icon-dreidel-puts-one-into-pot-shin::before { content: '\e00b'; }
+.rp-icon-dreidel-wins-everything-gimmel::before { content: '\e00c'; }
+.rp-icon-dreidel-wins-half-the-pot-hay::before { content: '\e00d'; }
+.rp-icon-dreidel-wins-nothing-nun::before { content: '\e00e'; }
+.rp-icon-eiffeltower::before { content: '\e00f'; }
+.rp-icon-elder-wand::before { content: '\e010'; }
+.rp-icon-electrical-plug::before { content: '\e011'; }
+.rp-icon-email::before { content: '\e012'; }
+.rp-icon-email-activity::before { content: '\e013'; }
+.rp-icon-email-caution::before { content: '\e014'; }
+.rp-icon-email-encrypted::before { content: '\e015'; }
+.rp-icon-email-forward::before { content: '\e016'; }
+.rp-icon-email-in::before { content: '\e017'; }
+.rp-icon-email-inbox::before { content: '\e018'; }
+.rp-icon-email-out::before { content: '\e019'; }
+.rp-icon-email-phone::before { content: '\e01a'; }
+.rp-icon-email-preferences::before { content: '\e01b'; }
+.rp-icon-email-soft-bounce::before { content: '\e01c'; }
+.rp-icon-engagement::before { content: '\e01d'; }
+.rp-icon-enterprise::before { content: '\e01e'; }
+.rp-icon-eye::before { content: '\e01f'; }
+.rp-icon-feedback::before { content: '\e020'; }
+.rp-icon-file-ai::before { content: '\e021'; }
+.rp-icon-file-avi::before { content: '\e022'; }
+.rp-icon-file-bmp::before { content: '\e023'; }
+.rp-icon-file-caution::before { content: '\e024'; }
+.rp-icon-file-doc::before { content: '\e025'; }
+.rp-icon-file-eps::before { content: '\e026'; }
+.rp-icon-file-exe::before { content: '\e027'; }
+.rp-icon-file-gif::before { content: '\e028'; }
+.rp-icon-file-html::before { content: '\e029'; }
+.rp-icon-file-jpg::before { content: '\e02a'; }
+.rp-icon-file-mov::before { content: '\e02b'; }
+.rp-icon-file-mp3::before { content: '\e02c'; }
+.rp-icon-file-pdf::before { content: '\e02d'; }
+.rp-icon-file-png::before { content: '\e02e'; }
+.rp-icon-file-psd::before { content: '\e02f'; }
+.rp-icon-file-rar::before { content: '\e030'; }
+.rp-icon-file-tif::before { content: '\e031'; }
+.rp-icon-file-txt::before { content: '\e032'; }
+.rp-icon-file-zip::before { content: '\e033'; }
+.rp-icon-filebox::before { content: '\e034'; }
+.rp-icon-filefolder::before { content: '\e035'; }
+.rp-icon-filter-complex::before { content: '\e036'; }
+.rp-icon-flag::before { content: '\e037'; }
+.rp-icon-floppydisk::before { content: '\e038'; }
+.rp-icon-football::before { content: '\e039'; }
+.rp-icon-footprint::before { content: '\e03a'; }
+.rp-icon-fork-spoon::before { content: '\e03b'; }
+.rp-icon-fraudster::before { content: '\e03c'; }
+.rp-icon-funnel::before { content: '\e03d'; }
+.rp-icon-getaway-car::before { content: '\e03e'; }
+.rp-icon-gift-1::before { content: '\e03f'; }
+.rp-icon-gift-2::before { content: '\e040'; }
+.rp-icon-gift-3::before { content: '\e041'; }
+.rp-icon-glasses::before { content: '\e042'; }
+.rp-icon-glasses-toasting::before { content: '\e043'; }
+.rp-icon-globe::before { content: '\e044'; }
+.rp-icon-globe-time-zones::before { content: '\e045'; }
+.rp-icon-graphbars::before { content: '\e046'; }
+.rp-icon-hammer::before { content: '\e047'; }
+.rp-icon-handcuffs::before { content: '\e048'; }
+.rp-icon-health::before { content: '\e049'; }
+.rp-icon-heart::before { content: '\e04a'; }
+.rp-icon-heartthrob::before { content: '\e04b'; }
+.rp-icon-hedwig-owl::before { content: '\e04c'; }
+.rp-icon-history::before { content: '\e04d'; }
+.rp-icon-holiday-koala::before { content: '\e04e'; }
+.rp-icon-holiday-monkey::before { content: '\e04f'; }
+.rp-icon-holiday-mug::before { content: '\e050'; }
+.rp-icon-holiday-palm-tree::before { content: '\e051'; }
+.rp-icon-horizontal-distribute-left::before { content: '\e052'; }
+.rp-icon-hotel::before { content: '\e053'; }
+.rp-icon-house::before { content: '\e054'; }
+.rp-icon-hover-car::before { content: '\e055'; }
+.rp-icon-indiana-fever::before { content: '\e056'; }
+.rp-icon-indiana-pacers::before { content: '\e057'; }
+.rp-icon-indy-11::before { content: '\e058'; }
+.rp-icon-indy-colts::before { content: '\e059'; }
+.rp-icon-indy-fuel::before { content: '\e05a'; }
+.rp-icon-indy-indians::before { content: '\e05b'; }
+.rp-icon-intersection::before { content: '\e05c'; }
+.rp-icon-judgement::before { content: '\e05d'; }
+.rp-icon-key::before { content: '\e05e'; }
+.rp-icon-keypad::before { content: '\e05f'; }
+.rp-icon-koala::before { content: '\e060'; }
+.rp-icon-leaf::before { content: '\e061'; }
+.rp-icon-lightbulb::before { content: '\e062'; }
+.rp-icon-lightning-bolt::before { content: '\e063'; }
+.rp-icon-magnifying-glass::before { content: '\e064'; }
+.rp-icon-map-locator::before { content: '\e065'; }
+.rp-icon-marker-with-signal::before { content: '\e066'; }
+.rp-icon-marty-moose-glass::before { content: '\e067'; }
+.rp-icon-math-symbols::before { content: '\e068'; }
+.rp-icon-maze-challenge::before { content: '\e069'; }
+.rp-icon-meeting::before { content: '\e06a'; }
+.rp-icon-megaphone::before { content: '\e06b'; }
+.rp-icon-menorah::before { content: '\e06c'; }
+.rp-icon-metric-complaint::before { content: '\e06d'; }
+.rp-icon-metric-deleted::before { content: '\e06e'; }
+.rp-icon-metric-forward::before { content: '\e06f'; }
+.rp-icon-metric-not-spam::before { content: '\e070'; }
+.rp-icon-metric-read::before { content: '\e071'; }
+.rp-icon-metric-reply::before { content: '\e072'; }
+.rp-icon-metric-spam::before { content: '\e073'; }
+.rp-icon-mic::before { content: '\e074'; }
+.rp-icon-microchip::before { content: '\e075'; }
+.rp-icon-microscope-research::before { content: '\e076'; }
+.rp-icon-mirror::before { content: '\e077'; }
+.rp-icon-money-bag::before { content: '\e078'; }
+.rp-icon-money-stacked::before { content: '\e079'; }
+.rp-icon-monkey::before { content: '\e07a'; }
+.rp-icon-moon::before { content: '\e07b'; }
+.rp-icon-moon-stars::before { content: '\e07c'; }
+.rp-icon-more-or-less-than::before { content: '\e07d'; }
+.rp-icon-mouse::before { content: '\e07e'; }
+.rp-icon-movie-camera-retro::before { content: '\e07f'; }
+.rp-icon-movie-scene-clapper::before { content: '\e080'; }
+.rp-icon-music-note::before { content: '\e081'; }
+.rp-icon-newspaper::before { content: '\e082'; }
+.rp-icon-non-profit::before { content: '\e083'; }
+.rp-icon-notebook::before { content: '\e084'; }
+.rp-icon-number-circle-1::before { content: '\e085'; }
+.rp-icon-number-circle-2::before { content: '\e086'; }
+.rp-icon-number-circle-3::before { content: '\e087'; }
+.rp-icon-number-circle-4::before { content: '\e088'; }
+.rp-icon-number-circle-5::before { content: '\e089'; }
+.rp-icon-number-circle-6::before { content: '\e08a'; }
+.rp-icon-number-circle-7::before { content: '\e08b'; }
+.rp-icon-number-circle-8::before { content: '\e08c'; }
+.rp-icon-number-circle-9::before { content: '\e08d'; }
+.rp-icon-number-circle-10::before { content: '\e08e'; }
+.rp-icon-number-circle-fill-1::before { content: '\e08f'; }
+.rp-icon-number-circle-fill-2::before { content: '\e090'; }
+.rp-icon-number-circle-fill-3::before { content: '\e091'; }
+.rp-icon-number-circle-fill-4::before { content: '\e092'; }
+.rp-icon-number-circle-fill-5::before { content: '\e093'; }
+.rp-icon-number-circle-fill-6::before { content: '\e094'; }
+.rp-icon-number-circle-fill-7::before { content: '\e095'; }
+.rp-icon-number-circle-fill-8::before { content: '\e096'; }
+.rp-icon-number-circle-fill-9::before { content: '\e097'; }
+.rp-icon-number-circle-fill-10::before { content: '\e098'; }
+.rp-icon-number-square-1::before { content: '\e099'; }
+.rp-icon-number-square-2::before { content: '\e09a'; }
+.rp-icon-number-square-3::before { content: '\e09b'; }
+.rp-icon-number-square-4::before { content: '\e09c'; }
+.rp-icon-number-square-5::before { content: '\e09d'; }
+.rp-icon-number-square-6::before { content: '\e09e'; }
+.rp-icon-number-square-7::before { content: '\e09f'; }
+.rp-icon-number-square-8::before { content: '\e0a0'; }
+.rp-icon-number-square-9::before { content: '\e0a1'; }
+.rp-icon-number-square-10::before { content: '\e0a2'; }
+.rp-icon-number-square-fill-1::before { content: '\e0a3'; }
+.rp-icon-number-square-fill-2::before { content: '\e0a4'; }
+.rp-icon-number-square-fill-3::before { content: '\e0a5'; }
+.rp-icon-number-square-fill-4::before { content: '\e0a6'; }
+.rp-icon-number-square-fill-5::before { content: '\e0a7'; }
+.rp-icon-number-square-fill-6::before { content: '\e0a8'; }
+.rp-icon-number-square-fill-7::before { content: '\e0a9'; }
+.rp-icon-number-square-fill-8::before { content: '\e0aa'; }
+.rp-icon-number-square-fill-9::before { content: '\e0ab'; }
+.rp-icon-number-square-fill-10::before { content: '\e0ac'; }
+.rp-icon-numbered-list::before { content: '\e0ad'; }
+.rp-icon-numbered-list-selection::before { content: '\e0ae'; }
+.rp-icon-open-notebook::before { content: '\e0af'; }
+.rp-icon-opportunities::before { content: '\e0b0'; }
+.rp-icon-options::before { content: '\e0b1'; }
+.rp-icon-orange-half::before { content: '\e0b2'; }
+.rp-icon-ornament::before { content: '\e0b3'; }
+.rp-icon-page-layout::before { content: '\e0b4'; }
+.rp-icon-paint-brush::before { content: '\e0b5'; }
+.rp-icon-paint-bucket::before { content: '\e0b6'; }
+.rp-icon-pants::before { content: '\e0b7'; }
+.rp-icon-paper::before { content: '\e0b8'; }
+.rp-icon-paper-folded::before { content: '\e0b9'; }
+.rp-icon-paperclip::before { content: '\e0ba'; }
+.rp-icon-partronus-harry-stag::before { content: '\e0bb'; }
+.rp-icon-patronus-dumbledore-phoenix::before { content: '\e0bc'; }
+.rp-icon-patronus-hermione-otter::before { content: '\e0bd'; }
+.rp-icon-patronus-james-stag::before { content: '\e0be'; }
+.rp-icon-patronus-lily-doe::before { content: '\e0bf'; }
+.rp-icon-patronus-ron-terrier::before { content: '\e0c0'; }
+.rp-icon-patronus-sirius-dog-padfoot::before { content: '\e0c1'; }
+.rp-icon-patronus-snape-doe::before { content: '\e0c2'; }
+.rp-icon-pen-tip::before { content: '\e0c3'; }
+.rp-icon-persona-female-1::before { content: '\e0c4'; }
+.rp-icon-persona-female-2::before { content: '\e0c5'; }
+.rp-icon-persona-female-3::before { content: '\e0c6'; }
+.rp-icon-persona-female-4::before { content: '\e0c7'; }
+.rp-icon-persona-female-5::before { content: '\e0c8'; }
+.rp-icon-persona-female-6::before { content: '\e0c9'; }
+.rp-icon-persona-female-7::before { content: '\e0ca'; }
+.rp-icon-persona-female-8::before { content: '\e0cb'; }
+.rp-icon-persona-female-9::before { content: '\e0cc'; }
+.rp-icon-persona-female-10::before { content: '\e0cd'; }
+.rp-icon-persona-female-11::before { content: '\e0ce'; }
+.rp-icon-persona-female-12::before { content: '\e0cf'; }
+.rp-icon-persona-female-13::before { content: '\e0d0'; }
+.rp-icon-persona-male-1::before { content: '\e0d1'; }
+.rp-icon-persona-male-2::before { content: '\e0d2'; }
+.rp-icon-persona-male-3::before { content: '\e0d3'; }
+.rp-icon-persona-male-4::before { content: '\e0d4'; }
+.rp-icon-persona-male-5::before { content: '\e0d5'; }
+.rp-icon-persona-male-6::before { content: '\e0d6'; }
+.rp-icon-persona-male-7::before { content: '\e0d7'; }
+.rp-icon-persona-male-8::before { content: '\e0d8'; }
+.rp-icon-persona-male-9::before { content: '\e0d9'; }
+.rp-icon-persona-male-10::before { content: '\e0da'; }
+.rp-icon-persona-male-11::before { content: '\e0db'; }
+.rp-icon-persona-male-12::before { content: '\e0dc'; }
+.rp-icon-persona-male-13::before { content: '\e0dd'; }
+.rp-icon-persona-male-14::before { content: '\e0de'; }
+.rp-icon-persona-male-15::before { content: '\e0df'; }
+.rp-icon-persona-male-16::before { content: '\e0e0'; }
+.rp-icon-phishing::before { content: '\e0e1'; }
+.rp-icon-pie-chart::before { content: '\e0e2'; }
+.rp-icon-ping-pong::before { content: '\e0e3'; }
+.rp-icon-pizza-1::before { content: '\e0e4'; }
+.rp-icon-pizza-2::before { content: '\e0e5'; }
+.rp-icon-play-arrow::before { content: '\e0e6'; }
+.rp-icon-predict-trends::before { content: '\e0e7'; }
+.rp-icon-preference-clickhand::before { content: '\e0e8'; }
+.rp-icon-preference-cursor::before { content: '\e0e9'; }
+.rp-icon-puzzle-piece::before { content: '\e0ea'; }
+.rp-icon-puzzle-pieces::before { content: '\e0eb'; }
+.rp-icon-read-rate::before { content: '\e0ec'; }
+.rp-icon-results-arrow-target::before { content: '\e0ed'; }
+.rp-icon-ribbon-129::before { content: '\e0ee'; }
+.rp-icon-ribbon-curved::before { content: '\e0ef'; }
+.rp-icon-road::before { content: '\e0f0'; }
+.rp-icon-robot-1::before { content: '\e0f1'; }
+.rp-icon-robot-2::before { content: '\e0f2'; }
+.rp-icon-rubber-duck::before { content: '\e0f3'; }
+.rp-icon-rubber-stamp::before { content: '\e0f4'; }
+.rp-icon-ruler::before { content: '\e0f5'; }
+.rp-icon-rv-camper::before { content: '\e0f6'; }
+.rp-icon-safe::before { content: '\e0f7'; }
+.rp-icon-safety-pin::before { content: '\e0f8'; }
+.rp-icon-scissors::before { content: '\e0f9'; }
+.rp-icon-screen::before { content: '\e0fa'; }
+.rp-icon-servers::before { content: '\e0fb'; }
+.rp-icon-service::before { content: '\e0fc'; }
+.rp-icon-settings-gear::before { content: '\e0fd'; }
+.rp-icon-shield-1::before { content: '\e0fe'; }
+.rp-icon-shield-2::before { content: '\e0ff'; }
+.rp-icon-shopping-cart::before { content: '\e100'; }
+.rp-icon-silhouette-people::before { content: '\e101'; }
+.rp-icon-skull-crossbones::before { content: '\e102'; }
+.rp-icon-smiley::before { content: '\e103'; }
+.rp-icon-snowglobe::before { content: '\e104'; }
+.rp-icon-snowman::before { content: '\e105'; }
+.rp-icon-snowman-rudolph::before { content: '\e106'; }
+.rp-icon-snowman-with-email::before { content: '\e107'; }
+.rp-icon-soccerball::before { content: '\e108'; }
+.rp-icon-solution-key::before { content: '\e109'; }
+.rp-icon-spam::before { content: '\e10a'; }
+.rp-icon-spoofing::before { content: '\e10b'; }
+.rp-icon-squares-3stack::before { content: '\e10c'; }
+.rp-icon-squares-3x3::before { content: '\e10d'; }
+.rp-icon-star-1::before { content: '\e10e'; }
+.rp-icon-star-2::before { content: '\e10f'; }
+.rp-icon-star-3::before { content: '\e110'; }
+.rp-icon-stocking::before { content: '\e111'; }
+.rp-icon-storage-box::before { content: '\e112'; }
+.rp-icon-strategy::before { content: '\e113'; }
+.rp-icon-string-of-lignts::before { content: '\e114'; }
+.rp-icon-subscriber-1::before { content: '\e115'; }
+.rp-icon-subscriber-2::before { content: '\e116'; }
+.rp-icon-suit-jacket::before { content: '\e117'; }
+.rp-icon-sun::before { content: '\e118'; }
+.rp-icon-sweater::before { content: '\e119'; }
+.rp-icon-tag::before { content: '\e11a'; }
+.rp-icon-target::before { content: '\e11b'; }
+.rp-icon-text::before { content: '\e11c'; }
+.rp-icon-text-symbol::before { content: '\e11d'; }
+.rp-icon-theater::before { content: '\e11e'; }
+.rp-icon-thumbs-down::before { content: '\e11f'; }
+.rp-icon-thumbs-up::before { content: '\e120'; }
+.rp-icon-trash::before { content: '\e121'; }
+.rp-icon-trophy::before { content: '\e122'; }
+.rp-icon-tv::before { content: '\e123'; }
+.rp-icon-umbrella-closed::before { content: '\e124'; }
+.rp-icon-umbrella-open::before { content: '\e125'; }
+.rp-icon-unicorn::before { content: '\e126'; }
+.rp-icon-unsubscribe::before { content: '\e127'; }
+.rp-icon-vault::before { content: '\e128'; }
+.rp-icon-vertical-align-center::before { content: '\e129'; }
+.rp-icon-webpage::before { content: '\e12a'; }
+.rp-icon-whistle::before { content: '\e12b'; }
+.rp-icon-wifi::before { content: '\e12c'; }
+.rp-icon-winback::before { content: '\e12d'; }
+.rp-icon-wine-glass::before { content: '\e12e'; }
+.rp-icon-wireframe::before { content: '\e12f'; }
+.rp-icon-wrench::before { content: '\e130'; }
+.rp-icon-x::before { content: '\e131'; }
+.rp-icon-x-outline::before { content: '\e132'; }
+.rp-icon-zombie::before { content: '\e133'; }

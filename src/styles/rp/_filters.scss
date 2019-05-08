@@ -1,0 +1,106 @@
+//== Name: Filters
+//== Description: Defines filter styles
+
+.rp-filter {
+    overflow: visible;
+    z-index: 225;
+    padding-bottom: 0;
+
+    li {
+        padding: 0 .5 * $rp-spacing;
+        font-size: .875em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .rp-filter-trigger {
+        cursor: pointer;
+        border-bottom: 1px solid $gray-light;
+    }
+
+    .primary-level {
+        position: relative;
+        background-color: $gray-lightest;
+
+        > li {
+            width: 100%;
+            line-height: $rp-spacing;
+        }
+
+        > li:first-of-type {
+            border-right: 5px solid $gray-base;
+            border-bottom: 1px solid $gray-light;
+            border-left: 5px solid $gray-base;
+        }
+
+        i {
+            transition: transform $rp-timing $rp-timing-function;
+
+            &.arrow-reverse {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .secondary-level {
+        height: 0;
+        background-color: rgba($gray-lightest, 1);
+        transition: height $rp-timing $rp-timing-function;
+        overflow: hidden;
+
+        .container-fluid {
+            display: none;
+            padding-top: .5 * $rp-spacing;
+            padding-bottom: .5 * $rp-spacing;
+        }
+
+        .rp-filter-item {
+            font-size: .75em;
+            font-weight: bold;
+            line-height: 1.75;
+            cursor: pointer;
+            transition: all $rp-timing $rp-timing-function;
+
+            &:hover {
+                color: $gray;
+            }
+        }
+    }
+
+    .rp-applied-filters {
+        li {
+            padding: 5px;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .rp-filter {
+        .rp-filter-trigger {
+            border-bottom: 0;
+        }
+
+        .primary-level {
+            height: $rp-spacing;
+
+            > li {
+                width: auto;
+            }
+
+            > li:first-of-type {
+                border-right: 0;
+                border-bottom: 0;
+            }
+        }
+
+        .secondary-level {
+            position: absolute;
+            top: 2 * $rp-spacing;
+            left: 0;
+            right: 0;
+            z-index: 225;
+            margin: 0 auto;
+            width: calc(100% - #{4 * $rp-spacing});
+        }
+    }
+}

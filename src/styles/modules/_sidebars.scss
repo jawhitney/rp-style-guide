@@ -1,0 +1,41 @@
+//== Name: Sidebars
+
+#rpSidebarWrapper,
+#rpSidebar {
+    width: 5 * $spacer;
+}
+
+#rpSidebar {
+    position: sticky;
+    top: 3 * $spacer;
+    transition: top $rp-timing $rp-timing-function;
+}
+
+.rp-sidebar-label {
+    padding: 0.25 * $spacer;
+    letter-spacing: 3px;
+}
+
+#rpArchiveWrapper {
+    width: 100%;
+
+    .container {
+        padding-left: $spacer;
+        padding-right: $spacer;
+    }
+}
+
+.rp-more-content {
+    opacity: 0;
+    transition: opacity $rp-timing $rp-timing-function;
+
+    &.loaded {
+        opacity: 1;
+    }
+}
+
+#rpLoadMore {
+    &.hide {
+        display: none;
+    }
+}

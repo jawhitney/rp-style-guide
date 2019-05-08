@@ -1,0 +1,227 @@
+//== Name: Quiz - Single
+//== Description: Defines quiz single styles
+
+#rpQuiz {
+    color: $white;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        color: $white;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $rp-sans;
+        font-weight: bold;
+        font-size: $rp-font-size-lg;
+    }
+
+    p {
+        font-size: $rp-font-size;
+    }
+
+    .rp-answer-tracker {
+        li {
+            vertical-align: middle;
+        }
+
+        img {
+            margin-right: .25 * $rp-spacing;
+            max-width: .75 * $rp-spacing;
+        }
+
+        span {
+            font-family: $rp-serif;
+            font-weight: bold;
+            font-size: $rp-font-size-lg;
+        }
+    }
+
+    .rp-quiz-item {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: none;
+
+        &.active {
+            z-index: 2;
+            display: block;
+        }
+
+        &:first-of-type,
+        &:last-of-type {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: $rp-serif;
+            }
+        }
+
+        &:first-of-type {
+            img {
+                width: 2.5 * $rp-spacing;
+                height: 2.5 * $rp-spacing;
+            }
+        }
+    }
+
+    .rp-question-wrapper {
+        .question-option {
+            position: relative;
+            display: inline-block;
+            margin: 0 .25 * $rp-spacing;
+            width: 4 * $rp-spacing;
+            vertical-align: top;
+        }
+
+        .option-letter {
+            margin: 0 auto;
+            width: 1.5 * $rp-spacing;
+            height: 1.5 * $rp-spacing;
+            cursor: pointer;
+
+            span {
+                position: relative;
+                display: inline-block;
+                margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                color: $white;
+                font-family: $rp-serif;
+                font-size: $rp-spacing;
+                background-color: $rp-blue-light;
+                border: $border-radius-lg solid $rp-blue-dark;
+                border-radius: $border-radius-lg;
+                pointer-events: none;
+                box-shadow: $quiz-shadow;
+            }
+
+            &:active {
+                span {
+                    top: $border-radius;
+                    left: $border-radius;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .option-text {
+            cursor: pointer;
+        }
+    }
+
+    .rp-quiz-user-info,
+    .rp-quiz-outro-pass,
+    .rp-quiz-outro-fail {
+        display: none;
+    }
+
+    .rp-quiz-resources {
+        li {
+            margin: 0 .25 * $rp-spacing !important;
+            max-width: 3.5 * $rp-spacing;
+            vertical-align: top;
+        }
+
+        .rp-text-small {
+            font-family: $rp-serif;
+            font-size: $rp-font-size-sm;
+            font-weight: bold;
+        }
+
+        .rp-label {
+            top: .25 * $rp-spacing;
+            left: -1 * .25 * $rp-spacing;
+            padding: 0 .25 * $rp-spacing;
+            height: .5 * $rp-spacing;
+            line-height: .5 * $rp-spacing;
+            font-size: $rp-font-size-xs;
+        }
+    }
+
+    .rp-line-spacer {
+        margin: 0 auto .5 * $rp-spacing;
+        width: 50%;
+        height: $border-radius;
+        background-color: $gray-light;
+    }
+
+    .rp-quiz-indicators {
+        position: relative;
+        margin: 0 auto;
+
+        li {
+            margin: 0 $rp-font-size / 4 !important;
+            width: $rp-font-size;
+            height: $rp-font-size;
+            background-color: $gray-light;
+            border-radius: $rp-font-size;
+            border: 0;
+
+            &.active {
+                background-color: $gray-base;
+            }
+        }
+    }
+
+    .rp-quiz-outro-right {
+        display: none;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #rpQuiz {
+        color: $gray-base;
+
+        .container-fluid {
+            padding: 0;
+            width: calc(100% - #{2.5 * $rp-spacing});
+            height: calc(100% - #{2.5 * $rp-spacing});
+
+            > .row {
+                @include border-window();
+                @include bg-window();
+                height: 100%;
+                box-shadow: $quiz-shadow;
+            }
+        }
+
+        [class*="col-"] {
+            .row {
+                &#rpQuizLogo {
+                    @include top-window();
+                    position: relative;
+                }
+
+                &#rpQuizNav,
+                &#rpQuizContent,
+                &#rpQuizIndicators {
+                    padding-left: $rp-spacing;
+                    padding-right: $rp-spacing;
+                }
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            color: $gray-base;
+        }
+    }
+}

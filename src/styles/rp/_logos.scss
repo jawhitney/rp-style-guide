@@ -1,0 +1,36 @@
+// Name: Logos
+// Description: Defines logo styles
+
+.rp-logo,
+.rp-logo img,
+.rp-logo-solo,
+.rp-logo-solo img {
+    width: 45px;
+    height: 41px;
+}
+
+.rp-logo-spacer {
+    display: inline-block;
+    margin: 0 .1 * $rp-spacing;
+    width: 1px;
+    height: .7 * $rp-spacing;
+    vertical-align: middle;
+    background-color: $white;
+}
+
+.rp-text-logo {
+    font-family: $rp-serif;
+    font-size: $rp-font-size-lg;
+    font-weight: 400;
+}
+
+@include media-breakpoint-up(md) {
+    .rp-logo,
+    .rp-logo img {
+        width: 185px;
+    }
+
+    .rp-logo-spacer {
+        margin: 0 .2 * $rp-spacing;
+    }
+}

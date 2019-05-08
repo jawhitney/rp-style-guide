@@ -1,0 +1,48 @@
+//== Name: Marquee
+//== Description: Defines marquee styles
+
+.rp-marquee {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .rp-marquee-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        padding: .25 * $rp-spacing;
+        transition: left $rp-timing * 2 $rp-timing-function;
+
+        &.rp-marquee-item-no-transition {
+            transition: none;
+        }
+    }
+
+    &.rp-marquee-rotating-images {
+        height: $rp-header-height;
+
+        .rp-marquee-item {
+            @include v-align();
+            z-index: 100;
+            height: $rp-header-height;
+
+            img {
+                // @include v-align(relative);
+                margin: 0 auto;
+                width: 100%;
+                max-width: 175px;
+                max-height: 100px;
+                background-color: $white;
+            }
+
+            .rp-image-lazy-load {
+                @include v-h-align();
+            }
+        }
+    }
+}

@@ -1,0 +1,113 @@
+//== Name: Quiz - Marketo
+//== Description: Defines quiz Marketo styles
+
+.rp-marketo-form-loading {
+    top: 10%;
+    background-image: url($wp-assets-path + 'email-university/loader-8bit-hour-glass.gif');
+    animation: none;
+    width: 200px;
+    height: 200px;
+    border: none !important;
+}
+
+.rp-marketo-form-wrapper {
+    background-color: transparent;
+}
+
+.mktoForm {
+    .mktoFormRow {
+        margin-bottom: .25 * $rp-spacing !important;
+    }
+
+    .mktoAsterix {
+        float: left !important;
+        line-height: 1.5em !important;
+        text-align: left !important;
+        width: .25 * $rp-spacing !important;
+    }
+
+    .mktoError {
+        top: 65px !important;
+        left: 5px !important;
+    }
+
+    .mktoLabel {
+        margin-bottom: .5em !important;
+        width: 100% !important;
+        font-family: $rp-serif !important;
+    }
+
+    input#optIn,
+    label[for=optIn] {
+        margin-top: .25 * $rp-spacing !important;
+        margin-bottom: .25 * $rp-spacing !important;
+    }
+
+    .mktoCheckboxList,
+    .mktoCheckboxList.mktoRequired,
+    input[type=date],
+    input[type=email],
+    input[type=number],
+    input[type=password],
+    input[type=search],
+    input[type=tel],
+    input[type=text],
+    input[type=url],
+    select.mktoField,
+    textarea.mktoField {
+        width: 100% !important;
+    }
+
+    input[type=date],
+    input[type=email],
+    input[type=number],
+    input[type=password],
+    input[type=search],
+    input[type=tel],
+    input[type=text],
+    input[type=url],
+    select.mktoField,
+    textarea.mktoField {
+        border-radius: 0 !important;
+        border: 2px solid $gray-dark !important;
+    }
+
+    .mktoButton {
+        position: relative !important;
+        display: inline-block !important;
+        padding: 0 !important;
+        width: $quiz-btn-width !important;
+        min-width: $quiz-btn-width !important;
+        height: $quiz-btn-height !important;
+        font-size: $rp-font-size !important;
+        font-weight: bold !important;
+        line-height: $quiz-btn-height !important;
+        text-transform: uppercase !important;
+        color: $white !important;
+        background-color: transparent !important;
+        background-image: url($wp-assets-path + 'email-university/EU-btn-sprite-small.png') !important;
+        background-size: $quiz-btn-bg-size !important;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        border: none !important;
+        border-radius: 0 !important;
+        transition: none !important;
+
+        &:hover {
+            background-color: transparent !important;
+            background-image: url($wp-assets-path + 'email-university/EU-btn-sprite-small.png') !important;
+        }
+
+        &:active {
+            left: $border-radius;
+            top: $border-radius;
+            background-image: url($wp-assets-path + 'email-university/EU-btn-sprite-small.png') !important;
+            background-position: 0 -1 * $quiz-btn-height;
+        }
+
+        &:disabled {
+            background-image: url($wp-assets-path + 'email-university/EU-btn-sprite-small.png') !important;
+            background-position: -1 * $quiz-btn-width 0;
+        }
+    }
+}

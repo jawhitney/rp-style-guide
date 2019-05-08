@@ -1,0 +1,203 @@
+//== Name: Utilities
+//== Description: Defines utilities styles
+
+//== Name: Utilities
+//== Description: Defines utility styles
+
+.rp-full-height {
+    height: 100%;
+}
+
+//== Spacers
+.rp-row-spacer {
+    position: relative;
+    z-index: $rp-z-index * 2;
+    background-color: $white;
+
+    .container-fluid {
+        padding-right: $rp-spacing;
+        padding-left: $rp-spacing;
+    }
+}
+
+.rp-spacer-default {
+    width: 100%;
+    height: $rp-spacing;
+}
+
+.rp-spacer-default-3-4 {
+    width: 100%;
+    height: .75 * $rp-spacing;
+}
+
+.rp-spacer-default-1-2 {
+    width: 100%;
+    height: .5 * $rp-spacing;
+}
+
+.rp-spacer-default-1-4 {
+    width: 100%;
+    height: .25 * $rp-spacing;
+}
+
+@for $i from 1 through 10 {
+    .rp-spacer-default-#{$i}x {
+        width: 100%;
+        height: $i * $rp-spacing;
+    }
+
+    .rp-spacer-#{$i * 100} {
+        width: 100%;
+        height: 2 * $i * $rp-spacing;
+    }
+}
+
+.rp-semi-transparent-50 {
+    opacity: .5;
+}
+
+.rp-semi-transparent-75 {
+    opacity: .75;
+}
+
+.rp-semi-transparent-90 {
+    opacity: .9;
+}
+
+.rp-semi-transparent-95 {
+    opacity: .95;
+}
+
+//== Loader
+.rp-loader {
+    height: 4 * $rp-spacing;
+    transition: height $rp-timing $rp-timing-function !important;
+
+    .rp-loading {
+        @include rp-loader();
+        opacity: 1;
+    }
+
+    &.rp-loader-hide {
+        height: 0;
+
+        .rp-loading {
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+    }
+}
+
+.rp-iframe-embed {
+    iframe {
+        width: 100%;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .rp-row-spacer {
+        .container-fluid {
+            padding-right: 2 * $rp-spacing;
+            padding-left: 2 * $rp-spacing;
+        }
+    }
+}
+
+.embed-responsive {
+    background: none;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.img-fluid-full {
+    width: 100%;
+}
+
+.rp-scrollto-section {
+    position: relative;
+    z-index: 1;
+}
+
+//== Animate content
+.rp-row-timeline {
+    .rp-animate-content {
+        &.rp-content-on-screen {
+            &.rp-bg-parallax {
+                opacity: 0.25;
+            }
+        }
+    }
+}
+
+.rp-text-opacity-50 {
+    opacity: 0.5;
+}
+
+.rp-side-navigation {
+    position: fixed;
+    right: 0.5 * $rp-spacing;
+    bottom: 0.5 * $rp-spacing;
+    z-index: $rp-z-index * 3.5 !important;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: $rp-spacing;
+    height: $rp-spacing;
+    background-color: transparent;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity $rp-timing $rp-timing-function;
+
+    a {
+        position: absolute;
+        display: block;
+        width: $rp-spacing;
+        height: $rp-spacing;
+        font-size: $rp-spacing;
+        color: $rp-yellow-dark;
+        line-height: 1;
+        transition: transform $rp-timing $rp-timing-function;
+
+        &:hover,
+        &:focus {
+            color: $rp-yellow-light;
+        }
+    }
+}
+
+.rp-footer-is-visible {
+    .rp-side-navigation {
+        opacity: 0.65;
+
+        a {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+// Is IE11
+.no-csspositionsticky {
+    .rp-side-navigation {
+        display: none !important;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .no-touchevents {
+        .rp-window-loaded {
+            .rp-side-navigation {
+                opacity: 0.65;
+
+                &:hover,
+                &:focus {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

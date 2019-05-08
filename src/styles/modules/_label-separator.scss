@@ -1,0 +1,38 @@
+//== Name: Label separator
+
+.rp-row-label-separator {
+    .col {
+        letter-spacing: 3px;
+
+        > div {
+            overflow: hidden;
+
+            > span {
+                display: inline-block;
+                position: relative;
+                color: $gray-light;
+                text-transform: uppercase;
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    width: 1000px;
+                    height: 1px;
+                    background-color: $gray-light;
+                }
+
+                &::before {
+                    right: 100%;
+                    margin-right: 0.25 * $spacer;
+                }
+
+                &::after {
+                    left: 100%;
+                    margin-left: 0.25 * $spacer;
+                }
+            }
+        }
+    }
+}

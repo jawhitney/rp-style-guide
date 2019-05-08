@@ -1,0 +1,320 @@
+//== Name: Marketo
+//== Description: Defines Marketo form styles
+
+.mktoForm {
+    width: 100% !important;
+    font-size: 1rem !important;
+    line-height: .4 * $rp-spacing !important;
+    color: $gray-base !important;
+
+    .mktoOffset,
+    .mktoAsterix,
+    .mktoGutter {
+        display: none !important;
+    }
+
+    .mktoFieldWrap {
+        position: relative !important;
+        clear: both !important;
+        margin-bottom: .25 * $rp-spacing !important;
+        min-height: .7 * $rp-spacing !important;
+    }
+
+    .mktoFormCol {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    input[type=text],
+    input[type=url],
+    input[type=email],
+    input[type=tel],
+    input[type=number],
+    input[type=date],
+    textarea {
+        padding: .125 * $rp-spacing .25 * $rp-spacing !important;
+    }
+
+    input[type=text],
+    input[type=url],
+    input[type=email],
+    input[type=tel],
+    input[type=number],
+    input[type=date],
+    select {
+        height: 2.1875rem !important;
+    }
+
+    input[type=text],
+    input[type=url],
+    input[type=email],
+    input[type=tel],
+    input[type=number],
+    input[type=date],
+    textarea,
+    select {
+        color: $gray !important;
+        border: 1px solid $gray-light !important;
+        border-radius: $border-radius-lg !important;
+
+        &::placeholder {
+            color: $gray !important;
+        }
+
+        &:focus {
+            border: 1px solid $rp-blue-dark !important;
+            outline: none !important;
+            box-shadow: $rp-shadow-blue-dark !important;
+            color: $gray-base !important;
+        }
+    }
+
+    .mktoFormCol,
+    .mktoFieldWrap,
+    .mktoButtonRow {
+        width: 100% !important;
+    }
+
+    .mktoButtonWrap {
+        display: inline-block !important;
+        vertical-align: top;
+        margin: .25 * $rp-spacing .25 * $rp-spacing 0 0 !important;
+        padding: 0 !important;
+    }
+
+    .mktoFormRow:not(.rpMktOptInCheckbox) {
+        input[type=text],
+        input[type=url],
+        input[type=email],
+        input[type=tel],
+        input[type=number],
+        input[type=date],
+        textarea,
+        select,
+        .mktoCheckboxList,
+        .mktoLabel {
+            width: 100% !important;
+        }
+    }
+
+    .mktoLabel {
+        position: relative !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        min-height: 2.1875rem !important;
+        line-height: 1.5rem !important;
+        font-weight: bold !important;
+    }
+
+    .mktoRequiredField {
+        .mktoLabel {
+            padding-left: .25 * $rp-spacing !important;
+        }
+
+        .mktoLabel::after {
+            content: '*' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: auto !important;
+            width: .25 * $rp-spacing !important;
+            font-size: $rp-font-size !important;
+            font-weight: bold !important;
+            line-height: .4 * $rp-spacing !important;
+            text-align: left !important;
+            color: $rp-red !important;
+        }
+    }
+
+    .mktoCheckboxList {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        > input[type=checkbox] {
+            position: relative !important;
+            top: 4px !important;
+        }
+
+        > label {
+            margin: 0 0 .25 * $rp-spacing !important;
+            padding: 0 0 0 .5 * $rp-spacing !important;
+            line-height: 1.5rem !important;
+        }
+    }
+
+    .rpMktOptInCheckbox {
+        .mktoCheckboxList {
+            float: left !important;
+            width: .5 * $rp-spacing !important;
+        }
+
+        label {
+            float: right !important;
+            width: calc(100% - #{.5 * $rp-spacing}) !important;
+            font-weight: bold;
+        }
+    }
+
+    .mktoError {
+        top: (.7 * $rp-spacing) * 2 !important;
+        left: 0 !important;
+
+        .mktoErrorArrowWrap {
+            left: .25 * $rp-spacing !important;
+            width: .5 * $rp-spacing !important;
+            height: .25 * $rp-spacing !important;
+        }
+
+        .mktoErrorArrow {
+            width: .5 * $rp-spacing !important;
+            height: .5 * $rp-spacing !important;
+            background-color: $rp-red !important;
+            border: 1px solid $rp-red !important;
+        }
+
+        .mktoErrorMsg {
+            margin-top: 10px !important;
+            padding: (.125 * $rp-spacing) (.25 * $rp-spacing) !important;
+            background-image: none !important;
+            background-color: $rp-red !important;
+            border: 1px solid $rp-red !important;
+            border-radius: $border-radius-lg !important;
+            box-shadow: none !important;
+            color: $white !important;
+            font-weight: bold !important;
+            line-height: 1.5em !important;
+            text-shadow: none !important;
+        }
+    }
+
+    .mktoButton {
+        position: relative !important;
+        padding: 0 .5 * $rp-spacing !important;
+        height: $rp-spacing !important;
+        min-width: 3.5 * $rp-spacing !important;
+        background-image: none !important;
+        background-color: $rp-blue-dark !important;
+        border-radius: $border-radius-lg !important;
+        border: none !important;
+        color: $white !important;
+        font-size: $rp-font-size-sm !important;
+        font-weight: bold !important;
+        line-height: $rp-spacing !important;
+        text-transform: uppercase !important;
+        transition: all $rp-timing $rp-timing-function !important;
+
+        &:focus,
+        &:active {
+            box-shadow: none !important;
+            outline: none !important;
+            color: $white !important;
+        }
+
+        &:hover {
+            background-image: none !important;
+            background-color: lighten($rp-blue-dark, $rp-color-change) !important;
+            color: lighten($white, $rp-color-change) !important;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .mktoForm {
+        .mktoFieldWrap {
+            margin-bottom: .5 * $rp-spacing !important;
+        }
+
+        .mktoFormRow:not(.rpMktOptInCheckbox) {
+            input[type=text],
+            input[type=url],
+            input[type=email],
+            input[type=tel],
+            input[type=number],
+            input[type=date],
+            textarea,
+            select,
+            .mktoCheckboxList {
+                float: right !important;
+                width: 65% !important;
+            }
+
+            .mktoLabel {
+                float: left !important;
+                width: 35% !important;
+            }
+        }
+
+        .mktoRequiredField {
+            .mktoLabel {
+                padding-left: 0 !important;
+                padding-right: .5 * $rp-spacing !important;
+            }
+
+            .mktoLabel::after {
+                right: 0 !important;
+                left: auto !important;
+                width: .5 * $rp-spacing !important;
+                text-align: center !important;
+            }
+
+            .mktoLabel[for*="optIn"],
+            .mktoLabel[for*="OptIn"] {
+                padding-left: .25 * $rp-spacing !important;
+            }
+
+            .mktoLabel[for*="optIn"]::after,
+            .mktoLabel[for*="OptIn"]::after {
+                right: auto !important;
+                left: 0 !important;
+                width: .25 * $rp-spacing !important;
+                text-align: left !important;
+            }
+        }
+
+        .mktoError {
+            top: .7 * $rp-spacing !important;
+            left: 35% !important;
+        }
+
+        .mktoButtonWrap {
+            margin: .5 * $rp-spacing .25 * $rp-spacing 0 0 !important;
+        }
+    }
+}
+
+.rp-marketo-errors {
+    display: none;
+}
+
+.rp-marketo-form-wrapper {
+    position: relative;
+    opacity: 0;
+    min-height: 3 * $rp-spacing;
+    background-color: $white;
+    transition: 2.5 * $rp-timing $rp-timing-function !important;
+
+    &.rp-marketo-form-rendered {
+        opacity: 1;
+    }
+}
+
+.rp-marketo-form-wrapper-gray {
+    background-color: $gray-lightest;
+}
+
+.rp-marketo-form-wrapper-transparent,
+.rp-marketo-promo-form-wrapper {
+    background-color: transparent;
+}
+
+.rp-marketo-form-loading {
+    @include rp-loader();
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &.rp-marketo-form-hide {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,95 @@
+//== Name: Footer
+//== Description: Defines footer styles
+
+footer {
+    padding: $rp-spacing 0;
+    background-color: $gray-base;
+    color: $white;
+
+    p:last-of-type {
+        margin: 0;
+    }
+
+    a {
+        @include reset-states();
+        color: $white;
+
+        &:focus,
+        &:hover {
+            color: $gray;
+        }
+    }
+}
+
+.rp-footer-full-height {
+    height: 600px;
+    min-height: 600px !important;
+}
+
+.rp-footer-bg {
+    display: none;
+}
+
+.rp-animate-content.rp-footer-back-to-top {
+    opacity: 1;
+
+    .rp-jump-to-link {
+        top: $rp-spacing;
+        transition: top 2.5 * $rp-timing $rp-timing-function;
+    }
+
+    &.rp-content-on-screen {
+        .rp-jump-to-link {
+            top: 0;
+        }
+    }
+}
+
+.touchevents {
+    .rp-footer-is-visible {
+        .rp-footer-bg {
+            display: block;
+            position: fixed;
+            bottom: 0;
+            z-index: $rp-z-index * 1.5;
+            width: 100%;
+            height: 100%;
+            background-color: $gray-base;
+        }
+    }
+}
+
+#rpPhoneNumber,
+#rpFooterMenu {
+    text-transform: uppercase;
+}
+
+#rpFooterMenu {
+    font-size: $rp-font-size-sm;
+    font-weight: bold;
+
+    li {
+        padding: 0 .25 * $rp-spacing;
+        line-height: 2;
+    }
+}
+
+#rpCopyright,
+#rpPrivacy {
+    font-size: $rp-font-size;
+
+    a {
+        text-decoration: underline;
+
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited, {
+            text-decoration: underline;
+        }
+    }
+
+    i {
+        margin-right: 5px;
+    }
+}

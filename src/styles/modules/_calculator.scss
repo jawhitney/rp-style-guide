@@ -1,0 +1,61 @@
+//== Name: RP Calculators
+
+div.dgjqueryerrorclass {
+    @include rp-error();
+}
+
+.rp-row-calculator {
+    &:not(.rp-sample-size-calculator) {
+        display: none;
+    }
+
+    label {
+        font-weight: normal;
+    }
+
+    form {
+        .required {
+            padding: 0 5px;
+            font-weight: bold;
+            color: $rp-red;
+        }
+    }
+
+    .rp-calculator-tips {
+        padding: 0 .5 * $spacer;
+
+        p {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        ul {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            padding-left: .5 * $spacer !important;
+        }
+
+        li {
+            padding-bottom: .25 * $spacer !important;
+        }
+    }
+}
+
+.rp-calculator-results {
+    h5 {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -.5em;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 75px;
+            background-color: $gray-light;
+        }
+    }
+}

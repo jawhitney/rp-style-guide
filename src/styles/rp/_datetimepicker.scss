@@ -1,0 +1,564 @@
+//== Name: Datetime Picker
+//== Description: Defines Datetime Picker styles
+
+.xdsoft_datetimepicker {
+    box-shadow: 0 5px 15px -5px $black-50;
+    background: $white;
+    border-bottom: 1px solid $gray;
+    border-left: 1px solid $gray-light;
+    border-right: 1px solid $gray-light;
+    border-top: 1px solid $gray-light;
+    color: $gray-base;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 8px;
+    padding-left: 0;
+    padding-top: 2px;
+    position: absolute;
+    z-index: 9999;
+    box-sizing: border-box;
+    display: none;
+
+    &.xdsoft_rtl {
+        padding: 8px 0 8px 8px;
+
+        .xdsoft_datepicker {
+            float: right;
+            margin-right: 8px;
+            margin-left: 0;
+        }
+
+        .xdsoft_timepicker {
+            float: right;
+            margin-right: 8px;
+            margin-left: 0;
+        }
+
+        .xdsoft_scrollbar {
+            left: 0;
+            right: auto;
+        }
+    }
+
+    iframe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 75px;
+        height: 210px;
+        background: transparent;
+        border: 0;
+    }
+
+    button {
+        border: 0 !important;
+    }
+
+    &.xdsoft_inline {
+        display: inline-block;
+        position: static;
+        box-shadow: none;
+    }
+
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .xdsoft_datepicker,
+    .xdsoft_timepicker {
+        display: none;
+    }
+
+    .xdsoft_datepicker.active,
+    .xdsoft_timepicker.active {
+        display: block;
+    }
+
+    .xdsoft_datepicker {
+        width: 224px;
+        float: left;
+        margin-left: 8px;
+
+        &.active+.xdsoft_timepicker {
+            margin-top: 8px;
+            margin-bottom: 3px;
+        }
+    }
+
+    &.xdsoft_showweeks .xdsoft_datepicker {
+        width: 256px;
+    }
+
+    .xdsoft_timepicker {
+        width: 58px;
+        float: left;
+        text-align: center;
+        margin-left: 8px;
+        margin-top: 0;
+
+        .xdsoft_prev {
+            background-position: -40px 0;
+            margin-bottom: 7px;
+            margin-top: 0;
+        }
+
+        .xdsoft_time_box {
+            height: 151px;
+            overflow: hidden;
+            border-bottom: 1px solid $gray-light;
+
+            > div > div {
+                background: $gray-f2;
+                border-top: 1px solid $gray-light;
+                color: $gray-darkest;
+                font-size: 12px;
+                text-align: center;
+                border-collapse: collapse;
+                cursor: pointer;
+                border-bottom-width: 0;
+                height: 25px;
+                line-height: 25px;
+            }
+
+            > div > div:first-child {
+                border-top-width: 0;
+            }
+        }
+    }
+
+    .xdsoft_monthpicker {
+        position: relative;
+        text-align: center;
+    }
+
+    .xdsoft_label i,
+    .xdsoft_prev,
+    .xdsoft_next,
+    .xdsoft_today_button {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0NBRjI1NjM0M0UwMTFFNDk4NkFGMzJFQkQzQjEwRUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0NBRjI1NjQ0M0UwMTFFNDk4NkFGMzJFQkQzQjEwRUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQ0FGMjU2MTQzRTAxMUU0OTg2QUYzMkVCRDNCMTBFQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0FGMjU2MjQzRTAxMUU0OTg2QUYzMkVCRDNCMTBFQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoNEP54AAAIOSURBVHja7Jq9TsMwEMcxrZD4WpBYeKUCe+kTMCACHZh4BFfHO/AAIHZGFhYkBBsSEqxsLCAgXKhbXYOTxh9pfJVP+qutnZ5s/5Lz2Y5I03QhWji2GIcgAokWgfCxNvcOCCGKqiSqhUp0laHOne05vdEyGMfkdxJDVjgwDlEQgYQBgx+ULJaWSXXS6r/ER5FBVR8VfGftTKcITNs+a1XpcFoExREIDF14AVIFxgQUS+h520cdud6wNkC0UBw6BCO/HoCYwBhD8QCkQ/x1mwDyD4plh4D6DDV0TAGyo4HcawLIBBSLDkHeH0Mg2yVP3l4TQMZQDDsEOl/MgHQqhMNuE0D+oBh0CIr8MAKyazBH9WyBuKxDWgbXfjNf32TZ1KWm/Ap1oSk/R53UtQ5xTh3LUlMmT8gt6g51Q9p+SobxgJQ/qmsfZhWywGFSl0yBjCLJCMgXail3b7+rumdVJ2YRss4cN+r6qAHDkPWjPjdJCF4n9RmAD/V9A/Wp4NQassDjwlB6XBiCxcJQWmZZb8THFilfy/lfrTvLghq2TqTHrRMTKNJ0sIhdo15RT+RpyWwFdY96UZ/LdQKBGjcXpcc1AlSFEfLmouD+1knuxBDUVrvOBmoOC/rEcN7OQxKVeJTCiAdUzUJhA2Oez9QTkp72OTVcxDcXY8iKNkxGAJXmJCOQwOa6dhyXsOa6XwEGAKdeb5ET3rQdAAAAAElFTkSuQmCC);
+    }
+
+    .xdsoft_label {
+        display: inline;
+        position: relative;
+        z-index: 9999;
+        margin: 0;
+        padding: 5px 3px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+
+        i {
+            opacity: .5;
+            background-position: -92px -19px;
+            display: inline-block;
+            width: 9px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        &:hover > span {
+            text-decoration: underline;
+        }
+
+        &:hover i {
+            opacity: 1;
+        }
+
+        > .xdsoft_select {
+            border: 1px solid $gray-light;
+            position: absolute;
+            right: 0;
+            top: 30px;
+            z-index: 101;
+            display: none;
+            background: $white;
+            max-height: 160px;
+            overflow-y: hidden;
+
+            &.xdsoft_monthselect {
+                right: -7px;
+            }
+
+            &.xdsoft_yearselect {
+                right: 2px;
+            }
+
+            > div > .xdsoft_option:hover {
+                color: $white;
+                background: $rp-orange-dark;
+            }
+
+            > div > .xdsoft_option {
+                padding: 2px 10px 2px 5px;
+                text-decoration: none !important;
+
+                &.xdsoft_current {
+                    background: $rp-blue-dark;
+                    box-shadow: $rp-blue-light 0 1px 3px 0 inset;
+                    color: $white;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .xdsoft_prev {
+        float: left;
+        background-position: -20px 0;
+    }
+
+    .xdsoft_today_button {
+        float: left;
+        background-position: -70px 0;
+        margin-left: 5px;
+    }
+
+    .xdsoft_next {
+        float: right;
+        background-position: 0 0;
+    }
+
+    .xdsoft_next,
+    .xdsoft_prev ,
+    .xdsoft_today_button {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: 0 none;
+        cursor: pointer;
+        display: block;
+        height: 30px;
+        opacity: .5;
+        outline: medium none;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        text-indent: 100%;
+        white-space: nowrap;
+        width: 20px;
+        min-width: 0;
+    }
+
+    .xdsoft_timepicker .xdsoft_prev,
+    .xdsoft_timepicker .xdsoft_next {
+        float: none;
+        background-position: -40px -15px;
+        height: 15px;
+        width: 30px;
+        display: block;
+        margin-left: 14px;
+        margin-top: 7px;
+    }
+
+    &.xdsoft_rtl .xdsoft_timepicker .xdsoft_prev,
+    &.xdsoft_rtl .xdsoft_timepicker .xdsoft_next {
+        float: none;
+        margin-left: 0;
+        margin-right: 14px;
+    }
+
+    .xdsoft_today_button:hover,
+    .xdsoft_next:hover,
+    .xdsoft_prev:hover {
+        opacity: 1;
+    }
+
+    .xdsoft_month {
+        width: 100px;
+        text-align: right;
+    }
+
+    .xdsoft_calendar {
+        clear: both;
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td > div {
+            padding-right: 5px;
+        }
+
+        th {
+            height: 25px;
+            background: $gray-lightest;
+        }
+
+        td,
+        th {
+            width: 14.2857142%;
+            background: $gray-f2;
+            border: 1px solid $gray-light;
+            font-size: 12px;
+            vertical-align: middle;
+            padding: 0;
+            border-collapse: collapse;
+            height: 25px;
+            font-weight: 700;
+            text-align: center;
+            color: $gray-darker;
+            cursor: default;
+        }
+
+        td.xdsoft_today {
+            color: $rp-blue-dark;
+        }
+
+        td.xdsoft_highlighted_default {
+            background: $rp-orange-light;
+            box-shadow: $rp-orange-dark 0 1px 4px 0 inset;
+            color: $black;
+        }
+
+        td.xdsoft_highlighted_mint {
+            background: $rp-green-light;
+            box-shadow: $rp-green-dark 0 1px 4px 0 inset;
+            color: $black;
+        }
+
+        td.xdsoft_other_month.xdsoft_disabled {
+            opacity: .2;
+        }
+    }
+
+    .xdsoft_year {
+        width: 48px;
+        margin-left: 5px;
+    }
+
+    &.xdsoft_showweeks .xdsoft_calendar td,
+    &.xdsoft_showweeks .xdsoft_calendar th {
+        width: 12.5%;
+    }
+
+    .xdsoft_calendar td.xdsoft_default,
+    .xdsoft_calendar td.xdsoft_current,
+    .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_current {
+        background: $rp-blue-dark;
+        box-shadow: $rp-blue-light 0 1px 3px 0 inset;
+        color: $white;
+        font-weight: 700;
+    }
+
+    .xdsoft_calendar td.xdsoft_other_month,
+    .xdsoft_calendar td.xdsoft_disabled,
+    .xdsoft_time_box >div >div.xdsoft_disabled {
+        opacity: .5;
+        cursor: default;
+    }
+
+    .xdsoft_calendar td:hover,
+    .xdsoft_timepicker .xdsoft_time_box >div >div:hover {
+        color: $white !important;
+        background: $rp-orange-dark !important;
+        box-shadow: none !important;
+    }
+
+    .xdsoft_calendar td.xdsoft_current.xdsoft_disabled:hover,
+    .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current.xdsoft_disabled:hover {
+        background: $rp-blue-dark !important;
+        box-shadow: $rp-blue-light 0 1px 3px 0 inset !important;
+        color: $white !important;
+    }
+
+    .xdsoft_calendar td.xdsoft_disabled:hover,
+    .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_disabled:hover {
+        color: inherit !important;
+        background: inherit !important;
+        box-shadow: inherit !important;
+    }
+
+    .xdsoft_copyright {
+        color: $gray-light !important;
+        font-size: 10px;
+        clear: both;
+        float: none;
+        margin-left: 8px;
+
+        a {
+            color: $gray-lighter !important;
+
+            &:hover {
+                color: $gray-dark !important;
+            }
+        }
+    }
+
+    &.xdsoft_dark {
+        box-shadow: 0 5px 15px -5px $white-50;
+        background: $black;
+        border-bottom: 1px solid $gray-base;
+        border-left: 1px solid $gray-base;
+        border-right: 1px solid $gray-base;
+        border-top: 1px solid $gray-base;
+        color: $gray-light;
+
+        .xdsoft_timepicker .xdsoft_time_box {
+            border-bottom: 1px solid $gray-333;
+
+            .xdsoft_time_box >div >div {
+                background: $black;
+                border-top: 1px solid $gray-333;
+                color: $gray-darker;
+            }
+        }
+
+        .xdsoft_label {
+            background-color: $black;
+
+            > .xdsoft_select {
+                border: 1px solid $gray-base;
+                background: $black;
+
+                > div > .xdsoft_option:hover {
+                    color: $black;
+                    background: $rp-blue-dark;
+                }
+
+                > div > .xdsoft_option.xdsoft_current {
+                    background: $rp-orange-dark;
+                    box-shadow: $rp-orange-dark 0 1px 3px 0 inset;
+                    color: $black;
+                }
+            }
+        }
+
+        .xdsoft_label i,
+        .xdsoft_prev,
+        .xdsoft_next,
+        .xdsoft_today_button {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUExQUUzOTA0M0UyMTFFNDlBM0FFQTJENTExRDVBODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUExQUUzOTE0M0UyMTFFNDlBM0FFQTJENTExRDVBODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQTFBRTM4RTQzRTIxMUU0OUEzQUVBMkQ1MTFENUE4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQTFBRTM4RjQzRTIxMUU0OUEzQUVBMkQ1MTFENUE4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pp0VxGEAAAIASURBVHja7JrNSgMxEMebtgh+3MSLr1T1Xn2CHoSKB08+QmR8Bx9A8e7RixdB9CKCoNdexIugxFlJa7rNZneTbLIpM/CnNLsdMvNjM8l0mRCiQ9Ye61IKCAgZAUnH+mU3MMZaHYChBnJUDzWOFZdVfc5+ZFLbrWDeXPwbxIqrLLfaeS0hEBVGIRQCEiZoHQwtlGSByCCdYBl8g8egTTAWoKQMRBRBcZxYlhzhKegqMOageErsCHVkk3hXIFooDgHB1KkHIHVgzKB4ADJQ/A1jAFmAYhkQqA5TOBtocrKrgXwQA8gcFIuAIO8sQSA7hidvPwaQGZSaAYHOUWJABhWWw2EMIH9QagQERU4SArJXo0ZZL18uvaxejXt/Em8xjVBXmvFr1KVm/AJ10tRe2XnraNqaJvKE3KHuUbfK1E+VHB0q40/y3sdQSxY4FHWeKJCunP8UyDdqJZenT3ntVV5jIYCAh20vT7ioP8tpf6E2lfEMwERe+whV1MHjwZB7PBiCxcGQWwKZKD62lfGNnP/1poFAA60T7rF1UgcKd2id3KDeUS+oLWV8DfWAepOfq00CgQabi9zjcgJVYVD7PVzQUAUGAQkbNJTBICDhgwYTjDYD6XeW08ZKh+A4pYkzenOxXUbvZcWz7E8ykRMnIHGX1XPl+1m2vPYpL+2qdb8CDAARlKFEz/ZVkAAAAABJRU5ErkJggg==);
+        }
+
+        .xdsoft_calendar td,
+        .xdsoft_calendar th {
+            background: $black;
+            border: 1px solid $gray-333;
+            color: $gray-darker;
+        }
+
+        .xdsoft_calendar th {
+            background: $black;
+
+            th {
+                color: $gray-darkest;
+            }
+        }
+
+        .xdsoft_calendar td.xdsoft_today {
+            color: $rp-orange-dark;
+        }
+
+        .xdsoft_calendar td.xdsoft_highlighted_default {
+            background: $rp-orange-light;
+            box-shadow: $rp-orange-dark 0 1px 4px 0 inset;
+            color: $black;
+        }
+
+        .xdsoft_calendar td.xdsoft_highlighted_mint {
+            background: $rp-green-light;
+            box-shadow: $rp-green-dark 0 1px 4px 0 inset;
+            color: $black;
+        }
+
+        .xdsoft_calendar td.xdsoft_default,
+        .xdsoft_calendar td.xdsoft_current,
+        .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_current {
+            background: $rp-orange-dark;
+            box-shadow: $rp-orange-dark 0 1px 3px 0 inset;
+            color: $black;
+        }
+
+        .xdsoft_calendar td:hover,
+        .xdsoft_timepicker .xdsoft_time_box >div >div:hover {
+            color: $black !important;
+            background: $rp-blue-dark !important;
+        }
+
+        .xdsoft_copyright {
+            color: $gray-base !important;
+
+            a {
+                color: $black !important;
+            }
+
+            a:hover {
+                color: $gray-base !important;
+            }
+        }
+    }
+
+    .xdsoft_save_selected {
+        display: block;
+        border: 1px solid $gray-light !important;
+        margin-top: 5px;
+        width: 100%;
+        color: $gray-base;
+        font-size: 13px;
+    }
+
+    .blue-gradient-button {
+        font-family: "museo-sans", "Book Antiqua", sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+        color: $gray-darker;
+        height: 28px;
+        position: relative;
+        padding: 4px 17px 4px 33px;
+        border: 1px solid $gray-light;
+        background: linear-gradient(to bottom, $white 0%, $gray-lightest 73%);
+    }
+
+    .blue-gradient-button:hover,
+    .blue-gradient-button:focus,
+    .blue-gradient-button:hover span,
+    .blue-gradient-button:focus span {
+        color: $gray-base;
+        background: linear-gradient(to bottom, $gray-lightest 0%, $white 73%);
+    }
+}
+
+.xdsoft_noselect {
+    user-select: none;
+}
+
+.xdsoft_noselect::selection {
+    background: transparent;
+}
+
+.xdsoft_time_box {
+    position: relative;
+    border: 1px solid $gray-light;
+}
+
+.xdsoft_scrollbar {
+    position: absolute;
+    width: 7px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+
+    >.xdsoft_scroller {
+        background: $gray-light !important;
+        height: 20px;
+        border-radius: 3px;
+    }
+}
+
+.xdsoft_scroller_box {
+    position: relative;
+}
+
+.xdsoft_dark .xdsoft_time_box {
+    border: 1px solid $gray-base;
+}
+
+.xdsoft_dark .xdsoft_scrollbar >.xdsoft_scroller {
+    background: $gray-base !important;
+}

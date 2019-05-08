@@ -1,0 +1,61 @@
+//== Name: Games
+
+#rpGameWrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#rpGame {
+    @include v-h-align();
+    z-index: 0;
+
+    &.active {
+        z-index: 2;
+    }
+}
+
+#rpGame,
+#rpGame canvas {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 675px;
+}
+
+@media (min-width: 1600px) {
+    #rpGame,
+    #rpGame canvas {
+        max-width: 1600px;
+        max-height: 900px;
+
+        canvas {
+            width: 100%;
+            max-width: 1600px;
+            max-height: 900px;
+        }
+    }
+}
+
+#rpGameSection {
+    display: none;
+}
+
+#rpGameModal {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: rgba(#000, 0.5);
+    opacity: 0;
+    transition: opacity .2s ease-out;
+    pointer-events: none;
+
+    &.active {
+        z-index: 1050;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

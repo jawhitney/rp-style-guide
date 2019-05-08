@@ -1,0 +1,10 @@
+@mixin reset-states() {
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited, {
+        text-decoration: none;
+        border: 0;
+        outline: none;
+    }
+}

@@ -1,0 +1,12 @@
+//== Name: Rotating Images
+//== Description: Defines rotaing image styles
+
+.rp-row-rotating-images {
+    padding: 0;
+    height: $rp-header-height;
+    overflow: hidden;
+
+    .container-fluid {
+        padding: 0;
+    }
+}

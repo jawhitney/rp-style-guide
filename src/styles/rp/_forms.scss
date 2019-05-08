@@ -1,0 +1,140 @@
+//== Name: Forms
+//== Description: Defines form styles
+
+[type=text],
+[type=url],
+[type=email],
+[type=tel],
+[type=number],
+[type=date],
+textarea {
+    padding: .125 * $rp-spacing .25 * $rp-spacing;
+}
+
+[type=text],
+[type=url],
+[type=email],
+[type=tel],
+[type=number],
+[type=date],
+textarea,
+select {
+    height: 2.1875rem;
+    color: $gray !important;
+    border: 1px solid $gray-light;
+    border-radius: $border-radius-lg;
+
+    &::placeholder {
+        color: $gray !important;
+    }
+
+    &:focus {
+        border: 1px solid $rp-blue-dark;
+        outline: none;
+        box-shadow: $rp-shadow-blue-dark;
+        color: $gray-base !important;
+    }
+}
+
+label {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 2.1875rem;
+    line-height: 1.5rem;
+}
+
+input::placeholder {
+    color: $gray;
+}
+
+.form-group {
+    position: relative;
+    clear: both;
+    margin-bottom: .25 * $rp-spacing;
+    min-height: .7 * $rp-spacing;
+}
+
+.form-group-required {
+    label {
+        padding-left: .25 * $rp-spacing;
+    }
+
+    label::after {
+        content: '*';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: auto;
+        width: .25 * $rp-spacing;
+        font-size: $rp-font-size;
+        font-weight: bold;
+        line-height: .4 * $rp-spacing;
+        text-align: left;
+        color: $rp-red;
+    }
+}
+
+.form-group-label-textinput,
+.form-group-label-select {
+    label,
+    input,
+    select {
+        width: 100%;
+    }
+
+    label {
+        font-weight: bold;
+    }
+}
+
+.form-group-label-checkbox-text {
+    [type=checkbox] {
+        position: relative;
+        top: 4px;
+        float: left;
+    }
+
+    span {
+        display: block;
+        padding-left: .5 * $rp-spacing;
+    }
+}
+
+.error {
+    @include rp-error();
+}
+
+@include media-breakpoint-up(lg) {
+    .form-group:not(.form-group-label-checkbox-text) {
+        margin-bottom: .5 * $rp-spacing;
+    }
+
+    .form-group-label-textinput:not(.form-group-label-above),
+    .form-group-label-select:not(.form-group-label-above) {
+        label {
+            float: left;
+            width: 35%;
+        }
+
+        input,
+        select {
+            float: right;
+            width: 65%;
+        }
+    }
+
+    .form-group-required:not(.form-group-label-above) {
+        label {
+            padding-left: 0;
+            padding-right: .5 * $rp-spacing;
+        }
+
+        label::after {
+            right: 0;
+            left: auto;
+            width: .5 * $rp-spacing;
+            text-align: center;
+        }
+    }
+}

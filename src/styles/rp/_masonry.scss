@@ -1,0 +1,30 @@
+//== Name: Masonry layout
+//== Description: Defines Masonry layout styles
+
+.grid {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+.grid-sizer,
+.grid-item {
+    margin-bottom: $rp-spacing / 2;
+    width: 100%;
+}
+
+@include media-breakpoint-up(md) {
+    .grid-sizer,
+    .grid-item {
+        width: calc(#{100% / 2} - #{.25 * $rp-spacing});
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .grid-sizer,
+    .grid-item {
+        width: calc(#{100% / 3} - #{$rp-spacing / 3});
+    }
+}

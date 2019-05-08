@@ -1,0 +1,34 @@
+//== Name: CTAs
+//== Description: Defines CTA styles
+
+.rp-ctas {
+    li {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: .5 * $rp-spacing;
+        width: 100%;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .rp-ctas {
+        li {
+            margin-left: .25 * $rp-spacing;
+            margin-right: .25 * $rp-spacing;
+            margin-bottom: 0;
+            width: auto;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+//== Name: Email Quiz
+//== Description: Defines email quiz styles
+
+.rp-email-quiz {
+    .carousel-indicators {
+        top: 0;
+
+        li {
+            margin: 0 .125 * $rp-spacing !important;
+            width: .5 * $rp-spacing;
+            height: .5 * $rp-spacing;
+            background-color: $rp-blue-dark;
+            border-radius: .5 * $rp-spacing;
+            opacity: .5;
+            transition: opacity 2 * $rp-timing $rp-timing-function;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    .carousel-inner {
+        z-index: $rp-z-index;
+    }
+
+    .rp-email-quiz-slide {
+        padding-top: (.5 * $rp-spacing) * 3;
+    }
+
+    .rp-quiz-intro-outro {
+        p {
+            font-size: $rp-font-size;
+        }
+    }
+
+    .rp-quiz-image {
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    .rp-quiz-buttons {
+        min-height: 2 * $rp-spacing;
+
+        li {
+            margin: 0 5px 10px;
+        }
+    }
+
+    .btn-quiz-prev-last {
+        background-color: $gray-light !important;
+
+        &:hover {
+            background-color: lighten($gray-light, $rp-color-change) !important;
+        }
+    }
+
+    .rp-quiz-questions {
+        position: relative;
+    }
+}

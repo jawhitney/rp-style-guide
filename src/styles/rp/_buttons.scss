@@ -1,0 +1,70 @@
+//== Name: Buttons
+//== Description: Defines button styles
+
+button {
+    transition: all $rp-timing $rp-timing-function;
+}
+
+.btn {
+    padding: 0 .5 * $rp-spacing;
+    height: $rp-spacing;
+    min-width: 3.5 * $rp-spacing;
+    border: none;
+    color: $white;
+    font-size: $rp-font-size-sm;
+    font-weight: bold;
+    line-height: $rp-spacing;
+    text-transform: uppercase;
+    transition: all $rp-timing $rp-timing-function;
+
+    &:focus,
+    &:active {
+        box-shadow: none;
+        outline: none;
+        color: $white;
+    }
+
+    &.btn-icon-left,
+    &.btn-icon-right {
+        .rp-icon,
+        .fab,
+        .fas,
+        .fa {
+            @include v-align();
+            width: .7 * $rp-spacing;
+            height: .7 * $rp-spacing;
+            font-size: .7 * $rp-spacing;
+            line-height: .7 * $rp-spacing;
+        }
+    }
+
+    &.btn-icon-left {
+        padding: 0 .7 * $rp-spacing 0 $rp-spacing;
+
+        .rp-icon,
+        .fab,
+        .fas,
+        .fa {
+            left: ($rp-spacing - (.7 * $rp-spacing)) / 2;
+        }
+    }
+
+    &.btn-icon-right {
+        padding: 0 $rp-spacing 0 .7 * $rp-spacing;
+
+        .rp-icon,
+        .fab,
+        .fas,
+        .fa {
+            right: ($rp-spacing - (.7 * $rp-spacing)) / 2;
+        }
+    }
+
+    @each $rp-color, $color in $rp-colors {
+        &.btn-#{$rp-color} { @include rp-button($color); }
+        &.btn-#{$rp-color}-hollow { @include rp-button-hollow($color); }
+        &.btn-#{$rp-color}-emaildna { @include rp-button-emaildna($color); }
+    }
+
+    &.btn-twitter-hollow { @include rp-button-hollow($twitter); }
+}

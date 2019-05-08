@@ -1,0 +1,12 @@
+//== Name: Add to Calendar
+//== Description: Defines add to calendar snippet generator styles
+
+.rp-row-add-to-calendar-results {
+    display: none;
+
+    #result {
+        padding: .25 * $rp-spacing;
+        border: 1px solid $gray;
+        border-radius: $border-radius;
+    }
+}

@@ -1,0 +1,121 @@
+@mixin rp-button($color) {
+    position: relative;
+    z-index: 1;
+    background-color: $color;
+    border-radius: $border-radius-lg;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+        background-color: lighten($color, $rp-color-change);
+        color: lighten($white, $rp-color-change);
+        box-shadow: $rp-shadow;
+
+        &:not([href]):not([tabindex]) {
+            color: lighten($white, $rp-color-change);
+        }
+    }
+
+    @if $color == $white or $color == $gray-lightest {
+        color: $gray-base;
+
+        &:hover,
+        &:focus {
+            background-color: darken($color, $rp-color-change);
+            color: lighten($gray-base, $rp-color-change);
+
+            &:not([href]):not([tabindex]) {
+                color: lighten($gray-base, $rp-color-change);
+            }
+        }
+    } @else if $color == $rp-red {
+        @include gradient-darken($rp-red, $rp-color-change, 'right');
+        box-shadow: $rp-shadow;
+        color: $gray-light;
+
+        &:not([href]):not([tabindex]) {
+            color: $gray-light;
+        }
+
+        &:hover,
+        &:focus {
+            box-shadow: $rp-shadow-darker-red;
+            color: $white;
+
+            &:not([href]):not([tabindex]) {
+                color: $white;
+            }
+        }
+    } @else if $color == $rp-yellow-dark {
+        @include gradient-2-color($rp-yellow-light, $rp-yellow-dark, 'right');
+        box-shadow: $rp-shadow;
+        color: $gray-lighter;
+
+        &:before {
+            @include gradient-2-color($rp-yellow-light, $rp-yellow-light, 'right');
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity $rp-timing $rp-timing-function;
+        }
+
+        &:not([href]):not([tabindex]) {
+            color: $gray-light;
+        }
+
+        &:hover,
+        &:focus {
+            box-shadow: $rp-shadow-lighter;
+            color: $white;
+
+            &:before {
+                opacity: 1;
+            }
+
+            &:not([href]):not([tabindex]) {
+                color: $white;
+            }
+        }
+    }
+}
+
+@mixin rp-button-hollow($color) {
+    position: relative;
+    background-color: transparent;
+    border: 2px solid $color;
+    border-radius: $border-radius-lg;
+    color: $color;
+    line-height: calc(#{$rp-spacing} - 4px);
+    box-shadow: none;
+
+    &:not([href]):not([tabindex]) {
+        color: $color;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: lighten($color, $rp-color-change);
+        color: lighten($color, $rp-color-change);
+        box-shadow: none;
+
+        &:not([href]):not([tabindex]) {
+            color: lighten($color, $rp-color-change);
+        }
+
+        @if $color == $white {
+            border-color: darken($color, $rp-color-change);
+            color: darken($color, $rp-color-change);
+
+            &:not([href]):not([tabindex]) {
+                color: darken($color, $rp-color-change);
+            }
+        }
+    }
+}

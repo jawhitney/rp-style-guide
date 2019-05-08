@@ -1,0 +1,6 @@
+//== Namecolor: Text
+//== Descriptioncolor: Defines text styles
+
+@each $rp-color, $color in $rp-colors {
+    .rp-text-color-#{$rp-color} { color: $color; }
+}

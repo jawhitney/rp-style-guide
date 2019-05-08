@@ -1,0 +1,219 @@
+//== Name: Menu
+
+#rpNavigationPrimary,
+#rpNavigationSecondary {
+    height: 2 * $spacer;
+
+    a {
+        white-space: nowrap;
+    }
+
+    a:not(.btn) {
+        padding: 0 0.25 * $spacer;
+        color: $gray-lightest;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+            color: $white;
+        }
+
+        &.rp-menu-current {
+            color: $white;
+
+            &:hover {
+                color: darken($white, 2 * $rp-color-change);
+            }
+        }
+
+        i {
+            transition: opacity $rp-timing $rp-timing-function,
+                        transform $rp-timing $rp-timing-function;
+        }
+    }
+
+    a.btn {
+        margin: 0 0.25 * $spacer;
+    }
+}
+
+.rp-is-below-top {
+    #rpNavigationPrimary,
+    #rpNavigationSecondary {
+        a:not(.btn) {
+            color: $gray-darkest;
+
+            &:hover {
+                color: $gray-base;
+            }
+
+            &.rp-menu-current {
+                color: $gray-base;
+
+                &:hover {
+                    color: darken($white, 2 * $rp-color-change);
+                }
+            }
+        }
+    }
+}
+
+.rp-megamenu-trigger {
+    position: relative;
+    display: inline-block;
+    height: 2 * $spacer;
+    line-height: 2 * $spacer;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.125 * $spacer;
+        left: 50%;
+        width: 50%;
+        height: 0.125 * $spacer;
+        transform: translateX(-50%);
+    }
+
+    @each $label, $theme in $rp-themes {
+        &.rp-theme-#{$label}::after { background-color: map-get($theme, main-color); }
+    }
+
+    &.open::after {
+        bottom: 0;
+    }
+}
+
+#rpMegamenu {
+    position: fixed;
+    top: 2 * $spacer;
+    z-index: 2;
+    overflow: hidden;
+    width: 11 * $spacer;
+    height: 0;
+    border-bottom-left-radius: $border-radius-lg;
+    border-bottom-right-radius: $border-radius-lg;
+}
+
+.rp-megamenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    opacity: 0;
+
+    ul,
+    .rp-megamenu-featured {
+        opacity: 0;
+        transition: opacity 2 * $rp-timing $rp-timing-function;
+    }
+
+    &.open {
+        opacity: 1;
+        z-index: 1;
+
+        ul,
+        .rp-megamenu-featured {
+            opacity: 1;
+        }
+    }
+
+    @each $label, $theme in $rp-themes {
+        &.rp-theme-#{$label} { border-top: 2px solid map-get($theme, main-color); }
+    }
+
+    a:not(.btn) {
+        color: $gray;
+        text-decoration: none;
+        transition: color $rp-timing $rp-timing-function;
+
+        &:hover {
+            color: $white;
+        }
+
+        &.rp-menu-current {
+            color: $white;
+
+            &:hover {
+                color: darken($white, 2 * $rp-color-change);
+            }
+        }
+
+        &.rp-new-window small::after {
+            content: '\f360';
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 900;
+            margin-left: 0.25rem;
+            width: 0.75rem;
+            height: 0.75rem;
+        }
+    }
+
+    p {
+        line-height: 1.25;
+    }
+
+    ul[class*="rp-theme-"] {
+        li {
+            position: relative;
+            padding-left: $spacer;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+
+    ul {
+        li:first-child a {
+            margin-bottom: 0.125 * $spacer;
+            color: $gray-light;
+        }
+    }
+
+    ul:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    a[class*="rp-theme-"] {
+        display: flex;
+        align-items: center;
+
+        span {
+            display: inline-block;
+            margin-right: 0.5 * $spacer;
+            width: 0.5 * $spacer;
+            height: 0.5 * $spacer;
+            border-radius: $border-radius;
+            transition: background-color $rp-timing $rp-timing-function;
+        }
+
+        @each $label, $theme in $rp-themes {
+            &.rp-theme-#{$label} span {
+                background-color: map-get($theme, main-color);
+                background-image: url($assets-path + 'images/icons/icon-menu-#{$label}.svg');
+                background-size: 75%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+        @each $label, $theme in $rp-themes {
+            &:hover {
+                &.rp-theme-#{$label} span {
+                    background-color: lighten(map-get($theme, main-color), $rp-color-change);
+                }
+            }
+        }
+    }
+}
+
+.rp-megamenu-content-left {
+    background-color: rgba($gray-base, 0.95);
+}
+
+.rp-megamenu-content-right {
+    background-color: rgba($gray-base, 0.85);
+}

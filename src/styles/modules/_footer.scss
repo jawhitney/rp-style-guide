@@ -1,0 +1,77 @@
+//== Name: Footer
+
+footer {
+    box-shadow: 0 50vh 0 50vh $gray-base;
+}
+
+#rpFooterPrimary,
+#rpFooterSecondary {
+    small {
+        font-size: 0.7rem;
+    }
+
+    .rp-footer-spacer {
+        display: none;
+    }
+
+    a[data-target="#newsletterForm"] i {
+        margin-right: 8px;
+    }
+}
+
+#rpFooterPrimary {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+}
+
+#rpFooterSecondary {
+    padding-top: 0.5 * $spacer;
+    padding-bottom: 0.5 * $spacer;
+}
+
+#rpFooterPrimary {
+    background-color: $gray-lighter;
+
+    a:not(.btn) {
+        color: $gray-darkest;
+
+        &:hover {
+            color: rgba($gray-darkest, $link-hover-opacity);
+        }
+    }
+}
+
+#rpFooterMenu {
+    a {
+        text-transform: uppercase;
+    }
+}
+
+#rpFooterSecondary {
+    background-color: $gray-base;
+    color: $gray-darkest;
+
+    a:not(.btn) {
+        color: $gray-darkest;
+        text-decoration: underline;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+#rpFooterMenu,
+.rp-menu-social {
+    a {
+        text-decoration: none;
+    }
+}
+
+.rp-menu-social i {
+    font-size: 1.5rem;
+
+    .list-inline-item:not(:last-child) {
+        margin-right: 1.25rem;
+    }
+}

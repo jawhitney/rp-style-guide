@@ -1,0 +1,54 @@
+//== Name: Marquee
+
+.rp-row-marquee {
+    .item {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        border-radius: $border-radius-lg;
+        opacity: 0;
+        transition: opacity 4 * $rp-timing $rp-timing-function;
+
+        &.active {
+            z-index: 1;
+            opacity: 1;
+        }
+    }
+
+    &.loaded {
+        .indicators {
+            opacity: 1;
+        }
+    }
+
+    .indicators {
+        position: absolute;
+        bottom: 0.25 * $spacer;
+        left: 50%;
+        z-index: 2;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity $rp-timing $rp-timing-function;
+
+        div {
+            display: inline-block;
+            margin: 0 0.125 * $spacer;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 0.5 * 1.25rem;
+            border: 1px solid $gray-darkest;
+            background-color: $gray-light;
+            opacity: 0.75;
+            cursor: pointer;
+            transition: opacity $rp-timing $rp-timing-function,
+                        background-color $rp-timing $rp-timing-function;
+
+            &.active {
+                background-color: $white;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+//== Return Path - WP Admin
+//== Copyright 2017 Return Path
+
+@charset "utf-8";
+
+// Includes
+@import 'variables';
+
+a,
+button,
+input,
+img {
+    transition: all $rp-timing $rp-timing-function;
+}
+
+#login {
+    h1 a {
+        background-image: url($assets-path + 'images/logos/logo-solo-red.svg');
+    }
+
+    a:hover {
+        color: $rp-red !important;
+    }
+
+    #login_error,
+    .message {
+        border-left: 4px solid $rp-red;
+    }
+}
+
+#loginform {
+    [type=text]:focus,
+    [type=search]:focus,
+    [type=radio]:focus,
+    [type=tel]:focus,
+    [type=time]:focus,
+    [type=url]:focus,
+    [type=week]:focus,
+    [type=password]:focus,
+    [type=checkbox]:focus,
+    [type=color]:focus,
+    [type=date]:focus,
+    [type=datetime]:focus,
+    [type=datetime-local]:focus,
+    [type=email]:focus,
+    [type=month]:focus,
+    [type=number]:focus,
+    select:focus,
+    textarea:focus {
+        border-color: $gray-dark !important;
+        box-shadow: 0 0 2px $gray-dark;
+    }
+
+    #wp-submit {
+        background: $rp-red;
+        border-color: $rp-red;
+        color: $white;
+        text-decoration: none;
+        text-shadow: none;
+        box-shadow: 0 1px 0 $rp-red;
+
+        &:hover,
+        &:active {
+            background: $rp-red;
+            opacity: .8;
+            border-color: $rp-red;
+        }
+
+        &:active {
+            box-shadow: 0 1px 0 $rp-red;
+        }
+    }
+}
+
+.wp-menu-image {
+    img {
+        width: 20px;
+        height: auto;
+    }
+}

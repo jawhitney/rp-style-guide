@@ -1,0 +1,110 @@
+//== Name: Core
+//== Description: Defines core styles
+
+* {
+    font-family: $rp-sans;
+    letter-spacing: .015rem;
+}
+
+body,
+html {
+    height: 100vh;
+}
+
+body {
+    @include define-device('xs');
+    padding-top: 100vh;
+    min-width: 100%;
+    transition: padding-top $rp-timing $rp-timing-function;
+    @include media-breakpoint-up(sm) { @include define-device('sm'); }
+    @include media-breakpoint-up(md) { @include define-device('md'); }
+    @include media-breakpoint-up(lg) { @include define-device('lg'); }
+    @include media-breakpoint-up(xl) { @include define-device('xl'); }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: .25 * $rp-spacing;
+    padding: 0;
+    font-family: $rp-serif;
+}
+
+header {
+    z-index: $rp-z-index * 3;
+}
+
+footer {
+    position: relative;
+    z-index: $rp-z-index * 2.25;
+}
+
+section {
+    position: relative;
+    z-index: $rp-z-index * 2;
+    padding: $rp-spacing 0;
+    background-color: $white;
+
+    .container-fluid {
+        padding-left: $rp-spacing;
+        padding-right: $rp-spacing;
+    }
+}
+
+p {
+    margin: 0 0 .25 * $rp-spacing;
+    padding: 0;
+    font-size: $rp-font-size;
+    line-height: 1.5;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+a {
+    transition: border-color $rp-timing $rp-timing-function, color $rp-timing $rp-timing-function, box-shadow $rp-timing $rp-timing-function;
+}
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    margin-top: .5 * $rp-spacing;
+    margin-bottom: .5 * $rp-spacing;
+    border-width: 2px;
+}
+
+@include media-breakpoint-up(lg) {
+    section {
+        .container-fluid {
+            padding-left: 2 * $rp-spacing;
+            padding-right: 2 * $rp-spacing;
+        }
+    }
+
+    p {
+        margin: 0 0 .5 * $rp-spacing;
+        font-size: $rp-font-size-lg;
+    }
+
+    h1 { font-size: $rp-spacing; } // 50px
+    h2 { font-size: .8 * $rp-spacing; } // 40px
+    h3 { font-size: .6 * $rp-spacing; } // 30px
+    h4 { font-size: .4 * $rp-spacing; } // 20px
+    h5 { font-size: $rp-font-size; } // 16px
+    h6 { font-size: $rp-font-size; } // 16px
+
+    hr {
+        margin-top: $rp-spacing;
+        margin-bottom: $rp-spacing;
+    }
+}

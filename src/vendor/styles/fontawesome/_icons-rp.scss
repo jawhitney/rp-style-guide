@@ -1,0 +1,28 @@
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+readers do not read off random characters that represent icons */
+
+$rp-icons:
+    ('arrow-down', $fa-var-arrow-down),
+    ('calendar-alt', $fa-var-calendar-alt),
+    ('chevron-down', $fa-var-chevron-down),
+    ('chevron-left', $fa-var-chevron-left),
+    ('copyright', $fa-var-copyright),
+    ('envelope', $fa-var-envelope),
+    ('expand-alt', $fa-var-expand-alt),
+    ('facebook-f', $fa-var-facebook-f),
+    ('globe', $fa-var-globe),
+    ('instagram', $fa-var-instagram),
+    ('linkedin-in', $fa-var-linkedin-in),
+    ('map-marker-alt', $fa-var-map-marker-alt),
+    ('mobile-alt', $fa-var-mobile-alt),
+    ('phone', $fa-var-phone),
+    ('pinterest-p', $fa-var-pinterest-p),
+    ('question-circle', $fa-var-question-circle),
+    ('search', $fa-var-search),
+    ('sign-in-alt', $fa-var-sign-in-alt),
+    ('times', $fa-var-times),
+    ('twitter', $fa-var-twitter);
+
+@each $icon, $var in $rp-icons {
+    .#{$fa-css-prefix}-#{$icon}:before { content: fa-content(#{$var}); }
+}

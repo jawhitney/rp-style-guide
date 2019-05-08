@@ -1,0 +1,50 @@
+//== 404 Content
+@keyframes dash {
+    from { stroke-dashoffset: 2138; }
+    to { stroke-dashoffset: 0; }
+}
+
+//== Metrics
+@each $metric, $color in $rp-metric-colors {
+    @keyframes rpMetricLine-#{$metric} {
+        0% { background-color: $color; }
+        50% { background-color: $white; }
+        100% { background-color: $color; }
+    }
+}
+
+@keyframes rpMetricBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rpMetricBorderOpp {
+    0% { transform: rotate(3600deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes rpMetricCircle {
+    0% {
+        transform: scale(.55);
+        opacity: .5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: .1;
+    }
+}
+
+@keyframes rpMetricIconBorder {
+    0% {
+        border-color: $rp-navy-light;
+    }
+
+    50% {
+        border-color: lighten($rp-navy-light, 35%);
+    }
+
+    100% {
+        border-color: $rp-navy-light;
+    }
+}

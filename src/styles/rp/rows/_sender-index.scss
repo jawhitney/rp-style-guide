@@ -1,0 +1,218 @@
+//== Name: Sender Index
+//== Description: Defines Sender Index styles
+
+.rp-sender-index-page {
+    background-color: $gray-lighter;
+
+    .rp-row-sender-index,
+    .rp-row-marketo {
+        background-color: $gray-lighter;
+    }
+
+    .rp-row-marketo {
+        .rp-marketo-form-wrapper {
+            @include box-shadow($rp-shadow);
+            @include transition(all $rp-timing / 2 $rp-timing-function !important);
+            padding: $rp-spacing;
+            border: 1px solid $rp-blue-dark;
+        }
+    }
+
+    .btn-purple-dark {
+        @include rp-button($rp-purple-dark);
+        @include box-shadow($rp-shadow);
+        color: $gray-light;
+
+        &:hover {
+            @include box-shadow($rp-shadow-darker-purple);
+            color: $white;
+        }
+    }
+
+    .modal,
+    .rp-modal {
+        .modal-header {
+            background-image: none;
+        }
+    }
+}
+
+.rp-si-email {
+    position: relative;
+    border: 2px solid $gray-lighter;
+    background-color: $white;
+    transition: box-shadow $rp-timing $rp-timing-function, border $rp-timing $rp-timing-function;
+
+    .rp-si-domain {
+        transition: color $rp-timing $rp-timing-function;
+    }
+
+    .rp-si-image {
+        padding: 0 $rp-spacing / 4 $rp-spacing / 4;
+        background-color: $white;
+
+        img {
+            border: 1px solid $gray-lighter;
+        }
+    }
+
+    .rp-si-subject {
+        background-color: $gray-lightest;
+        transition: background-color $rp-timing $rp-timing-function;
+
+        p {
+            font-size: $rp-font-size;
+
+            &:first-child {
+                margin-bottom: $rp-spacing / 4;
+                color: $gray-dark;
+            }
+
+            &:nth-child(2) {
+                padding: $rp-spacing / 8 $rp-spacing / 4;
+                border: 1px solid $gray-dark;
+                border-radius: $border-radius-lg;
+                background-color: $white;
+                color: $gray-dark;
+                transition: border $rp-timing $rp-timing-function, color $rp-timing $rp-timing-function;
+            }
+        }
+    }
+
+    .rp-si-domain,
+    .rp-si-subject {
+        padding: $rp-spacing / 4;
+        font-weight: bold;
+    }
+
+    &:hover {
+        cursor: pointer;
+        border: 2px solid $rp-blue-dark;
+        box-shadow: $rp-shadow;
+
+        .rp-si-domain {
+            color: $rp-blue-dark;
+        }
+
+        .rp-si-subject {
+            background-color: $rp-blue-lighter;
+
+            p {
+                &:nth-child(1) {
+                    color: $rp-blue-dark;
+                }
+
+                &:nth-child(2) {
+                    border: 1px solid $rp-blue-dark;
+                    color: $gray-base;
+                }
+            }
+        }
+    }
+}
+
+#rpSiContainer {
+    top: -1 * (2.5 * $rp-spacing);
+    transition: top .5 * $rp-timing $rp-timing-function;
+
+    .rp-loading {
+        top: $rp-spacing;
+    }
+}
+
+.rp-is-below-hero {
+    #rpSiContainer {
+        top: -1 * (.5 * $rp-spacing);
+    }
+}
+
+#rpSiEmailDetails {
+    padding-left: .5 * $rp-spacing !important;
+    padding-right: .5 * $rp-spacing !important;
+
+    .modal-dialog {
+        max-width: 100% !important;
+    }
+
+    .modal-content {
+        width: 100% !important;
+    }
+
+    #rpSiImage {
+        div {
+            padding: .25 * $rp-spacing;
+            background-color: $white;
+            box-shadow: $rp-shadow;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    #rpSiImage,
+    #rpSiStats {
+        padding: .5 * $rp-spacing;
+    }
+
+    .rp-si-stats {
+        text-align: left;
+
+        .rp-si-row {
+            overflow: hidden;
+            margin-bottom: .125 * $rp-spacing;
+            padding-bottom: .125 * $rp-spacing;
+            border-bottom: 1px solid $gray-light;
+
+            div {
+                &:first-child {
+                    float: left;
+                }
+
+                &:nth-child(2) {
+                    float: right;
+                    font-weight: bold;
+                    text-align: right;
+                }
+            }
+
+            &:last-child {
+                border: 0;
+            }
+        }
+
+        .rp-si-blur {
+            filter: blur(5px);
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #rpSiEmailDetails {
+        #rpSiImage {
+            padding: $rp-spacing 0;
+
+            div {
+                left: $rp-spacing;
+            }
+        }
+
+        #rpSiStats {
+            padding: $rp-spacing $rp-spacing $rp-spacing 2 * $rp-spacing;
+        }
+    }
+
+    .rp-sender-index-page {
+        .rp-row-marketo {
+            .rp-marketo-form-wrapper {
+                top: -1 * (1.5 * $rp-spacing);
+            }
+        }
+
+        &.rp-is-below-hero {
+            .rp-row-marketo {
+                .rp-marketo-form-wrapper {
+                    top: 0;
+                }
+            }
+        }
+    }
+}

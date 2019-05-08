@@ -1,0 +1,40 @@
+//== Name: Agenda
+//== Description: Defines agenda styles
+
+.rp-row-agenda {
+    h3,
+    h4 {
+        font-family: $rp-sans;
+        font-size: $rp-font-size-md;
+        font-weight: bold;
+    }
+
+    p,
+    ul,
+    li {
+        font-size: $rp-font-size;
+    }
+
+    div > img {
+        border-radius: 50%;
+        box-shadow: $rp-shadow;
+        width: 3 * $rp-spacing;
+        height: 3 * $rp-spacing;
+    }
+
+    ul > li {
+        margin: 0 .25 * $rp-spacing !important;
+        max-width: 3 * $rp-spacing;
+        min-width: 3 * $rp-spacing;
+    }
+
+    .rp-agenda-indent {
+        > div {
+            padding-left: .5 * $rp-spacing;
+        }
+
+        h3 {
+            font-size: $rp-font-size;
+        }
+    }
+}

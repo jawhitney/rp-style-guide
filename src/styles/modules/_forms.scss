@@ -1,0 +1,164 @@
+//== Name: Forms
+
+[type=text],
+[type=url],
+[type=email],
+[type=tel],
+[type=number],
+[type=date],
+textarea {
+    padding: .125 * $spacer .25 * $spacer;
+}
+
+[type=text],
+[type=url],
+[type=email],
+[type=tel],
+[type=number],
+[type=date],
+textarea,
+select {
+    height: 2.1875rem;
+    color: $gray !important;
+    border: 1px solid $gray-light;
+    border-radius: $border-radius-lg;
+    box-shadow: none;
+    transition: box-shadow $rp-timing $rp-timing-function;
+
+    &::placeholder {
+        color: $gray !important;
+    }
+
+    &:focus {
+        border: 1px solid $rp-blue-dark;
+        outline: none;
+        box-shadow: $rp-shadow-blue-dark;
+        color: $gray-base !important;
+    }
+}
+
+label {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 2.1875rem;
+    line-height: 1.5rem;
+}
+
+input::placeholder {
+    color: $gray;
+}
+
+.form-group {
+    position: relative;
+    clear: both;
+    margin-bottom: .25 * $spacer;
+    min-height: .7 * $spacer;
+}
+
+.form-group-required {
+    label {
+        padding-left: .25 * $spacer;
+    }
+
+    label::after {
+        content: '*';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: auto;
+        width: .25 * $spacer;
+        font-weight: bold;
+        line-height: .4 * $spacer;
+        text-align: left;
+        color: $rp-red;
+    }
+}
+
+.form-group-label-textinput,
+.form-group-label-select {
+    label,
+    input,
+    select {
+        width: 100%;
+    }
+
+    label {
+        font-weight: bold;
+    }
+}
+
+.form-group-label-checkbox-text {
+    [type=checkbox] {
+        position: relative;
+        top: 4px;
+        float: left;
+    }
+
+    span {
+        display: block;
+        padding-left: .5 * $spacer;
+    }
+}
+
+div.error {
+    @include rp-error();
+}
+
+@include media-breakpoint-up(lg) {
+    .form-group:not(.form-group-label-checkbox-text) {
+        margin-bottom: .5 * $spacer;
+    }
+
+    .form-group-label-textinput:not(.form-group-label-above),
+    .form-group-label-select:not(.form-group-label-above) {
+        label {
+            float: left;
+            width: 35%;
+        }
+
+        input,
+        select {
+            float: right;
+            width: 65%;
+        }
+    }
+
+    .form-group-required:not(.form-group-label-above) {
+        label {
+            padding-left: 0;
+            padding-right: .5 * $spacer;
+        }
+
+        label::after {
+            right: 0;
+            left: auto;
+            width: .5 * $spacer;
+            text-align: center;
+        }
+    }
+}
+
+.rp-loader {
+    width: 3 * $spacer;
+    height: 3 * $spacer;
+    border-top: .25 * $spacer solid rgba($gray-light, .25);
+    border-right: .25 * $spacer solid rgba($gray-light, .25);
+    border-bottom: .25 * $spacer solid rgba($gray-light, .25);
+    border-left: .25 * $spacer solid $rp-red;
+    border-radius: 50%;
+    animation: rpLoader 1.25s linear infinite;
+    transition: opacity 2.5 * $rp-timing $rp-timing-function !important;
+
+    &.rp-loader-marketo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    &.hide-loader {
+        opacity: 0;
+    }
+}

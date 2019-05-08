@@ -1,0 +1,22 @@
+//== Name: Links
+
+.rp-link-content {
+    position: absolute;
+    bottom: 0.5 * $spacer;
+    left: 50%;
+    z-index: 4;
+    transform: translateX(-50%);
+    width: $spacer;
+    height: $spacer;
+    border-radius: 0.5 * $spacer;
+    background-color: $white;
+    color: $gray-base;
+    transition: background-color $rp-timing $rp-timing-function,
+                color $rp-timing $rp-timing-function;
+
+    &:hover {
+        background-color: $gray-lightest;
+        color: $gray-base;
+        text-decoration: none;
+    }
+}

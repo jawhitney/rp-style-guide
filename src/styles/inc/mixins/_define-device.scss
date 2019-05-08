@@ -1,0 +1,6 @@
+@mixin define-device($device) {
+    &::after {
+        content: $device;
+        display: none;
+    }
+}

@@ -1,0 +1,107 @@
+//== Name: Core
+
+@mixin define-device($device) {
+    &::after {
+        content: $device;
+        display: none;
+    }
+}
+
+html,
+body,
+main,
+header,
+section,
+footer {
+    position: relative;
+    z-index: 0;
+}
+
+body {
+    @include define-device('xs');
+    @include media-breakpoint-up(sm) { @include define-device('sm'); }
+    @include media-breakpoint-up(md) { @include define-device('md'); }
+    @include media-breakpoint-up(lg) { @include define-device('lg'); }
+    @include media-breakpoint-up(xl) { @include define-device('xl'); }
+}
+
+header {
+    z-index: 2;
+}
+
+main,
+section,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+main {
+    background-color: $white;
+
+    section:not(.p-0):not(.m-0)::before,
+    section:not(.p-0):not(.m-0)::after {
+        background-color: $white;
+    }
+}
+
+section:not(.p-0):not(.m-0)::before,
+section:not(.p-0):not(.m-0)::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.75 * $spacer;
+}
+
+section:first-child:not(.p-0):not(.m-0)::before,
+section:last-child:not(.p-0):not(.m-0)::after {
+    height: 1.5 * $spacer;
+}
+
+section.rp-row-promo:last-child::after {
+    display: none;
+}
+
+.animate-content > * {
+    opacity: 0;
+    transform: translateY(10%);
+}
+
+.animate-content.loaded > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 3 * $rp-timing $rp-timing-function,
+                transform 3 * $rp-timing $rp-timing-function;
+
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            transition-delay: $i * 1.5 * $rp-timing;
+        }
+    }
+}
+
+.border, [class*="rounded-"] {
+    overflow: hidden;
+}
+
+a {
+    transition: color $rp-timing $rp-timing-function;
+}
+
+i {
+    transition: color $rp-timing $rp-timing-function,
+                transform $rp-timing $rp-timing-function;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding: 0.5 * $spacer;
+}
+
+.modal-header {
+    background-color: $rp-blue-dark;
+    background-image: url($assets-path + 'images/backgrounds/background-confetti.svg'), linear-gradient(to top right, #2DCCD3, #00A3E0);
+    background-size: cover;
+    color: $white;
+}

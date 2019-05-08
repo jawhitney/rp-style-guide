@@ -1,0 +1,18 @@
+//== Name: Labels
+
+.rp-label {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.5 * $spacer;
+    font-weight: bold;
+    line-height: 2;
+    text-transform: uppercase;
+    border-bottom: 1px solid $gray-base;
+
+    @each $rp-color, $color in $rp-colors {
+        &.rp-label-#{$rp-color} {
+            color: $color;
+            border-bottom-color: $color;
+        }
+    }
+}

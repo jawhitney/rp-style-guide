@@ -1,0 +1,55 @@
+//== Return Path - Jobvite Desktop
+//== Copyright 2017 Return Path
+
+@charset "utf-8";
+
+//== Includes
+@import 'inc/variables';
+@import 'inc/mixins';
+
+.h2 {
+    font-size: 24px !important;
+    font-weight: bold !important;
+}
+
+.jv-wrapper h2 {
+    color: $rp-red;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+a {
+    color: $rp-red;
+    transition: all .2s ease-out;
+
+    &:hover {
+        opacity: .8;
+        color: $rp-red;
+    }
+}
+
+.jv-button {
+    padding: 0 36px;
+    height: 50px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 50px;
+    text-transform: uppercase;
+    border: 0;
+    background-image: none !important;
+    transition: all .2s ease-out;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.jv-button-primary {
+    color: $white;
+    background-color: $rp-red !important;
+}
+
+.jv-button-apply-later {
+    color: $gray-base;
+    background-color: $gray-lightest !important;
+}

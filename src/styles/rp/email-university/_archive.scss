@@ -1,0 +1,230 @@
+//== Name: Quiz - Archive
+//== Description: Defines quiz archive styles
+
+#rpQuizArchiveConnect {
+    li {
+        display: block;
+        margin: .25 * $rp-spacing auto !important;
+        width: 4 * $rp-spacing;
+        height: 3 * $rp-spacing;
+        background-color: $rp-blue-light;
+        border: $border-radius-lg solid $rp-blue-dark;
+        border-radius: $border-radius-lg;
+
+        img {
+            position: relative;
+            top: 50%;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(-50%);
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    p {
+        color: $gray-base;
+    }
+}
+
+#rpQuizArchive {
+    p {
+        color: $gray-base;
+        font-size: $rp-font-size;
+    }
+
+    #rpQuizzesTabs {
+        li {
+            margin: 0 .25 * $rp-spacing;
+            color: $gray-base;
+            font-size: $rp-font-size;
+            font-family: $rp-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+
+            &.active {
+                color: $white;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #rpQuizzes {
+        > div {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        p {
+            font-family: $rp-sans;
+            font-weight: normal;
+        }
+
+        li {
+            margin: 0 .25 * $rp-spacing !important;
+            width: 2.5 * $rp-spacing;
+            opacity: .5;
+
+            img {
+                width: 100%;
+            }
+
+            &.active {
+                opacity: 1;
+
+                p {
+                    color: $gray-base;
+                }
+            }
+
+            p {
+                font-family: $rp-serif;
+                font-weight: bold;
+            }
+        }
+
+        a,
+        span {
+            margin: 0 auto;
+            width: 2 * $rp-spacing;
+            height: 2 * $rp-spacing;
+            transition: none;
+        }
+
+        a {
+            box-shadow: $quiz-shadow;
+
+            &:active {
+                position: relative;
+                top: $border-radius;
+                left: $border-radius;
+                box-shadow: none;
+            }
+        }
+
+        span {
+            background-color: $gray-lightest;
+            border: $border-radius-lg solid $gray-base;
+            border-radius: $border-radius-lg;
+
+            img {
+                width: 65%;
+                height: 65%;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #rpQuizArchiveMarketo {
+        .row {
+            border-radius: $border-radius-lg;
+            box-shadow: $quiz-shadow;
+
+            > [class*="col-"] {
+                padding: $rp-spacing;
+
+                &:nth-of-type(1) {
+                    background-color: $rp-blue-light;
+                    border: $border-radius solid $rp-navy-light;
+                    border-top-left-radius: $border-radius-lg;
+                    border-bottom-left-radius: $border-radius-lg;
+                }
+
+                &:nth-of-type(2) {
+                    @include bg-window();
+                    border-top: $border-radius solid $gray;
+                    border-right: $border-radius solid $gray;
+                    border-bottom: $border-radius solid $gray;
+                    border-top-right-radius: $border-radius-lg;
+                    border-bottom-right-radius: $border-radius-lg;
+                }
+            }
+        }
+    }
+
+    #rpQuizArchiveConnect {
+        .container-fluid {
+            > .row {
+                @include border-window();
+                @include bg-window();
+                padding: $rp-spacing;
+                box-shadow: $quiz-shadow;
+            }
+        }
+
+        li {
+            display: inline-block;
+            margin: .25 * $rp-spacing !important;
+        }
+    }
+
+    #rpQuizArchive {
+        .container-fluid {
+            padding: 0;
+            width: calc(100% - #{2.5 * $rp-spacing});
+            height: calc(100% - #{2.5 * $rp-spacing});
+
+            > .row {
+                @include border-window();
+                @include bg-window();
+                height: 100%;
+                box-shadow: $quiz-shadow;
+            }
+        }
+
+        [class*="col-"] {
+            .row {
+                &:nth-of-type(1) {
+                    @include top-window();
+                    position: relative;
+                    z-index: 1;
+                    border-bottom: 0;
+                }
+
+                &:nth-of-type(2) {
+                    background-color: $gray;
+                }
+
+                &:nth-of-type(3) {
+                    padding-left: $rp-spacing;
+                    padding-right: $rp-spacing;
+                }
+            }
+        }
+
+        #rpQuizzesTabs {
+            padding-top: 5px;
+            padding-left: 10px;
+            background-image: url($wp-assets-path + 'email-university/EU-tab-bg.png');
+            background-repeat: repeat-x;
+            background-size: 4px 35px;
+            color: $gray-base;
+            text-align: left;
+
+            li {
+                margin: 0;
+                width: .5 * $quiz-tab-width;
+                height: $quiz-tab-height;
+                background-image: url($wp-assets-path + 'email-university/EU-tab-btn.png');
+                background-size: $quiz-tab-width $quiz-tab-height;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                line-height: $quiz-tab-height;
+
+                &.active {
+                    background-position: -.5 * $quiz-tab-width 0;
+                    color: $gray-base;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

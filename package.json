@@ -1,0 +1,36 @@
+{
+    "name": "dmk-rp-web-styleguide",
+    "description": "Return Path website static assets",
+    "version": "1.0.0",
+    "author": "Return Path",
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ReturnPath/dmk-rp-web-styleguide"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.1.0",
+        "@babel/preset-env": "^7.1.0",
+        "browser-sync": "^2.26.3",
+        "jshint": "^2.9.6",
+        "jshint-stylish": "^2.2.1",
+        "lazypipe": "^1.0.1",
+        "gulp": "^4.0.0",
+        "gulp-autoprefixer": "^6.0.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-cssnano": "^2.1.3",
+        "gulp-debug": "^4.0.0",
+        "gulp-flatmap": "^1.0.2",
+        "gulp-header": "^2.0.5",
+        "gulp-jshint": "^2.1.0",
+        "gulp-optimize-js": "^1.1.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-rename": "^1.4.0",
+        "gulp-terser": "^1.1.7"
+    },
+    "browserslist": [
+        "last 2 versions"
+    ]
+}

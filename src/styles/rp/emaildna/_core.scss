@@ -1,0 +1,134 @@
+//== Name: Core
+//== Description: Defines core styles
+
+* {
+    font-family: $rp-sans;
+    letter-spacing: .015rem;
+}
+
+html,
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    @include define-device('xs');
+    @include media-breakpoint-up(sm) { @include define-device('sm'); }
+    @include media-breakpoint-up(md) { @include define-device('md'); }
+    @include media-breakpoint-up(lg) { @include define-device('lg'); }
+    @include media-breakpoint-up(xl) { @include define-device('xl'); }
+}
+
+#wrapper,
+main,
+section,
+footer {
+    position: relative;
+    z-index: 0;
+}
+
+main {
+    height: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+}
+
+html.touchevents {
+    overflow: auto;
+}
+
+.touchevents {
+    body {
+        overflow: visible;
+    }
+
+    main {
+        height: auto;
+        overflow-x: visible;
+        overflow-y: visible;
+        perspective: 1px;
+    }
+}
+
+section {
+    padding-bottom: $rp-spacing;
+    height: auto;
+    background-color: transparent;
+    transform-style: preserve-3d;
+
+    .container-fluid {
+        position: relative;
+        z-index: 1;
+        padding-left: $rp-spacing;
+        padding-right: $rp-spacing;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: .25 * $rp-spacing;
+    padding: 0;
+    font-weight: bold;
+}
+
+p {
+    margin: 0 0 .25 * $rp-spacing;
+    padding: 0;
+    font-size: $rp-font-size;
+    line-height: 1.5;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+a {
+    transition: border-color $rp-timing $rp-timing-function, color $rp-timing $rp-timing-function, box-shadow $rp-timing $rp-timing-function;
+}
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    margin-top: .5 * $rp-spacing;
+    margin-bottom: .5 * $rp-spacing;
+    border-width: 2px;
+}
+
+@include media-breakpoint-up(lg) {
+    section {
+        .container-fluid {
+            padding-left: 2 * $rp-spacing;
+            padding-right: 2 * $rp-spacing;
+        }
+    }
+
+    p {
+        margin: 0 0 .5 * $rp-spacing;
+        font-size: $rp-font-size-lg;
+    }
+
+    h1 { font-size: .9 * $rp-spacing; } // 45px
+    h2 { font-size: .8 * $rp-spacing; } // 40px
+    h3 { font-size: .6 * $rp-spacing; } // 30px
+    h4 { font-size: .4 * $rp-spacing; } // 20px
+    h5 { font-size: $rp-font-size; } // 16px
+    h6 { font-size: $rp-font-size; } // 16px
+
+    hr {
+        margin-top: $rp-spacing;
+        margin-bottom: $rp-spacing;
+    }
+}

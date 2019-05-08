@@ -1,0 +1,77 @@
+//== Name: Quiz - Logos
+//== Description: Defines quiz logo styles
+
+$rp-logo-w: 150px;
+$rp-logo-h: 33px;
+$quiz-logo-w: 200px;
+$quiz-logo-h: 121px;
+
+.rp-main-logo,
+.rp-quiz-logo {
+    display: inline-block;
+}
+
+#rpQuizArchiveIntro,
+#rpQuizArchiveMarketo {
+    .rp-main-logo {
+        @include image-dimensions($rp-logo-w, $rp-logo-h);
+    }
+}
+
+#rpQuizArchiveIntro,
+#rpQuizArchiveMarketo,
+#rpQuizArchiveConnect,
+#rpQuizArchive,
+#rpQuiz {
+    .rp-quiz-logo {
+        @include image-dimensions($quiz-logo-w, $quiz-logo-h);
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #rpQuizArchiveIntro {
+        .rp-quiz-logo {
+            @include image-dimensions(2 * $quiz-logo-w, 2 * $quiz-logo-h);
+        }
+    }
+
+    #rpQuizArchiveMarketo {
+        .rp-main-logo {
+            @include image-dimensions(auto, auto);
+        }
+
+        .rp-quiz-logo {
+            @include image-dimensions(auto, auto);
+        }
+    }
+
+    #rpQuizArchiveConnect {
+        .rp-quiz-logo {
+            @include image-dimensions(1.5 * $quiz-logo-w, 1.5 * $quiz-logo-h);
+        }
+    }
+
+    #rpQuizArchive,
+    #rpQuiz {
+        .rp-quiz-logo {
+            @include h-align();
+            top: -1.25rem;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #rpQuizArchiveMarketo {
+        .rp-main-logo {
+            @include image-dimensions($rp-logo-w, $rp-logo-h);
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #rpQuizArchiveMarketo {
+        .rp-quiz-logo {
+            @include image-dimensions(1.5 * $quiz-logo-w, 1.5 * $quiz-logo-h);
+        }
+    }
+}

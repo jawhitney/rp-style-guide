@@ -1,0 +1,42 @@
+//== Name: Promo
+
+.rp-row-promo {
+    padding: 0;
+
+    .item {
+        position: relative;
+        padding: 0.5 * $spacer;
+        height: 100%;
+    }
+
+    &.rp-row-marquee {
+        .item {
+            padding-bottom: $spacer;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .item {
+            padding: $spacer;
+        }
+
+        &.rp-row-marquee {
+            .item {
+                padding-bottom: 2 * $spacer;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &.rp-row-promo-full-width h4 {
+            margin: 0 auto;
+            width: 50%;
+        }
+    }
+}
+
+.rp-row-quote {
+    .item {
+        overflow: visible;
+    }
+}

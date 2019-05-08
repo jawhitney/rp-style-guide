@@ -1,0 +1,113 @@
+//== Name: Core
+//== Description: Defines parallax styles
+
+section {
+    .rp-bg-parallax {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
+        background-position: center center;
+        z-index: -1;
+        background-repeat: no-repeat;
+    }
+
+    &.rp-row-hero {
+        .rp-bg-parallax-back {
+            background-position: top center;
+        }
+
+        .rp-bg-parallax-front {
+            background-position: bottom center;
+        }
+    }
+
+    &.rp-row-content {
+        .rp-bg-parallax {
+            visibility: hidden;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    section {
+        &.rp-row-hero {
+            .rp-bg-parallax-front {
+                background-position: top center;
+            }
+        }
+
+        &.rp-row-content {
+            .rp-bg-parallax {
+                visibility: visible;
+            }
+        }
+
+        &.rp-row-timeline {
+            .rp-bg-parallax {
+                background-size: 100%;
+            }
+        }
+    }
+
+    // Is Edge
+    .cssall:not(.touchevents),
+    .no-cssall.csspositionsticky:not(.touchevents) {
+        section {
+            .rp-bg-parallax {
+                transform-style: preserve-3d;
+
+                // == 1 + (translateZ * -1) / perspective (1px)
+                &.rp-bg-parallax-back {
+                    transform: translateZ(-0.6px) scale(1.6);
+                }
+
+                &.rp-bg-parallax-middle {
+                    transform: translateZ(-0.4px) scale(1.4);
+                }
+
+                &.rp-bg-parallax-front {
+                    transform: translateZ(-0.2px) scale(1.2);
+                }
+            }
+        }
+
+        @keyframes rpparallax {
+            0%, 100% {
+                transform: translateY(-5px);
+            }
+            50% {
+                transform: translateY(5px);
+            }
+        }
+
+        .rp-bg-parallax {
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+
+        .rp-bg-parallax-front {
+            animation-name: rpparallax;
+        }
+
+        .rp-bg-parallax-middle {
+            animation-name: rpparallax;
+        }
+    }
+
+    // Is Edge
+    .no-cssall.csspositionsticky {
+        .rp-row-promo {
+            .rp-bg-color {
+                opacity: 0.9;
+            }
+        }
+    }
+}

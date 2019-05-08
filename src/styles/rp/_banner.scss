@@ -1,0 +1,41 @@
+//== Name: Banner
+//== Description: Defines banner styles
+
+.rp-banner {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    height: $rp-header-height;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: opacity $rp-timing $rp-timing-function, z-index $rp-timing $rp-timing-function;
+    will-change: top;
+
+    p {
+        font-size: 1rem;
+    }
+
+    .row {
+        height: 100%;
+    }
+
+    &.active {
+        opacity: .95;
+        z-index: 1000;
+    }
+
+    &.inactive {
+        opacity: 0;
+        z-index: 0;
+    }
+
+    img {
+        height: $rp-header-height;
+        width: auto;
+    }
+}

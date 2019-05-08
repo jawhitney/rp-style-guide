@@ -1,0 +1,17 @@
+//== Name: Image Reveal
+//== Description: Defines image reveal styles
+
+.rp-row-image-reveal {
+    img {
+        margin: 0 auto;
+    }
+
+    .rp-image-reveal-trigger {
+        border-top: 3px solid $gray-light;
+
+        a {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+}

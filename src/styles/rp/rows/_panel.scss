@@ -1,0 +1,44 @@
+//== Name: Panel
+//== Description: Defines Panel row styles
+
+.rp-row-panel {
+    .rp-row-panel-content {
+        position: relative;
+        width: 100%;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: scroll;
+
+        > div {
+            padding: $rp-spacing;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &.rp-row-panel-16x9 {
+        .rp-row-panel-content {
+            padding-bottom: 56.25%;
+        }
+    }
+
+    &.rp-row-panel-1x1 {
+        .rp-row-panel-content {
+            padding-bottom: 100%;
+        }
+    }
+}
+
+.no-touchevents {
+    .rp-row-panel {
+        &.rp-row-panel-16x9 {
+            .rp-row-panel-content {
+                background-size: cover;
+                background-attachment: fixed;
+                will-change: top;
+            }
+        }
+    }
+}

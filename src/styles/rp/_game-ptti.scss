@@ -1,0 +1,249 @@
+//== Name: Game
+//== Description: Defines Path to the Inbox game styles
+
+$ptti-assets-path: $assets-path + 'path-to-the-inbox/';
+
+//== Core
+html,
+body {
+    overflow: hidden;
+}
+
+body {
+    padding: 0 !important;
+    color: $white;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-color: $rp-blue-dark;
+    background-image: linear-gradient($rp-blue-dark, $rp-yellow-dark);
+    will-change: top;
+}
+
+section {
+    padding: .5 * $rp-spacing;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    text-align: center;
+
+    div {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+//== Parallax
+.rp-game-parallax {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    transition: top $rp-timing / 2 $rp-timing-function;
+
+    &.full {
+        background-size: 100% 100%;
+    }
+
+    &.bottom {
+        background-position: bottom center;
+    }
+
+    &.top {
+        background-position: top center;
+    }
+}
+
+#bgSky {
+    background-image: url($ptti-assets-path + 'bg-sky.png');
+    z-index: 0;
+}
+
+@keyframes sun {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.rp-game-intro:not(.game-active) {
+    #bgSun {
+        animation: sun 30s linear infinite;
+    }
+}
+
+#bgSun {
+    position: absolute;
+    right: 0;
+    bottom: -25%;
+    left: 0;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 75%;
+    padding-bottom: 75%;
+    background-image: url($ptti-assets-path + 'bg-sun.png');
+    z-index: 10;
+}
+
+#bgCloudsBack {
+    background-image: url($ptti-assets-path + 'bg-clouds-back.png');
+    z-index: 20;
+}
+
+#bgCloudsMiddle {
+    background-image: url($ptti-assets-path + 'bg-clouds-middle.png');
+    z-index: 30;
+}
+
+#bgCloudsFront {
+    background-image: url($ptti-assets-path + 'bg-clouds-front.png');
+    z-index: 40;
+}
+
+#bgHillsBack {
+    background-image: url($ptti-assets-path + 'bg-hills-back.png');
+    z-index: 50;
+}
+
+#bgHillsMiddle {
+    background-image: url($ptti-assets-path + 'bg-hills-middle.png');
+    z-index: 60;
+}
+
+#bgHillsFront {
+    background-image: url($ptti-assets-path + 'bg-hills-front.png');
+    z-index: 70;
+}
+
+#bgGround {
+    background-image: url($ptti-assets-path + 'bg-ground.png');
+    z-index: 80;
+}
+
+#bgWater {
+    background-image: url($ptti-assets-path + 'bg-water.png');
+    z-index: 90;
+}
+
+.rp-logo-wrapper {
+    position: absolute;
+    top: .5 * $rp-spacing;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    width: 200px;
+    height: 44px;
+
+    a {
+        display: inline-block;
+    }
+}
+
+.rp-game-content-wrapper {
+    position: relative;
+    z-index: 100;
+}
+
+.rp-logo-wrapper-mobile {
+    width: 150px;
+    height: 33px;
+}
+
+.rp-game-logo {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+}
+
+.rp-logo-wrapper,
+.rp-logo-wrapper-mobile,
+.rp-game-logo {
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.rp-game-button {
+    width: 96px;
+    height: 48px;
+
+    a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-image: url($ptti-assets-path + 'buttons.png');
+        background-size: 192px 144px;
+        background-position: 0 -2 * 48px;
+
+        &:hover {
+            background-position: -2 * 48px -2 * 48px;
+        }
+    }
+}
+
+//== Game
+.rp-game-modal {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: $black-50;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+
+    &.active {
+        z-index: 1050;
+        opacity: 1;
+    }
+}
+
+.rp-game-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.rp-game-container {
+    width: 100%;
+    max-width: 1024px;
+    max-height: 576px;
+
+    canvas {
+        width: 100%;
+        max-width: 1024px;
+        max-height: 576px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .rp-game-logo {
+        width: 900px;
+        height: 96px;
+    }
+
+    .rp-intro-content {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .rp-game-button {
+        width: 144px;
+        height: 72px;
+
+        a {
+            background-size: 288px 216px;
+            background-position: 0 -2 * 72px;
+
+            &:hover {
+                background-position: -2 * 72px -2 * 72px;
+            }
+        }
+    }
+}

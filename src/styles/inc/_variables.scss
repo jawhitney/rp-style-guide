@@ -1,0 +1,199 @@
+//== Name: Variables
+//== Description: Defines variables and redifines Bootstrap variables
+
+//== Filepaths
+$assets-path: '../../../assets/';
+$assets-path: '../../../';
+$rp-font-path: $assets-path + 'fonts/rp/2.0.0/return-path-icons';
+$rp-game-filepath: $assets-path + 'images/rp/game/';
+
+$assets-path: '../../assets/';
+$wp-assets-path: '../../../wp-content/uploads/assets/';
+
+//== Dimensions
+$rp-spacing: 3.125rem; // 50px
+$rp-header-height: 2 * $rp-spacing; // 100px
+$rp-featured-resource: 8.4 * $rp-spacing; // 420px
+$rp-admin-margin: 32px;
+
+//== Font sizes
+$rp-font-size: 1rem; // 16px
+$rp-font-size-xs: .75 * $rp-font-size; // 12px
+$rp-font-size-sm: .875 * $rp-font-size; // 14px
+$rp-font-size-md: 1.125 * $rp-font-size; // 18px
+$rp-font-size-lg: 1.375 * $rp-font-size; // 22px
+
+$font-xl-mobile: 2.5rem;
+$font-lg-mobile: 2.0rem;
+$font-md-mobile: 1.25rem;
+$font-sm-mobile: 1rem;
+$font-xs-mobile: 0.75rem;
+
+$font-xl: 3rem;
+$font-lg: 2.5rem;
+$font-md: 1.5rem;
+$font-sm: 1.25rem;
+$font-xs: 0.8rem;
+
+//== Z Indexes
+$rp-z-index: 100;
+
+//== Fonts
+$rp-serif: 'adelle', serif;
+$rp-sans: 'adelle-sans', sans-serif;
+$fa-font-path: $assets-path + 'fonts/vendor/fontawesome';
+
+//== Colors
+$rp-color-change: 10%;
+$rp-red: #cb333b;
+$rp-orange-dark: #e35205;
+$rp-orange-light: #ff9d6e;
+$rp-yellow-dark: #ffa300;
+$rp-yellow-light: #f1be48;
+$rp-green-dark: #00965e;
+$rp-green-light: #84bd00;
+$rp-teal-dark: #008c95;
+$rp-teal-light: #2dccd3;
+$rp-teal-lighter: #c9f2f4;
+$rp-blue-dark: #00a3e0;
+$rp-blue-light: #71c5e8;
+$rp-blue-lighter: #d5eef7;
+$rp-navy-dark: #003d51;
+$rp-navy-light: #4298b5;
+$rp-purple-dark: #6d2077;
+$rp-purple-light: #ab4fc6;
+
+//== Grays
+$black: #000;
+$black-50: rgba(#000, .5);
+$gray-base: #4c4b4d;
+$gray-darkest: #707274;
+$gray-darker: #95989b;
+$gray-dark: #aaadaf;
+$gray: #b4b4b4;
+$gray-light: #d5d6d7;
+$gray-lighter: #e3e3e3;
+$gray-lightest: #f5f6f7;
+$gray-bbb: #bbb;
+$gray-ccc: #ccc;
+$gray-333: #333;
+$gray-f2: #f2f2f2;
+$white: #fff;
+$white-50: rgba(255, 255, 255, .5);
+
+//== Social colors
+$twitter: #00abf0;
+$facebook: #3a579a;
+$linkedin: #127bb6;
+$pinterest: #cd1c1f;
+
+//== Email for President
+$hillaryclinton: #6d2077;
+$tedcruz: #00965e;
+$johnkasich: #ffa300;
+$berniesanders: $rp-blue-dark;
+$donaldtrump: $rp-orange-dark;
+$donaldjtrump: #c83900;
+$trump2016: #ae1f00;
+$gopteam: #950600;
+
+//== Browsers
+$chrome-color: #d8443a;
+$firefox-color: #ff8f05;
+$safari-color: #00caff;
+$ie-color: #006dd1;
+
+//== Color map
+$rp-colors:
+    ('red', $rp-red),
+    ('white', $white),
+    ('purple-dark', $rp-purple-dark),
+    ('purple-light', $rp-purple-light),
+    ('teal-dark', $rp-teal-dark),
+    ('teal-light', $rp-teal-light),
+    ('teal-lighter', $rp-teal-lighter),
+    ('green-dark', $rp-green-dark),
+    ('green-light', $rp-green-light),
+    ('yellow-dark', $rp-yellow-dark),
+    ('yellow-light', $rp-yellow-light),
+    ('blue-dark', $rp-blue-dark),
+    ('blue-light', $rp-blue-light),
+    ('blue-lighter', $rp-blue-lighter),
+    ('navy-dark', $rp-navy-dark),
+    ('navy-light', $rp-navy-light),
+    ('orange-dark', $rp-orange-dark),
+    ('orange-light', $rp-orange-light),
+    ('gray-base', $gray-base),
+    ('gray-darkest', $gray-darkest),
+    ('gray-darker', $gray-darker),
+    ('gray-dark', $gray-dark),
+    ('gray', $gray),
+    ('gray-light', $gray-light),
+    ('gray-lighter', $gray-lighter),
+    ('gray-lightest', $gray-lightest),
+    ('twitter', $twitter),
+    ('facebook', $facebook),
+    ('linkedin', $linkedin),
+    ('pinterest', $pinterest);
+$rp-metric-colors:
+    ('spam', $rp-teal-light),
+    ('read', $rp-teal-dark),
+    ('deleted', $rp-yellow-dark),
+    ('reply', $rp-orange-dark),
+    ('forward', $rp-green-light),
+    ('complaint', $rp-blue-light),
+    ('not-spam', $rp-purple-light);
+
+//== Sender Score colors
+$impact-low-fill: #84bd00;
+$impact-low-border: #00965e;
+$impact-med-fill: #ffa300;
+$impact-med-border: #e35205;
+$impact-high-fill: #d8666c;
+$impact-high-border: #cb333b;
+
+//== Shadows
+$rp-shadow-lighter: 0 .1 * $rp-spacing .5 * $rp-spacing 0 rgba($black, .1);
+$rp-shadow: 0 .1 * $rp-spacing .5 * $rp-spacing 0 rgba($black, .15);
+$rp-shadow-darker: 0 .1 * $rp-spacing .7 * $rp-spacing 0 rgba($black, .75);
+$rp-shadow-darker-red: 0 .1 * $rp-spacing .7 * $rp-spacing 0 rgba($rp-red, .75);
+$rp-shadow-darker-purple: 0 .1 * $rp-spacing .7 * $rp-spacing 0 rgba($rp-purple-dark, .75);
+$rp-shadow-blue-dark: 0 0 .16 * $rp-spacing $rp-blue-dark;
+$rp-shadow-gray-dark: 0 0 .16 * $rp-spacing $gray-dark;
+$rp-admin-text-shadow: 1px 1px 2px rgba(#000, .9);
+
+//== Timing
+$rp-timing: .2s;
+$rp-timing-function: ease-out;
+
+//== Bootstrap 4 Overrides
+
+//== Font
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$line-height-base: 1.25; // 1.5 !default;
+$headings-line-height: 1.25; // 1.2 !default;
+$h1-font-size: $font-size-base * 2; // $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 1.5; // $font-size-base * 2.5 !default;
+$h3-font-size: $font-size-base * 1.25; // $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.15; // $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base; // $font-size-base * 1.25 !default;
+
+//== Options
+$enable-shadows: true;
+
+//== Dimensions
+$spacer: 3.125rem; // 50px | 1rem !default;
+$grid-gutter-width: $spacer * 2; // 30px !default;
+
+//== Colors
+$body-color: $gray-base; // $gray-900 !default;
+
+//== Links
+$link-color: $rp-blue-dark; // theme-color("primary") !default;
+$link-hover-color: lighten($rp-blue-dark, $rp-color-change); // darken($link-color, 15%) !default;
+$link-hover-decoration: none; // underline !default;
+
+//== Borders
+$border-radius: .1875rem; // 3px | .25rem !default;
+$border-radius-lg: 2 * $border-radius; // 6px | .3rem !default;
+$border-radius-sm: .5 * $border-radius; // 1.5px | .2rem !default;

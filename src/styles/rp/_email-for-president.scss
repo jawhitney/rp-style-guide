@@ -1,0 +1,395 @@
+//== Name: Email for President
+//== Description: Defines Email for President styles
+
+.rp-row-email-for-president {
+    padding-bottom: 0 !important;
+
+    hr {
+        margin-top: $rp-spacing !important;
+        margin-bottom: 0 !important;
+    }
+
+    .domain-comparison-alert {
+        display: none;
+    }
+
+    .domain-comparison-candidates,
+    .domain-comparison-measures {
+        ul {
+            display: inline-block;
+            text-align: left;
+
+            li {
+                display: block;
+
+                img {
+                    height: $rp-spacing;
+                    width: $rp-spacing;
+                }
+            }
+        }
+    }
+
+    .domain-comparison-candidates {
+        ul {
+            li {
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: .5 * $rp-spacing;
+                padding-left: 0;
+                padding-right: 0;
+                font-family: $rp-serif;
+                font-size: 1em;
+                vertical-align: top;
+
+                img {
+                    height: $rp-spacing;
+                    width: $rp-spacing;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .hillaryclinton,
+                .clinton {
+                    background-color: $rp-blue-dark;
+                    color: $white;
+                }
+
+                .donaldtrump,
+                .donaldjtrump,
+                .trump {
+                    background-color: $rp-red;
+                    color: $white;
+                }
+            }
+        }
+
+        .chart-data-trigger {
+            display: table;
+            padding: .5 * $rp-spacing;
+            border-radius: $border-radius-lg;
+            overflow: hidden;
+            opacity: .5;
+            cursor: pointer;
+            filter: grayscale(100%);
+            transition: all $rp-timing $rp-timing-function;
+
+            &:hover {
+                opacity: .75;
+            }
+
+            &.chart-trigger-active {
+                opacity: 1;
+                filter: grayscale(0%);
+            }
+
+            div {
+                display: table-cell;
+                vertical-align: middle;
+
+                &:first-child {
+                    padding-right: .5 * $rp-spacing;
+                }
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+
+                &.primary-label {
+                    font-weight: bold;
+                }
+
+                &.secondary-label {
+                    font-size: .8em;
+                }
+            }
+        }
+
+        .secondary-label {
+            &::before {
+                content: '';
+                position: relative;
+                top: 2px;
+                display: inline-block;
+                margin-right: .5em;
+                height: 1em;
+                width: 1.5em;
+                border: 1px solid $white;
+                border-radius: 1px;
+            }
+
+            &.hillaryclinton::before {
+                background-color: $hillaryclinton;
+            }
+
+            &.donaldtrump::before {
+                background-color: $donaldtrump;
+            }
+
+            &.donaldjtrump::before {
+                background-color: $donaldjtrump;
+            }
+
+            &.trump2016::before {
+                background-color: $trump2016;
+            }
+
+            &.gopteam::before {
+                background-color: $gopteam;
+            }
+        }
+    }
+
+    .domain-comparison-measures {
+        ul {
+            font: 1em $rp-sans;
+            font-weight: bold;
+
+            li {
+                [type="radio"] {
+                    margin-right: .25 * $rp-spacing;
+
+                    &:checked + label {
+                        background-color: $gray-bbb;
+                    }
+                }
+            }
+        }
+
+        label {
+            color: $gray;
+            font-weight: normal;
+
+            &.measure-active {
+                color: $gray-base;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .domain-comparison-chart {
+        overflow: hidden;
+
+        &.active {
+            overflow: visible;
+        }
+
+        .ct-chart-line {
+            .grid-horizontal,
+            .grid-vertical {
+                stroke: $gray-darkest;
+                stroke-dasharray: 0;
+                stroke-width: 2px;
+            }
+        }
+
+        .c3 {
+            margin-top: 0;
+
+            svg {
+                font: 13.5px $rp-sans;
+                font-weight: bold;
+                overflow: visible !important;
+
+                text {
+                    fill: $gray;
+                }
+            }
+        }
+
+        .c3 line,
+        .c3 path {
+            stroke: $gray-darkest;
+            stroke-width: 2px;
+        }
+
+        .tick {
+            line {
+                stroke: $white;
+            }
+        }
+
+        .c3-shapes-benchmark {
+            circle {
+                opacity: 0 !important;
+            }
+        }
+
+        .region-negative,
+        .region-positive {
+            fill-opacity: 1 !important;
+
+            rect {
+                fill-opacity: 1 !important;
+            }
+        }
+
+        .region-negative {
+            fill: $gray-light;
+        }
+
+        .region-positive {
+            fill: $gray-lightest;
+        }
+
+        #chart-y-axis-label {
+            position: absolute;
+            left: 0;
+            height: 24px;
+            color: $gray;
+            font-size: 14px;
+            font-weight: bold;
+            transform: rotate(-90deg);
+            transform-origin: 0% 0%;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .rp-row-eo-domain-comparison {
+        .domain-comparison-candidates,
+        .domain-comparison-measures {
+            ul {
+                li {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .domain-comparison-candidates {
+            ul {
+                li {
+                    margin-bottom: 0;
+
+                    &:not(:first-child) {
+                        margin-left: 75px;
+                    }
+
+                    img {
+                        height: 3 * $rp-spacing;
+                        width: 3 * $rp-spacing;
+                    }
+                }
+            }
+
+            .chart-data-trigger {
+                p {
+                    &.secondary-label {
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+
+        .domain-comparison-measures {
+            ul {
+                li {
+                    &:not(:first-child) {
+                        margin-left: .5 * $rp-spacing;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#chart-legend {
+    padding: .5 * $rp-spacing 0 0;
+
+    ul {
+        display: table;
+        margin: 0 auto;
+    }
+
+    li {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 .5 * $rp-spacing;
+
+        div {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        img {
+            max-width: 125px;
+            max-height: 125px;
+            margin-right: 10px;
+        }
+
+        &:not(.benchmark) {
+            opacity: 0;
+            transition: opacity 2.5 * $rp-timing $rp-timing-function;
+        }
+
+        &.legend-show {
+            opacity: 1;
+        }
+
+        &.hillaryclinton,
+        &.clinton {
+            p:first-child {
+                color: $hillaryclinton;
+            }
+        }
+
+        &.donaldtrump,
+        &.donaldjtrump,
+        &.trump {
+            p:first-child {
+                color: $donaldtrump;
+            }
+        }
+    }
+
+    .domain-label {
+        &::before {
+            content: '';
+            position: relative;
+            top: 2px;
+            display: inline-block;
+            margin-right: .5em;
+            height: 1em;
+            width: 1.5em;
+        }
+
+        &.hillaryclinton::before {
+            background-color: $hillaryclinton;
+        }
+
+        &.donaldtrump::before {
+            background-color: $donaldtrump;
+        }
+
+        &.donaldjtrump::before {
+            background-color: $donaldjtrump;
+        }
+
+        &.trump2016::before {
+            background-color: $trump2016;
+        }
+
+        &.gopteam::before {
+            background-color: $gopteam;
+        }
+    }
+}
+
+#chart {
+    padding: .5 * $rp-spacing 0 0;
+
+    .ct-chart-line {
+        .grid-horizontal,
+        .grid-vertical {
+            stroke: $rp-navy-dark;
+        }
+    }
+
+    .c3 line,
+    .c3 path {
+        stroke: $rp-navy-dark;
+    }
+}

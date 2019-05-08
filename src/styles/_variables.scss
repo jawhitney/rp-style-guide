@@ -1,0 +1,295 @@
+//== Name: Variables
+//== Name: Variables
+//== Description: Defines variables and redifines Bootstrap variables
+
+// Spacing
+$spacer: 3.125rem;
+
+//== Filepaths
+$assets-path: '../../../assets/';
+$wp-assets-path: '../../../wp-content/uploads/assets/';
+
+//== Fonts
+$fa-font-path: '../fonts/fontawesome';
+$fa-font-display: swap;
+
+//== Grays
+$gray-base: #3C4858;
+$gray-base-alt: #4C4B4D;
+$gray-darkest: #7E909E;
+$gray-darkest-alt: #707274;
+$gray-darker: #95989b;
+$gray-dark: #AAADAF;
+$gray: #B4B4B4;
+$gray-light: #D5D6D7;
+$gray-lighter: #EAEEF2;
+$gray-lighter-alt: #E3E3E3;
+$gray-lightest: #F5F6F7;
+$white: #FFF;
+$black: #000;
+
+//== Colors
+$rp-color-change: 10%;
+$rp-red: #CB333B;
+$rp-pink: #E28C8C;
+$rp-orange-dark: #E35205;
+$rp-orange-light: #FF9D6E;
+$rp-yellow-dark: #FFA300;
+$rp-yellow-light: #F1BE48;
+$rp-green-dark: #00965E;
+$rp-green-light: #84BD00;
+$rp-teal-dark: #008C95;
+$rp-teal-light: #2DCCD3;
+$rp-teal-lighter: #C9F2F4;
+$rp-blue-dark: #00A3E0;
+$rp-blue-light: #71C5e8;
+$rp-blue-lighter: #D5EEF7;
+$rp-navy-dark: #003D51;
+$rp-navy-light: #4298B5;
+$rp-purple-dark: #6D2077;
+$rp-purple-light: #AB4FC6;
+
+//== Theme colors
+$theme-about: $rp-red;
+$theme-arcade: $black;
+$theme-request-a-demo-promo: #fff;
+$theme-footer-promo: $gray-light;
+$theme-solutions: $rp-blue-dark;
+$theme-deliverability: $rp-blue-dark;
+$theme-optimization: $rp-yellow-dark;
+$theme-client-services: $rp-purple-light;
+$theme-partner-platform: $rp-teal-light;
+$theme-email-fraud: $rp-navy-dark;
+$theme-partners: $rp-teal-light;
+$theme-resources: $rp-green-light;
+
+//== Social colors
+$twitter: #00abf0;
+$facebook: #3a579a;
+$linkedin: #127bb6;
+$pinterest: #cd1c1f;
+
+//== Validity colors
+$v-blue-dark: #13133f;
+$v-blue-light: #102170;
+
+//== Color map
+$rp-colors:
+    ('gray-base', $gray-base),
+    ('gray-base-alt', $gray-base-alt),
+    ('gray-darkest', $gray-darkest),
+    ('gray-darkest-alt', $gray-darkest-alt),
+    ('gray-darker', $gray-darker),
+    ('gray-dark', $gray-dark),
+    ('gray', $gray),
+    ('gray-light', $gray-light),
+    ('gray-lighter', $gray-lighter),
+    ('gray-lighter-alt', $gray-lighter-alt),
+    ('gray-lightest', $gray-lightest),
+    ('white', $white),
+    ('black', $black),
+    ('red', $rp-red),
+    ('pink', $rp-pink),
+    ('orange-dark', $rp-orange-dark),
+    ('orange-light', $rp-orange-light),
+    ('yellow-dark', $rp-yellow-dark),
+    ('yellow-light', $rp-yellow-light),
+    ('green-dark', $rp-green-dark),
+    ('green-light', $rp-green-light),
+    ('teal-dark', $rp-teal-dark),
+    ('teal-light', $rp-teal-light),
+    ('teal-lighter', $rp-teal-lighter),
+    ('blue-dark', $rp-blue-dark),
+    ('blue-light', $rp-blue-light),
+    ('blue-lighter', $rp-blue-lighter),
+    ('navy-dark', $rp-navy-dark),
+    ('navy-light', $rp-navy-light),
+    ('purple-dark', $rp-purple-dark),
+    ('purple-light', $rp-purple-light),
+    ('v-blue-dark', $v-blue-dark),
+    ('v-blue-light', $v-blue-light);
+
+$rp-themes: (
+    'about': (
+        'main-color': $theme-about,
+        'gradient-1': $rp-red,
+        'gradient-2': $rp-pink,
+        'curve': $rp-pink,
+        'marketo-text-color': $white,
+    ),
+    'arcade': (
+        'main-color': $theme-arcade,
+        'gradient-1': $black,
+        'gradient-2': $gray-base,
+        'curve': $gray-darkest,
+        'marketo-text-color': $white,
+    ),
+    'request-a-demo-promo': (
+        'main-color': $theme-request-a-demo-promo,
+        'gradient-1': #fff,
+        'gradient-2': #fff,
+        'curve': #fff,
+        'marketo-text-color': $gray-base,
+    ),
+    'footer-promo': (
+        'main-color': $theme-footer-promo,
+        'gradient-1': $gray-lightest,
+        'gradient-2': $gray-lightest,
+        'curve': $gray-lightest,
+        'marketo-text-color': $gray-base,
+    ),
+    'solutions': (
+        'main-color': $theme-solutions,
+        'gradient-1': $rp-blue-dark,
+        'gradient-2': $rp-teal-light,
+        'curve': $rp-teal-light,
+        'marketo-text-color': $white,
+    ),
+    'deliverability': (
+        'main-color': $theme-deliverability,
+        'gradient-1': $rp-blue-dark,
+        'gradient-2': $rp-teal-light,
+        'curve': $rp-teal-light,
+        'marketo-text-color': $white,
+    ),
+    'optimization': (
+        'main-color': $theme-optimization,
+        'gradient-1': $rp-yellow-dark,
+        'gradient-2': $rp-teal-light,
+        'curve': $rp-yellow-dark,
+        'marketo-text-color': $white,
+    ),
+    'client-services': (
+        'main-color': $theme-client-services,
+        'gradient-1': $rp-purple-light,
+        'gradient-2': $rp-teal-light,
+        'curve': $rp-purple-light,
+        'marketo-text-color': $white,
+    ),
+    'partner-platform': (
+        'main-color': $theme-partner-platform,
+        'gradient-1': $rp-teal-dark,
+        'gradient-2': $rp-teal-light,
+        'curve': $rp-teal-light,
+        'marketo-text-color': $white,
+    ),
+    'email-fraud': (
+        'main-color': $theme-email-fraud,
+        'gradient-1': $rp-navy-dark,
+        'gradient-2': $rp-teal-light,
+        'curve': $rp-teal-light,
+        'marketo-text-color': $white,
+    ),
+    'partners': (
+        'main-color': $theme-partners,
+        'gradient-1': $rp-teal-dark,
+        'gradient-2': $rp-teal-light,
+        'curve': $rp-teal-light,
+        'marketo-text-color': $white,
+    ),
+    'resources': (
+        'main-color': $theme-resources,
+        'gradient-1': $rp-green-light,
+        'gradient-2': $rp-teal-dark,
+        'curve': $rp-green-light,
+        'marketo-text-color': $white,
+    ),
+);
+
+//== Shadows
+$rp-shadow: 0 .1 * $spacer .5 * $spacer 0 rgba(#000, .15);
+$rp-shadow-blue-dark: 0 0 .16 * $spacer $rp-blue-dark;
+
+//== Timing
+$rp-timing: .2s;
+$rp-timing-function: ease-out;
+$rp-timing-function-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+//== Mobile menu
+$mobile-menu-child-height: 4px;
+$mobile-menu-child-height-center: calc(50% - #{$mobile-menu-child-height / 2});
+$mobile-menu-timing: 0.5s;
+$mobile-menu-timing-function: ease-in-out;
+
+//== Bootstrap Overrides
+
+// Colors
+$success: $rp-green-dark;
+$warning: $rp-yellow-dark;
+$danger: $rp-red;
+
+// Options
+$enable-shadows: true;
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1065px
+);
+
+// Body
+$body-bg: $gray-base;
+$body-color: $gray-base;
+
+// Links
+$link-color: $gray-base;
+$link-hover-opacity: 0.5;
+$link-hover-color: rgba($gray-base, $link-hover-opacity);
+$link-hover-decoration: underline;
+
+// Paragraphs
+$paragraph-margin-bottom: 0.25 * $spacer;
+
+// Grid columns
+$grid-gutter-width: $spacer;
+
+// Components
+$line-height-lg: 1.25 !default;
+$line-height-sm: 1.25 !default;
+
+$border-width: 1px;
+$border-color: $gray-light;
+
+$border-radius: 2.5px;
+$border-radius-lg: 4px;
+$border-radius-sm: 1.5px;
+
+// Typography
+$font-family-sans-serif: 'adelle-sans', sans-serif;
+
+$font-size-base: 1rem;
+$font-size-lg: $font-size-base * 1.25;
+$font-size-sm: $font-size-base * .875;
+
+$line-height-base: 1.25 !default;
+
+$h1-font-size: $font-size-base * 2.25;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base;
+$h6-font-size: $font-size-base;
+
+$headings-margin-bottom: 0.5 * $spacer;
+$headings-font-weight: 400;
+$headings-line-height: 1.25;
+
+$small-font-size: $font-size-base * 0.75;
+
+$hr-border-color: $gray-lighter;
+$hr-margin-y: 0.5 * $spacer;
+
+$list-inline-padding: 0.25 * $spacer;
+
+// Buttons + Forms
+$input-btn-padding-y: 0.25 * $spacer;
+$input-btn-padding-x: 0.5 * $spacer;
+$input-btn-font-size: 0.8rem;
+
+$input-btn-border-width: 1px;
+
+$btn-border-radius: $border-radius-lg;
+
+$btn-font-weight: normal;
+$btn-box-shadow: none;

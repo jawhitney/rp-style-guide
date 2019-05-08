@@ -1,0 +1,31 @@
+//== Name: Custom Post Archive
+//== Description: Defines custom post archive styles
+
+.rp-archive-customer-success,
+.rp-archive-downloads,
+.rp-archive-events,
+.rp-archive-webinars,
+.rp-archive-leadership {
+    img {
+        margin: 0 auto;
+    }
+}
+
+.rp-archive-downloads,
+.rp-archive-events,
+.rp-archive-webinars {
+    a {
+        max-width: $rp-featured-resource;
+
+        .rp-image-lazy-load {
+            height: 100%;
+        }
+    }
+}
+
+.rp-archive-customer-success {
+    .rp-link-image {
+        padding: .25 * $rp-spacing .5 * $rp-spacing;
+        border: 1px solid $gray-light;
+    }
+}

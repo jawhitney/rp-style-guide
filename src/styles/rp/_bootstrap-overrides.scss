@@ -1,0 +1,132 @@
+//== Name: Bootstrap Overrides
+//== Description: Defines bootstrap override styles
+
+.embed-responsive {
+    background-color: $gray-light;
+    background-image: url($assets-path + 'images/logos/logo-solo-white.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 25% auto;
+}
+
+.list-inline-item {
+    margin-right: 0 !important;
+}
+
+.close {
+    @include reset-states();
+
+    position: absolute;
+    top: 0;
+    right: .25 * $rp-spacing;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 2.5rem;
+    cursor: pointer;
+    height: 1.5 * $rp-spacing;
+
+    span {
+        vertical-align: text-top;
+    }
+}
+
+.modal,
+.rp-modal {
+    text-align: left;
+    color: $gray-base;
+
+    .modal-title {
+        margin-bottom: 0 !important;
+        line-height: 1;
+    }
+
+    .modal-content {
+        border: 0;
+        border-radius: 8px;
+    }
+
+    .modal-header {
+        padding: .5 * $rp-spacing;
+        background-color: $rp-blue-dark;
+        background-image: url($assets-path + 'images/backgrounds/background-confetti.svg');
+        background-size: cover;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        height: 1.5 * $rp-spacing;
+        align-items: center;
+
+        .modal-title {
+            color: $white;
+        }
+    }
+
+    .modal-body {
+        padding: .5 * $rp-spacing;
+
+        .mktoButtonRow {
+            margin-top: .5 * $rp-spacing !important;
+        }
+    }
+
+    .modal-footer {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.text-center {
+    img {
+        margin: 0 auto;
+    }
+}
+
+.tooltip {
+    &.bs-tooltip-top .arrow::before { border-top-color: rgba($gray-base, .9); }
+    &.bs-tooltip-right .arrow::before { border-right-color: rgba($gray-base, .9); }
+    &.bs-tooltip-bottom .arrow::before { border-bottom-color: rgba($gray-base, .9); }
+    &.bs-tooltip-left .arrow::before { border-left-color: rgba($gray-base, .9); }
+}
+
+.tooltip-inner {
+    padding: .25 * $rp-spacing;
+    border-radius: $border-radius-lg;
+    background-color: rgba($gray-base, .9);
+    line-height: 1.5;
+}
+
+address {
+    margin: 0;
+    padding: 0;
+}
+
+.alert {
+    margin-bottom: .5 * $rp-spacing;
+    padding: .5 * $rp-spacing;
+
+    p {
+        margin: 0 0 .25 * $rp-spacing;
+        font-size: 1rem;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    ul {
+        &:last-child {
+            margin: 0;
+        }
+
+        li {
+            font-size: 1rem;
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: .5 * $rp-spacing;
+}
+
+.table {
+    margin-bottom: 0;
+}

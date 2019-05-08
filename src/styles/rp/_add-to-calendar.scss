@@ -1,0 +1,95 @@
+//== AddToCalendar Base CSS
+//== http://addtocalendar.com
+
+//== Base
+.addtocalendar {
+    position: relative;
+    display: inline-block;
+    background: transparent !important;
+
+    var {
+        display: none;
+    }
+}
+
+.atcb-link {
+    @include rp-button-hollow($rp-blue-dark);
+
+    display: block;
+    outline: none !important;
+    cursor: pointer;
+    padding: 0 .5 * $rp-spacing;
+    height: $rp-spacing;
+    min-width: 3.5 * $rp-spacing;
+    border: 0;
+    color: $white;
+    font-size: $rp-font-size-sm;
+    font-weight: bold;
+    line-height: $rp-spacing;
+    text-transform: uppercase;
+    transition: all $rp-timing $rp-timing-function;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.atcb-link:active~ul,
+.atcb-link:focus~ul,
+.atcb-list:hover {
+    display: inline-block;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.atcb-list {
+    display: none;
+    position: relative;
+    padding: .25 * $rp-spacing;
+    width: 100%;
+    height: 0;
+    border: 1px solid $gray-light;
+    border-radius: $border-radius-lg;
+    visibility: visible;
+    opacity: 0;
+    transition: opacity $rp-timing $rp-timing-function;
+}
+
+.atcb-item,
+.atcb-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: $white;
+}
+
+.atcb-item {
+    float: none;
+    text-align: left;
+    line-height: .5 * $rp-spacing;
+}
+
+.atcb-item-link {
+    text-decoration: none;
+    outline: none;
+    display: block;
+}
+
+.atcb-item.hover,
+.atcb-item:hover {
+    position: relative;
+    z-index: 900;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+}
+
+//== Overrides
+.rp-atc-wrapper {
+    text-align: center;
+}
+
+.rp-atc-errors {
+    display: none;
+}

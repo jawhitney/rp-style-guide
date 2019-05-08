@@ -1,0 +1,72 @@
+//== Name: WordPress
+
+.entry-content img {
+    margin: 0 0 0.5 * $spacer;
+}
+
+.alignleft,
+img.alignleft {
+    margin: 0.5 * $spacer 0.5 * $spacer 0.5 * $spacer 0;
+    float: left;
+    clear: left;
+    max-width: 50%;
+    height: auto;
+}
+
+.alignright,
+img.alignright {
+    margin: 0.5 * $spacer 0 0.5 * $spacer 0.5 * $spacer;
+    float: right;
+    clear: right;
+    max-width: 50%;
+    height: auto;
+}
+
+.aligncenter,
+img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+    max-width: 100%;
+    height: auto;
+}
+
+img.alignnone {
+    max-width: 100%;
+    height: auto;
+}
+
+.wp-caption {
+    margin-bottom: 0.5 * $spacer;
+    text-align: center;
+    padding-top: 5px;
+
+    img {
+        border: 0 none;
+        padding: 0;
+        margin: 0;
+    }
+
+    p.wp-caption-text {
+        line-height: 1.5;
+        font-size: 10px;
+        margin: 0;
+    }
+}
+
+blockquote.left {
+    margin-right: 0.5 * $spacer;
+    text-align: right;
+    margin-left: 0;
+    width: 33%;
+    float: left;
+}
+
+blockquote.right {
+    margin-left: 0.5 * $spacer;
+    text-align: left;
+    margin-right: 0;
+    width: 33%;
+    float: right;
+}

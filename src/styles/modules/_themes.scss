@@ -1,0 +1,186 @@
+//== Name: Themes
+
+@each $label, $theme in $rp-themes {
+    .rp-theme-#{$label} {
+        .rp-bg-color {
+            background-color: map-get($theme, main-color);
+        }
+
+        .rp-bg-gradient {
+            background-image: radial-gradient(circle at top left, map-get($theme, gradient-1), map-get($theme, gradient-2));
+        }
+
+        .rp-curve-gradient-left {
+            stop:last-child {
+                stop-color: map-get($theme, gradient-2) !important;
+            }
+        }
+
+        .rp-curve-gradient-right {
+            stop:last-child {
+                stop-color: map-get($theme, gradient-1) !important;
+            }
+        }
+
+        &.rp-row-hero {
+            h1 {
+                color: $white;
+            }
+
+            &.rp-row-hero-alt {
+                h1::before {
+                    content: '';
+                    position: absolute;
+                    top: -1 * (0.25 * ($spacer - $h1-font-size));
+                    left: -1.5 * $spacer;
+                    width: $spacer;
+                    height: $spacer;
+                    border-radius: $border-radius-lg;
+                    background-color: rgba($white, 0.25);
+                    background-image: url($assets-path + 'images/icons/icon-menu-#{$label}.svg');
+                    background-size: 75%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+
+            h4 {
+                color: $gray-lighter;
+            }
+
+            .btn {
+                border-color: $white;
+                color: $white;
+
+                &:hover {
+                    border-color: darken($white, $rp-color-change);
+                    color: darken($white, $rp-color-change);
+                }
+            }
+        }
+
+        &.rp-row-content {
+            h1, h2, h3, h4, h5, h6 {
+                color: map-get($theme, main-color);
+            }
+
+            a:not(.btn):not(.social) {
+                color: map-get($theme, main-color);
+
+                &:hover {
+                    color: rgba(map-get($theme, main-color), $link-hover-opacity);
+                }
+            }
+
+            ul:not(.list-unstyled, .list-inline) {
+                li::before {
+                    color: map-get($theme, main-color);
+                }
+            }
+        }
+
+        &.rp-row-marketo {
+            h1, h2, h3, h4, h5, h6 {
+                color: map-get($theme, marketo-text-color);
+            }
+
+            a:not(.btn):not(.social) {
+                color: map-get($theme, marketo-text-color);
+
+                &:hover {
+                    color: rgba(map-get($theme, marketo-text-color), $link-hover-opacity);
+                }
+            }
+
+            ul:not(.list-unstyled, .list-inline) {
+                li::before {
+                    color: map-get($theme, marketo-text-color);
+                }
+            }
+        }
+
+        &.rp-row-icon-message {
+            .rp-icon-wrapper {
+                background-color: map-get($theme, main-color);
+            }
+        }
+
+        &.rp-row-promo {
+            @if $label == "request-a-demo-promo" or $label == "footer-promo" {
+                h2 {
+                    color: $gray-base;
+                }
+
+                h4 {
+                    color: $gray-darkest;
+                }
+
+                .rp-image-icon {
+                    background-color: $white;
+                    border: 1px solid $gray-light;
+                }
+
+                a:not(.btn):not(.social) {
+                    color: $gray-base;
+
+                    &:hover {
+                        color: rgba($gray-base, $link-hover-opacity);
+                    }
+                }
+            } @else {
+                h2 {
+                    color: $white;
+                }
+
+                h4 {
+                    color: $gray-lighter;
+                }
+
+                .rp-image-icon {
+                    background-color: map-get($theme, main-color);
+                }
+
+                a:not(.btn):not(.social) {
+                    color: $white;
+
+                    &:hover {
+                        color: rgba($white, $link-hover-opacity);
+                    }
+                }
+            }
+        }
+
+        .mktoButton {
+            background-color: map-get($theme, main-color) !important;
+
+            &:hover {
+                background-color: rgba(map-get($theme, main-color), $link-hover-opacity) !important;
+            }
+        }
+
+        &.rp-products-used {
+            position: relative;
+
+            &::before {
+                content: '';
+                margin-right: 0.25 * $spacer;
+                width: 0.25 * $spacer;
+                height: 0.25 * $spacer;
+                background-color: map-get($theme, main-color);
+                border-radius: 0.125 * $spacer;
+            }
+        }
+    }
+}
+
+body:not(.page-template-page-solutions-overview) {
+    .rp-row-content-image {
+        .rp-bg-color {
+            background-color: $gray-lightest !important;
+        }
+
+        .rp-bg-gradient {
+            display: none !important;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@mixin flexbox() {
+    display: flex;
+}
+
+@mixin justify-content($jc) {
+    justify-content: $jc;
+}
+
+@mixin align-items($al) {
+    align-items: $al;
+}
+
+@mixin flex-direction($fd) {
+    flex-direction: $fd;
+}

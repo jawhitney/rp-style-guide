@@ -1,0 +1,80 @@
+//== Name: Quiz - Buttons
+//==* Description: Defines quiz button styles
+
+.rp-quiz-button-red,
+.rp-quiz-button-gray {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    width: $quiz-btn-width;
+    height: $quiz-btn-height;
+    line-height: $quiz-btn-height;
+    font-family: $rp-serif;
+    font-size: $rp-font-size;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $white;
+    background-color: transparent;
+    background-image: url($wp-assets-path + 'email-university/EU-btn-sprite-small.png');
+    background-size: $quiz-btn-bg-size;
+    background-repeat: no-repeat;
+    transition: none;
+
+    &:focus,
+    &:hover,
+    &:visited {
+        outline: none;
+        color: $white;
+    }
+
+    &:active {
+        left: $border-radius;
+        top: $border-radius;
+    }
+}
+
+.rp-quiz-button-red {
+    background-position: 0 0;
+
+    &:active {
+        background-position: 0 -1 * $quiz-btn-height;
+    }
+}
+
+.rp-quiz-button-gray {
+    background-position: -1 * $quiz-btn-width 0;
+
+    &:active {
+        background-position: -1 * $quiz-btn-width -1 * $quiz-btn-height;
+    }
+}
+
+.rp-quiz-button-back {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 14.5px;
+        left: 35px;
+        width: 6px;
+        height: 12px;
+        background-image: url($wp-assets-path + 'email-university/EU-btn-arrow.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+.rp-quiz-button-mobile {
+    width: $quiz-btn-width-mobile;
+    background-image: url($wp-assets-path + 'email-university/EU-btn-sprite-smaller.png');
+    background-size: $quiz-btn-bg-size-mobile;
+
+    background-position: 0 0;
+
+    &:active {
+        background-position: 0 -1 * $quiz-btn-height;
+    }
+
+    &::before {
+        left: 12.5px;
+    }
+}

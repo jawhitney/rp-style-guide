@@ -1,0 +1,46 @@
+//== Name: Search
+//== Description: Defines search styles
+
+#rpSearchForm {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+
+    input {
+        padding: (.5 * $rp-spacing) - 10 !important;
+        height: $rp-spacing !important;
+        background-color: $gray-darker;
+        color: $white;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none !important;
+        outline: none;
+        border-radius: $border-radius-lg;
+        transition: all $rp-timing $rp-timing-function;
+
+        &:focus {
+            box-shadow: $rp-shadow-gray-dark;
+        }
+
+        &::placeholder {
+            color: $white;
+        }
+    }
+
+    .fas,
+    .fab,
+    .fa {
+        @include v-align();
+        right: .25 * $rp-spacing;
+        font-size: $rp-font-size-lg;
+    }
+}
+
+.rp-search-label {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}

@@ -1,0 +1,127 @@
+//== Name: Header
+//== Description: Defines header styles
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $rp-header-height;
+    background-color: transparent;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity $rp-timing $rp-timing-function;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(76, 75, 77, 0.75), rgba(76, 75, 77, 0.5));
+        opacity: 0;
+        transition: opacity $rp-timing $rp-timing-function;
+    }
+
+    &.rp-is-below-top {
+        box-shadow: $rp-shadow-lighter;
+
+        &:before {
+            opacity: 1;
+        }
+    }
+
+    a {
+        position: relative;
+        display: inline-block;
+        color: $gray-lighter;
+        vertical-align: middle;
+
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited, {
+            text-decoration: none;
+            border: 0;
+            outline: none;
+        }
+
+        &:focus,
+        &:hover {
+            color: $white;
+        }
+
+        &:not([href]):not([tabindex]) {
+            color: $gray-lighter;
+            cursor: pointer;
+
+            &:focus,
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}
+
+.rp-document-ready {
+    header {
+        opacity: 1;
+    }
+}
+
+#rpMenuBrand {
+    &.list-inline > li {
+        line-height: $rp-header-height;
+    }
+}
+
+#rpMenu {
+    position: relative;
+
+    &.list-inline > li {
+        padding: 0 .25 * $rp-spacing;
+        line-height: $rp-header-height;
+    }
+
+    a {
+        font-size: .875rem; // 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        &:not(.btn) {
+            line-height: $rp-header-height;
+        }
+
+        &.rp-menu-icon {
+            font-size: 1.5em;
+        }
+    }
+
+    .rp-megamenu-trigger-active {
+        a:not(.btn):not(.rp-menu-no-megamenu)::after {
+            opacity: .95;
+        }
+    }
+}
+
+[lang="fr-FR"] {
+    #rpMenu a {
+        font-size: .8125rem; // 13px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .no-touchevents {
+        header {
+            &:before {
+                display: none;
+            }
+
+            &.rp-is-below-top {
+                box-shadow: none;
+            }
+        }
+    }
+}

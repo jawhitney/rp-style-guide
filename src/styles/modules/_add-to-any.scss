@@ -1,0 +1,110 @@
+//== Name: Add to any
+#rpa2a {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity $rp-timing $rp-timing-function;
+
+    a {
+        position: relative;
+        left: 0;
+        display: inline-block;
+        width: 0.75 * $spacer;
+        height: 0.75 * $spacer;
+        color: $white;
+        text-decoration: none;
+        transition: left $rp-timing $rp-timing-function,
+                    background-color $rp-timing $rp-timing-function,
+                    color $rp-timing $rp-timing-function;
+    }
+
+    a#rpa2aShowHide {
+        position: absolute;
+        right: 0;
+        bottom: -0.75 * $spacer;
+        left: calc(100% - #{0.5 * $spacer});
+        margin-top: 0.25 * $spacer;
+        width: 0.5 * $spacer;
+        height: 0.5 * $spacer;
+        border-radius: $border-radius-lg;
+        background-color: $gray;
+        color: $gray-lightest;
+        transform-origin: center;
+        transition: transform $rp-timing $rp-timing-function,
+                    left $rp-timing $rp-timing-function,
+                    background-color $rp-timing $rp-timing-function,
+                    color $rp-timing $rp-timing-function;
+
+        &:hover {
+            background-color: $gray-base;
+            color: $white;
+        }
+    }
+
+    &.loaded {
+        opacity: 0.9;
+    }
+
+    &.hidden {
+        a:not(#rpa2aShowHide) {
+            left: -1 * 0.75 * $spacer;
+        }
+
+        a#rpa2aShowHide {
+            left: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            transform: rotate(-180deg);
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        top: 50%;
+        bottom: auto;
+        left: auto;
+        transform: translateY(-50%);
+    }
+}
+
+.a2a_button_twitter {
+    background-color: $twitter;
+
+    @include media-breakpoint-up(lg) {
+        border-top-right-radius: $border-radius-lg;
+    }
+
+    &:hover {
+        background-color: lighten($twitter, $rp-color-change);
+    }
+}
+
+.a2a_button_facebook {
+    background-color: $facebook;
+
+    &:hover {
+        background-color: lighten($facebook , $rp-color-change);
+    }
+}
+
+.a2a_button_linkedin {
+    background-color: $linkedin;
+
+    &:hover {
+        background-color: lighten($linkedin , $rp-color-change);
+    }
+}
+
+.a2a_button_pinterest {
+    background-color: $pinterest;
+
+    @include media-breakpoint-up(lg) {
+        border-bottom-right-radius: $border-radius-lg;
+    }
+
+    &:hover {
+        background-color: lighten($pinterest , $rp-color-change);
+    }
+}

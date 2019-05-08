@@ -1,0 +1,21 @@
+//==* Name: Language Selector
+//== Description: Defines WPML language selector styles
+
+.rp-language-list {
+    text-align: center;
+
+    li {
+        margin-bottom: .5 * $rp-spacing;
+        width: 100%;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    a img {
+        position: relative;
+        top: -1.5px;
+        margin-right: .5em;
+    }
+}

@@ -1,0 +1,95 @@
+//== Name: Panel
+//== Description: Defines Metrics row styles
+
+.rp-row-metrics {
+    .rp-metrics-trigger {
+        padding: .5 * $rp-spacing;
+        cursor: pointer;
+
+        img {
+            max-width: 2 * $rp-spacing;
+        }
+
+        &.active {
+            @include gradient-lighten($gray-lighter, $rp-color-change, up);
+        }
+    }
+
+    .rp-metrics-grid {
+        padding: $rp-spacing;
+
+        .grid-item {
+            padding: .5 * $rp-spacing;
+            background-color: $white;
+
+            > div {
+                position: relative;
+                width: 100%;
+                padding: .5 * $rp-spacing;
+            }
+        }
+    }
+
+    .rp-metric-icon,
+    .rp-metric-text,
+    .rp-metric-cta {
+        position: relative;
+        z-index: 2 * $rp-z-index;
+    }
+
+    .rp-metric-text {
+        font-weight: bold;
+
+        &.rp-font-sm {
+            font-size: (12 / 16) * $rp-font-size; // 12px
+        }
+
+        &.rp-font-md {
+            font-size: (15 / 16) * $rp-font-size; // 15px
+        }
+
+        &.rp-font-lg {
+            font-size: (18 / 16) * $rp-font-size; // 18px
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .rp-row-metrics {
+        .rp-metric-text {
+            font-weight: bold;
+
+            &.rp-font-sm {
+                font-size: (15 / 16) * $rp-font-size; // 15px
+            }
+
+            &.rp-font-md {
+                font-size: (20 / 16) * $rp-font-size; // 20px
+            }
+
+            &.rp-font-lg {
+                font-size: (25 / 16) * $rp-font-size; // 25px
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .rp-row-metrics {
+        .rp-metric-text {
+            font-weight: bold;
+
+            &.rp-font-sm {
+                font-size: (25 / 16) * $rp-font-size; // 25px
+            }
+
+            &.rp-font-md {
+                font-size: (35 / 16) * $rp-font-size; // 35px
+            }
+
+            &.rp-font-lg {
+                font-size: (45 / 16) * $rp-font-size; // 45px
+            }
+        }
+    }
+}

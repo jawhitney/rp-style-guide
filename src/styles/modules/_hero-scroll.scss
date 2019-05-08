@@ -1,0 +1,338 @@
+//== Name: Hero Scroll
+
+.rp-row-hero-scroll {
+    .section {
+        position: relative;
+        padding-top: 3 * $spacer;
+        height: 100vh;
+        min-height: 600px;
+
+        @media (min-width: 1920px) {
+            padding-top: 0;
+            justify-content: center !important;
+        }
+    }
+
+    .line {
+        position: absolute;
+        left: 50%;
+        z-index: 1;
+        width: 4px;
+        height: 0;
+        opacity: 1;
+        transform: translateX(-50%);
+        transition: opacity $rp-timing $rp-timing-function;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+        }
+
+        line {
+            stroke:$white;
+            stroke-width: 4
+        }
+
+        &.complete {
+            opacity: 0;
+        }
+    }
+
+    .scroll {
+        position: absolute;
+        top: calc(100vh - #{1.5 * $spacer});
+        left: 50%;
+        z-index: 1;
+        width: 29px;
+        height: $spacer;
+        opacity: 1;
+        animation: scrollindicator 2s infinite;
+        transform: translateX(-50%);
+        transition: opacity $rp-timing $rp-timing-function;
+    }
+
+    .icon,
+    .rp-jump-to-link {
+        position: fixed;
+        z-index: 3;
+        transform: translateX(-50%);
+        transform-origin: 50%;
+        transition: opacity $rp-timing $rp-timing-function,
+                    transform 2 * $rp-timing $rp-timing-function-bounce;
+    }
+
+    .rp-jump-to-link {
+        left: 50%;
+    }
+
+    .icon,
+    .icon img {
+        width: $spacer;
+        height: $spacer;
+    }
+
+    .section:not(.active) {
+        .icon {
+            transform: translateX(-50%) scale(0);
+        }
+
+        .rp-jump-to-link {
+            opacity: 0;
+        }
+    }
+
+    .section.active {
+        .icon {
+            transform: translateX(-50%) scale(1);
+        }
+
+        .rp-jump-to-link {
+            opacity: 1;
+        }
+    }
+
+    .envelope-bg {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        overflow: hidden;
+        width: 100%;
+        height: 98px;
+
+        > div {
+            > div {
+                display: inline-block;
+                width: 200px;
+                height: 98px;
+
+                &:not(:last-child) {
+                    margin-right: 0.5 * $spacer;
+                }
+
+                &:nth-child(1),
+                &:nth-child(5) {
+                    opacity: 0.25;
+                }
+
+                &:nth-child(3) {
+                    opacity: 0;
+                }
+
+                &:nth-child(2),
+                &:nth-child(4) {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    .envelope {
+        position: fixed;
+        top: 100%;
+        left: 50%;
+        z-index: 2;
+        width: 200px;
+        height: 98px;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        transition: opacity 2 * $rp-timing $rp-timing-function-bounce,
+                    transform 2 * $rp-timing $rp-timing-function-bounce;
+
+        @include media-breakpoint-up(md) {
+            &.grown {
+                transform: translateX(-50%) scale(1.5);
+            }
+        }
+
+        &.complete {
+            opacity: 0;
+            transform: translateX(-50%) scale(0);
+        }
+    }
+
+    .inbox {
+        position: absolute;
+        left: 50%;
+        width: 225px;
+        height: 181px;
+        transform: translateX(-50%);
+
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: opacity 2 * $rp-timing $rp-timing-function-bounce,
+                        transform 2 * $rp-timing $rp-timing-function-bounce;
+        }
+
+        &.back {
+            z-index: 1;
+        }
+
+        &.front {
+            z-index: 3;
+        }
+
+        &.primary {
+            img {
+                visibility: visible;
+            }
+        }
+
+        &.secondary {
+            img {
+                visibility: hidden;
+            }
+        }
+    }
+
+    .triggered {
+        .primary {
+            img {
+                visibility: hidden;
+            }
+        }
+
+        .secondary {
+            img {
+                visibility: visible;
+                animation: expandContract 2 * $rp-timing cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            }
+        }
+    }
+
+    .screenshots-cta {
+        position: relative;
+        z-index: 1;
+
+        h4, p {
+            opacity: 0;
+            transition: opacity 2 * $rp-timing $rp-timing-function;
+        }
+
+        &.complete {
+            h4, p {
+                opacity: 1;
+            }
+        }
+    }
+
+    .screenshots {
+        margin: 0 auto;
+        perspective: 1000px;
+        transform: scale(0);
+        transition: transform 2 * $rp-timing $rp-timing-function-bounce;
+
+        &.complete {
+            transform: scale(1);
+        }
+    }
+
+    .screenshots-flipper {
+        transition: transform 2 * $rp-timing $rp-timing-function;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .screenshot {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:first-of-type() {
+            z-index: 2;
+        }
+
+        &:last-of-type() {
+            z-index: 1;
+        }
+    }
+
+    .screenshots:hover {
+        .screenshot:first-of-type() {
+            z-index: 1;
+        }
+
+        .screenshot:last-of-type() {
+            z-index: 2;
+        }
+    }
+
+    .screenshots,
+    .screenshot,
+    .screenshot img {
+        $screenshot-ar: 1148 / 1920;
+        width: 250px;
+        height: 250px * $screenshot-ar;
+
+        @include media-breakpoint-up(md) {
+            width: 500px;
+            height: 500px * $screenshot-ar;
+        }
+
+        @media (min-width: 1920px) {
+            width: 800px;
+            height: 800px * $screenshot-ar;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .envelope-bg {
+            height: 147px;
+
+            > div {
+                > div {
+                    width: 300px;
+                    height: 147px;
+                }
+            }
+        }
+
+        .envelope {
+            width: 300px;
+            height: 147px;
+        }
+
+        .inbox {
+            width: 325px;
+            height: 261px;
+        }
+    }
+}
+
+// Not IE11
+.csspositionsticky {
+    .rp-row-hero-scroll {
+        .screenshots:hover {
+            .screenshots-flipper {
+                transform: rotateY(-180deg);
+            }
+        }
+
+        .screenshot {
+            &:first-of-type() {
+                transform: rotateY(0deg);
+            }
+
+            &:last-of-type() {
+                transform: rotateY(-180deg);
+            }
+        }
+    }
+}
+
+.rp-is-below-top {
+    .scroll {
+        opacity: 0;
+    }
+}
+
+.cssall {
+    .envelope-bg {
+        display: flex !important;
+    }
+}

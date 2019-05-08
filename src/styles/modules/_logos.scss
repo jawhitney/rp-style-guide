@@ -1,0 +1,55 @@
+//== Name: Logos
+
+.rp-logo,
+.rp-logo-solo {
+    display: inline-block;
+}
+
+.rp-logo,
+.rp-logo img,
+.rp-logo-solo,
+.rp-logo-solo img {
+    width: 45px;
+    height: 41px;
+}
+
+.rp-logo-spacer {
+    display: inline-block;
+    margin: 0 .25 * $spacer;
+    width: 1px;
+    height: .7 * $spacer;
+    vertical-align: middle;
+    background-color: $white;
+}
+
+.rp-text-logo {
+    font-family: 'adelle', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: $gray-lightest;
+
+    &:hover {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+.rp-logo-animated {
+    svg {
+        fill: $white;
+    }
+
+    &:hover {
+        svg {
+            fill: #000;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .rp-logo,
+    .rp-logo img {
+        width: 185px;
+    }
+}

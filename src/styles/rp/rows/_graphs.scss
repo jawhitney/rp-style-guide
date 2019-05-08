@@ -1,0 +1,85 @@
+//== Name: Graphs
+//== Description: Defines graph styles
+
+.rp-row-graph,
+.rp-modal {
+    #chart-month,
+    #chart-year,
+    #chart-modal {
+        min-height: 400px;
+    }
+
+    #chart-year {
+        display: none;
+    }
+
+    .c3 {
+        text {
+            font-family: $rp-sans;
+            font-size: $rp-font-size;
+        }
+
+        line,
+        path {
+            fill: none;
+            stroke: $gray;
+            stroke-width: 2px;
+        }
+
+        svg {
+            font: 10px $rp-sans;
+            -webkit-tap-highlight-color: transparent;
+            fill: $gray-base;
+        }
+    }
+
+    .c3-axis-y-label {
+        fill: $gray;
+    }
+
+    .rp-graph-legend {
+        > div {
+            font-size: .5 * $rp-spacing;
+        }
+
+        [class *= "rp-graph-legend-item"] {
+            margin: 0 10px;
+            cursor: pointer;
+            transition: color $rp-timing $rp-timing-function, opacity $rp-timing $rp-timing-function;
+
+            &:hover {
+                opacity: .5;
+            }
+
+            &.item-click {
+                opacity: .5;
+                color: $gray-base !important;
+            }
+        }
+    }
+
+    .rp-legend-icon {
+        margin-right: 5px;
+        width: .5 * $rp-spacing;
+        height: .5 * $rp-spacing;
+
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+    }
+}
+
+.rp-modal {
+    .rp-graph-legend {
+        > div {
+            font-size: $rp-font-size;
+        }
+    }
+
+    .rp-legend-icon {
+        width: $rp-font-size;
+        height: $rp-font-size;
+    }
+}

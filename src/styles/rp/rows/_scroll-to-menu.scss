@@ -1,0 +1,146 @@
+//== Name: Scroll To Menu
+//== Description: Defines scroll to menu styles
+
+.rp-scroll-to-menu {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: $rp-z-index * 3.5;
+    opacity: 0;
+    font-family: $rp-sans;
+    font-weight: bold;
+    font-size: $rp-font-size-sm;
+    text-transform: uppercase;
+    transition: opacity $rp-timing $rp-timing-function;
+
+    ul:not(.menu-controls) {
+        position: relative;
+        top: 0;
+        right: 0;
+        transition: all $rp-timing $rp-timing-function;
+
+        li {
+            background-color: $gray-lightest;
+            border-top: 1px solid $gray-lighter;
+
+            &:first-of-type,
+            &:first-of-type a {
+                border-top-left-radius: $border-radius-lg;
+            }
+
+            &:last-of-type,
+            &:last-of-type a {
+                border-bottom-left-radius: $border-radius-lg;
+            }
+
+            a {
+                display: block;
+                padding: .5em 1em;
+                color: $gray-base;
+                text-decoration: none;
+            }
+
+            &:first-of-type {
+                border-top: 0;
+            }
+
+            &.rp-back-to-top a {
+                color: $rp-blue-dark;
+            }
+        }
+    }
+
+    .menu-controls {
+        a {
+            position: relative;
+            right: 0;
+            display: inline-block;
+            overflow: hidden;
+            margin: 5px 5px 0 0;
+            padding: 0;
+            background-color: $gray-darker;
+            border-radius: .3 * $rp-spacing;
+            height: .6 * $rp-spacing;
+            width: .6 * $rp-spacing;
+            text-align: center;
+            color: $white;
+            opacity: .8;
+            transition: all $rp-timing $rp-timing-function;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            i {
+                font-size: 12px;
+            }
+
+            &.menu-hide {
+                margin-right: 0;
+                border-radius: 0;
+                border-top-right-radius: $border-radius-lg;
+                border-bottom-right-radius: $border-radius-lg;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &.rp-scroll-to-menu-metrics-icons {
+        ul:not(.menu-controls) {
+            li {
+                margin-top: 1px;
+                background-color: $rp-navy-dark;
+                border: 0;
+
+                &:first-of-type {
+                    margin-top: none;
+                    border-top-left-radius: $border-radius-lg;
+                    border-top: 0;
+                }
+
+                &:last-of-type {
+                    border-bottom-left-radius: $border-radius-lg;
+                }
+
+                a {
+                    padding: 0;
+                    width: .8 * $rp-spacing;
+                    height: .8 * $rp-spacing;
+                    font-size: .4 * $rp-spacing;
+                    line-height: .4 * $rp-spacing;
+                    text-align: center;
+                    transition: background-color $rp-timing $rp-timing-function, color $rp-timing $rp-timing-function;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+
+                &.rp-back-to-top a {
+                    color: $white;
+
+                    &:hover {
+                        background-color: $white;
+                        color: $gray-base;
+                    }
+                }
+            }
+        }
+
+        @each $metric, $color in $rp-metric-colors {
+            a.rp-metric-#{$metric} {
+                color: $color;
+
+                &:hover {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+}
+
+.rp-window-loaded.rp-is-below-hero {
+    .rp-scroll-to-menu-metrics-icons {
+        opacity: .9;
+    }
+}

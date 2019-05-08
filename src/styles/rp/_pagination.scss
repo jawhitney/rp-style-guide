@@ -1,0 +1,49 @@
+//== Name: Pagination
+//== Description: Defines pagination styles
+
+.rp-list-pagination {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    li {
+        padding: 0 !important;
+    }
+}
+
+.rp-pagination-next,
+.rp-pagination-previous {
+    margin: 0 .25 * $rp-spacing !important;
+
+    a {
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none !important;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .rp-pagination-next,
+    .rp-pagination-previous {
+        a {
+            display: inline-block;
+            padding: 0 .5 * $rp-spacing;
+            height: $rp-spacing;
+            min-width: 3.5 * $rp-spacing;
+            border: 0;
+            color: $white;
+            font-size: $rp-font-size-sm;
+            font-weight: bold;
+            line-height: $rp-spacing;
+            text-align: center;
+            transition: all $rp-timing $rp-timing-function;
+            @include rp-button-hollow($rp-blue-dark);
+
+            &:active,
+            &:focus {
+                box-shadow: none;
+                outline: none;
+                color: $white;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@mixin background-video() {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+}

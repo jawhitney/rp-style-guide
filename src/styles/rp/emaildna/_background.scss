@@ -1,0 +1,74 @@
+//== Name: Background (Email DNA)
+//== Description: Defines background styles
+
+.rp-bg,
+.rp-bg-color,
+.rp-bg-gradient,
+.rp-bg-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.rp-bg-image {
+    opacity: 0;
+    transition: opacity $rp-timing $rp-timing-function;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.rp-bg-image-top {
+    background-size: 100% auto;
+    background-position: top center;
+}
+
+.rp-bg-image-bottom {
+    background-size: 100% auto;
+    background-position: bottom center;
+}
+
+.rp-document-ready {
+    .rp-bg-image {
+        opacity: 1;
+    }
+}
+
+@each $rp-color, $color in $rp-colors {
+    .rp-bg-color-#{$rp-color} { background-color: $color; }
+    .rp-bg-gradient-darken-#{$rp-color} { @include gradient-darken($color, $rp-color-change); }
+    .rp-bg-gradient-darken-#{$rp-color}-up { @include gradient-darken($color, $rp-color-change, up); }
+    .rp-bg-gradient-darken-#{$rp-color}-right { @include gradient-darken($color, $rp-color-change, right); }
+    .rp-bg-gradient-darken-#{$rp-color}-diagonal { @include gradient-darken($color, $rp-color-change, diagonal); }
+    .rp-bg-gradient-darken-#{$rp-color}-middle-horizontal { @include gradient-darken($color, $rp-color-change, middle-horizontal); }
+    .rp-bg-gradient-darken-#{$rp-color}-middle-vertical { @include gradient-darken($color, $rp-color-change, middle-vertical); }
+    .rp-bg-gradient-lighten-#{$rp-color} { @include gradient-lighten($color, $rp-color-change); }
+    .rp-bg-gradient-lighten-#{$rp-color}-up { @include gradient-lighten($color, $rp-color-change, up); }
+    .rp-bg-gradient-lighten-#{$rp-color}-right { @include gradient-lighten($color, $rp-color-change, right); }
+    .rp-bg-gradient-lighten-#{$rp-color}-diagonal { @include gradient-lighten($color, $rp-color-change, diagonal); }
+    .rp-bg-gradient-lighten-#{$rp-color}-middle-horizontal { @include gradient-lighten($color, $rp-color-change, middle-horizontal); }
+    .rp-bg-gradient-lighten-#{$rp-color}-middle-vertical { @include gradient-lighten($color, $rp-color-change, middle-vertical); }
+}
+
+@include gradient-2-color-classes(red-to-blue, $rp-red, $rp-blue-dark);
+@include gradient-2-color-classes(blue-to-red, $rp-blue-dark, $rp-red);
+@include gradient-2-color-classes(blue-to-purple, $rp-blue-dark, $rp-purple-dark);
+@include gradient-2-color-classes(purple-to-blue, $rp-purple-dark, $rp-blue-dark);
+@include gradient-2-color-classes(red-to-blue, $rp-red, $rp-blue-dark);
+@include gradient-2-color-classes(green-dark-to-green-light, $rp-green-dark, $rp-green-light);
+@include gradient-2-color-classes(green-light-to-green-dark, $rp-green-light, $rp-green-dark);
+
+.no-touchevents {
+    .rp-bg-image-fixed {
+        background-attachment: fixed;
+        will-change: top;
+    }
+}

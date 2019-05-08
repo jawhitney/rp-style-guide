@@ -1,0 +1,88 @@
+//== Return Path - Jobvite Mobile
+//== Copyright 2017 Return Path
+
+@charset "utf-8";
+
+//== Includes
+@import 'inc/variables';
+@import 'inc/mixins';
+
+$jvlogo: rgba(203, 51, 59, 0);
+
+.jv-page-header {
+    background-color: $rp-red;
+}
+
+.jv-logo::after {
+    background: linear-gradient(to right, $jvlogo, $rp-red 40%);
+}
+
+.jv-nav {
+    background-color: $rp-red;
+}
+
+.jv-tabs {
+    background: $rp-red;
+    border-top: 1px solid $gray-lightest;
+}
+
+.jv-tab {
+    border-left: 1px solid $gray-lightest;
+}
+
+.jv-tab-active::before {
+    border-top: 10px solid $rp-red;
+}
+
+.jv-job-category-label {
+    color: $rp-red;
+}
+
+.jv-job-category-link .jv-list-icon {
+    color: $rp-red;
+}
+
+.jv-text-link,
+.jv-search-list .jv-list-label,
+.jv-search-list .jv-list-icon {
+    color: $rp-red;
+}
+
+.jv-job-list-inner {
+    background: $gray-base;
+}
+
+.jv-icon-primary {
+    color: $rp-red;
+}
+
+a {
+    color: $rp-red;
+    transition: all .2s ease-out;
+}
+
+.jv-button {
+    padding: 0 36px;
+    height: 50px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 50px;
+    text-transform: uppercase;
+    border: 0;
+    background-image: none !important;
+    transition: all .2s ease-out;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.jv-button-primary {
+    color: $white;
+    background-color: $rp-red !important;
+}
+
+.jv-button-apply-later {
+    color: $gray-base;
+    background-color: $gray-lightest !important;
+}

@@ -1,0 +1,127 @@
+//== Name: Header
+//== Description: Defines header styles
+
+$rp-logo-width: 188px;
+
+@keyframes rplogoanimforward {
+    100% {
+        background-position: -1 * 9 * $rp-logo-width 0;
+    }
+}
+
+@keyframes rplogoanimbackward {
+    100% {
+        background-position: 0 0;
+    }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: $rp-z-index * 3;
+    width: 100%;
+    height: $rp-header-height;
+    background-color: transparent;
+    overflow: hidden;
+    opacity: 0;
+    box-shadow: none;
+    transition: opacity $rp-timing $rp-timing-function, box-shadow $rp-timing $rp-timing-function;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5));
+        opacity: 0;
+        transition: opacity $rp-timing $rp-timing-function;
+    }
+
+    .rp-logo-animated {
+        background-size: auto 41px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+
+    &.rp-is-below-top {
+        box-shadow: $rp-shadow-lighter;
+
+        &:before {
+            opacity: 1;
+        }
+    }
+
+    .container-fluid {
+        padding: 0 0.5 * $rp-spacing;
+    }
+
+    a {
+        position: relative;
+        display: inline-block;
+        color: $gray-lighter;
+        vertical-align: middle;
+    }
+}
+
+// Is IE11
+.no-csspositionsticky {
+    header {
+        position: fixed;
+    }
+}
+
+.rp-document-ready {
+    header {
+        opacity: 1;
+
+        &.rp-is-below-top {
+            .rp-logo-animated {
+                animation-name: rplogoanimforward;
+                animation-duration: 0.5s;
+                animation-timing-function: steps(9);
+                animation-delay: 0.5s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+        }
+
+        &.rp-has-scrolled:not(.rp-is-below-top) {
+            .rp-logo-animated {
+                background-position: -1 * 9 * $rp-logo-width 0;
+                animation-name: rplogoanimbackward;
+                animation-duration: 0.5s;
+                animation-timing-function: steps(9);
+                animation-delay: 0.5s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+}
+
+#rpMenuBrand {
+    &.list-inline > li {
+        line-height: $rp-header-height;
+    }
+}
+
+#rpMenu {
+    position: relative;
+
+    &.list-inline > li {
+        padding: 0 .25 * $rp-spacing;
+        line-height: $rp-header-height;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    header {
+        .container-fluid {
+            padding: 0 $rp-spacing;
+        }
+    }
+}

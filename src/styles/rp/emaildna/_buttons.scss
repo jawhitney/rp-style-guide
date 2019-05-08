@@ -1,0 +1,31 @@
+//== Name: Buttons
+//== Description: Defines button styles
+
+button {
+    transition: all $rp-timing $rp-timing-function;
+}
+
+.btn {
+    padding: 0 .5 * $rp-spacing;
+    height: $rp-spacing;
+    min-width: 3.5 * $rp-spacing;
+    border: none;
+    color: $white;
+    font-size: $rp-font-size-sm;
+    font-weight: bold;
+    line-height: $rp-spacing;
+    text-transform: uppercase;
+    transition: color $rp-timing $rp-timing-function, background-color $rp-timing $rp-timing-function,  background-image $rp-timing $rp-timing-function, box-shadow $rp-timing $rp-timing-function;
+
+    &:focus,
+    &:active {
+        box-shadow: none;
+        outline: none;
+        color: $white;
+    }
+
+    @each $rp-color, $color in $rp-colors {
+        &.btn-#{$rp-color} { @include rp-button($color); }
+        &.btn-#{$rp-color}-hollow { @include rp-button-hollow($color); }
+    }
+}

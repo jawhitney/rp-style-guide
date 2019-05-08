@@ -1,0 +1,71 @@
+//== Name: WordPress
+//== Description: Defines WordPress WYSIWIG styles
+
+.entry-content img {
+    margin: 0 0 1.5em;
+}
+
+.alignleft,
+img.alignleft {
+    margin: 1em 1em 0 1.5em;
+    float: left;
+    clear: left;
+    max-width: 50%;
+    height: auto;
+}
+
+.alignright,
+img.alignright {
+    margin: 1em 0 1em 1.5em;
+    float: right;
+    clear: right;
+    max-width: 50%;
+    height: auto;
+}
+
+.aligncenter,
+img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+}
+
+.wp-caption {
+    margin-bottom: 1.5em;
+    text-align: center;
+    padding-top: 5px;
+
+    img {
+        border: 0 none;
+        padding: 0;
+        margin: 0;
+    }
+
+    p.wp-caption-text {
+        line-height: 1.5;
+        font-size: 10px;
+        margin: 0;
+    }
+}
+
+.wp-smiley {
+    margin: 0 !important;
+    max-height: 1em;
+}
+
+blockquote.left {
+    margin-right: 20px;
+    text-align: right;
+    margin-left: 0;
+    width: 33%;
+    float: left;
+}
+
+blockquote.right {
+    margin-left: 20px;
+    text-align: left;
+    margin-right: 0;
+    width: 33%;
+    float: right;
+}

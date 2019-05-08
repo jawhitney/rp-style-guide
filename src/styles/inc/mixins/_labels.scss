@@ -1,0 +1,19 @@
+@mixin rp-label($color) {
+    display: inline-block;
+    padding: 0 .5 * $rp-spacing;
+    height: $rp-spacing;
+    color: $white;
+    font-size: $rp-font-size-sm;
+    font-weight: bold;
+    line-height: $rp-spacing;
+    text-transform: uppercase;
+    background-color: $color;
+    border: 0;
+    border-radius: $border-radius-lg;
+    box-shadow: $rp-shadow;
+    opacity: .9;
+
+    @if $color == $white {
+        color: $gray-base;
+    }
+}

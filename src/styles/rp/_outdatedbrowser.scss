@@ -1,0 +1,51 @@
+//== Name: Outdated browser
+//== Description: Defines Outdated browser styles
+
+#outdatedBrowser {
+    position: fixed;
+    z-index: -1;
+    top: $rp-header-height;
+    padding: $rp-spacing 0;
+    width: 100%;
+    background: rgba($gray-base, 1);
+    overflow: hidden;
+    opacity: 0;
+    color: $white;
+    transition: opacity 2.5 * $rp-timing $rp-timing-function;
+
+    &.loaded {
+        z-index: 3 * $rp-z-index;
+        opacity: .95;
+    }
+
+    .browser-link {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+
+    a {
+        color: $white;
+        opacity: .75;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.chrome:hover {
+            color: $chrome-color;
+        }
+
+        &.firefox:hover {
+            color: $firefox-color;
+        }
+
+        &.safari:hover {
+            color: $safari-color;
+        }
+
+        &.ie:hover {
+            color: $ie-color;
+        }
+    }
+}

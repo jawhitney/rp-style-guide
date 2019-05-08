@@ -1,0 +1,37 @@
+@mixin rp-error() {
+    position: absolute;
+    bottom: -$rp-spacing;
+    left: .5 * $rp-spacing;
+    z-index: 15;
+    padding: (.125 * $rp-spacing) (.25 * $rp-spacing);
+    max-width: 16em;
+    background-color: $rp-red;
+    border: 1px solid $rp-red;
+    border-radius: $border-radius-lg;
+    color: $white;
+    font-size: $rp-font-size;
+    font-weight: bold;
+    line-height: 1.5em !important;
+    box-shadow: none !important;
+
+    p {
+        font-size: $rp-font-size;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -.27 * $rp-spacing;
+        left: .25 * $rp-spacing;
+        z-index: 10;
+        width: 0;
+        height: 0;
+        border-left: .25 * $rp-spacing solid transparent;
+        border-right: .25 * $rp-spacing solid transparent;
+        border-bottom: .25 * $rp-spacing solid $rp-red;
+    }
+
+    @include media-breakpoint-up(lg) {
+        left: 35% !important;
+    }
+}

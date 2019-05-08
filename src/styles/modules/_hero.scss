@@ -1,0 +1,30 @@
+//== Name: Hero
+
+.rp-row-hero {
+    padding-top: 4 * $spacer;
+    padding-bottom: 2 * $spacer;
+
+    &.rp-row-hero-alt,
+    &.rp-row-hero-solutions {
+        padding-top: 2 * $spacer;
+        padding-bottom: 0;
+    }
+
+    &.rp-row-hero-full-background {
+        padding-top: 2.5 * $spacer;
+        padding-bottom: 2 * $spacer;
+    }
+}
+
+.page-template-page-alt-hero {
+    .rp-row-hero {
+        padding-top: 2 * $spacer;
+        padding-bottom: 0;
+    }
+}
+
+.rp-below-hero {
+    .rp-row-hero {
+        visibility: hidden;
+    }
+}

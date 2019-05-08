@@ -1,0 +1,15 @@
+//== Name: Billing
+
+.rp-row-billing {
+    .alert,
+    .form-group {
+        display: none;
+    }
+}
+
+.rp-row-billing,
+.rp-row-content {
+    #tryAgain {
+        display: none;
+    }
+}
